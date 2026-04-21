@@ -91,6 +91,7 @@
       background: #FFD100;
     }
     .card-grade {
+      display: block;
       font-size: 3rem;
       font-weight: 800;
       margin-bottom: 8px;
@@ -98,11 +99,13 @@
       margin-top: 8px;
     }
     .card-label {
+      display: block;
       font-size: 1rem;
       font-weight: 600;
       margin-bottom: 6px;
     }
     .card-theme {
+      display: block;
       font-size: 0.85rem;
       opacity: 0.8;
       font-style: italic;
@@ -125,30 +128,30 @@
     <p class="subtitle">Interactive lessons, worksheets, and quizzes</p>
 
     <div class="grid">
-      <a class="card" href="sts-math-4.html">
-        <div class="card-grade">4</div>
-        <div class="card-label">4th Grade</div>
-        <div class="card-theme">Discovering the World with Math</div>
+      <a class="card" href="sts-math-4.html" onclick="window.location.href=this.getAttribute('href');return false;">
+        <span class="card-grade">4</span>
+        <span class="card-label">4th Grade</span>
+        <span class="card-theme">Discovering the World with Math</span>
       </a>
-      <a class="card" href="sts-math-5.html">
-        <div class="card-grade">5</div>
-        <div class="card-label">5th Grade</div>
-        <div class="card-theme">Exploring the World with Math</div>
+      <a class="card" href="sts-math-5.html" onclick="window.location.href=this.getAttribute('href');return false;">
+        <span class="card-grade">5</span>
+        <span class="card-label">5th Grade</span>
+        <span class="card-theme">Exploring the World with Math</span>
       </a>
-      <a class="card" href="sts-math-6.html">
-        <div class="card-grade">6</div>
-        <div class="card-label">6th Grade</div>
-        <div class="card-theme">Describing the World with Math</div>
+      <a class="card" href="sts-math-6.html" onclick="window.location.href=this.getAttribute('href');return false;">
+        <span class="card-grade">6</span>
+        <span class="card-label">6th Grade</span>
+        <span class="card-theme">Describing the World with Math</span>
       </a>
-      <a class="card" href="sts-math-7.html">
-        <div class="card-grade">7</div>
-        <div class="card-label">7th Grade</div>
-        <div class="card-theme">Predicting the World with Math</div>
+      <a class="card" href="sts-math-7.html" onclick="window.location.href=this.getAttribute('href');return false;">
+        <span class="card-grade">7</span>
+        <span class="card-label">7th Grade</span>
+        <span class="card-theme">Predicting the World with Math</span>
       </a>
-      <a class="card" href="sts-math-8.html">
-        <div class="card-grade">8</div>
-        <div class="card-label">8th Grade</div>
-        <div class="card-theme">Engineering the World with Math</div>
+      <a class="card" href="sts-math-8.html" onclick="window.location.href=this.getAttribute('href');return false;">
+        <span class="card-grade">8</span>
+        <span class="card-label">8th Grade</span>
+        <span class="card-theme">Engineering the World with Math</span>
       </a>
     </div>
 
