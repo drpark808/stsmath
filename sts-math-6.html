@@ -907,10 +907,15 @@ This kind of comparison mirrors how geologists think in the field: find the shar
   'fraction-division': {
     title: `Rock Sample Splitter`,
     science: `🌍 Earth Science — Soil & Rock Sample Analysis`,
-    mission: `A geologist divides rock core samples into equal segments for testing. Model this with fraction division in Excel!`,
-    steps: [`Open Excel and title your sheet <em>Sample_Splitter</em>.`,`Column A: Enter 10 total sample lengths as decimals (e.g., 0.75, 1.5, 2.25, 0.5, 1.0…).`,`Column B: Enter 10 segment sizes (e.g., 0.25, 0.5, 0.125, 0.1…).`,`Column C: Formula <code>=A2/B2</code> — calculates how many segments fit.`,`Column D: Formula <code>=IF(C2=INT(C2),"Whole Number","Fraction")</code> — classifies the result.`,`Use <strong>Conditional Formatting</strong> on Column C: highlight green when result is a whole number.`,`Create a bar chart showing sample sizes (Col A) and number of segments (Col C).`],
-    deliverable: `Submit your Excel file with 10 scenarios, division results, color-coded formatting, and chart. Conclusion: Which sample sizes divide into whole-number segments, and why does that matter for a geologist?`,
-    reflect: [`What does the quotient mean in the context of a rock sample?`,`If a segment size is greater than the total sample length, what does the result tell you?`]
+    mission: `A geologist divides rock core samples into equal segments for testing. Model this with fraction division in Excel or Google Sheets!<br><br>
+<div style="background:#fffbe6;border:2px solid #FFD100;border-radius:8px;padding:14px;margin:10px 0;">
+  <strong style="color:#1B3A8A;">📥 Starter Template:</strong>
+  <a href="Sample_Splitter.xlsx" download style="display:inline-block;background:#1B3A8A;color:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;font-weight:600;margin:6px 8px 6px 0;">Download Sample_Splitter.xlsx</a>
+  <div style="font-size:0.9rem;color:#555;margin-top:6px;">Open it in Excel or import into Google Sheets (<em>File → Import → Upload</em>). The template already has the headers, formulas, color coding, and bar chart set up — you just change the blue input values in columns A and B and watch everything update.</div>
+</div>`,
+    steps: [`<strong>Download the starter template</strong> (Sample_Splitter.xlsx) from the link above, or open Excel / Google Sheets and title a new sheet <em>Sample_Splitter</em>.`,`<strong>Column A — Sample Length (m):</strong> Enter 10 total sample lengths as decimals (e.g., 0.75, 1.5, 2.25, 0.5, 1.0…). In the template these are the blue input values — replace them with your own.`,`<strong>Column B — Segment Size (m):</strong> Enter 10 segment sizes (e.g., 0.25, 0.5, 0.125, 0.1…).`,`<strong>Column C — Number of Segments:</strong> Formula <code>=A2/B2</code> calculates how many segments fit. (Already filled in the template.)`,`<strong>Column D — Result Type:</strong> Formula <code>=IF(C2=INT(C2),"Whole Number","Fraction")</code> classifies the quotient.`,`The template applies <strong>Conditional Formatting</strong> to Column C — any whole-number result highlights green. Verify it still works after you change the data.`,`Inspect the <strong>bar chart</strong> comparing sample lengths (Col A) and number of segments (Col C). Resize or restyle it if you wish.`,`<strong>Try at least 3 scenarios</strong> that produce whole-number segments and 3 that produce fractions. Notice which combinations of numerator and denominator give clean divisions.`],
+    deliverable: `Submit your completed workbook (Excel or Google Sheets link) with 10 scenarios, division results, green conditional formatting, and chart. Write a short conclusion: <em>Which sample sizes divide into whole-number segments, and why does that matter for a geologist who needs equal test pieces?</em>`,
+    reflect: [`What does the quotient mean in the context of a rock sample?`,`If a segment size is greater than the total sample length, what does the result tell you?`,`Pick one row where Column D says "Fraction." What whole number would the geologist actually get (how many complete segments), and how much leftover rock?`]
   },
   'scientific-notation': {
     title: `Scale of the Solar System Explorer`,
@@ -1137,6 +1142,30 @@ In this project you will build a metric conversion tool for real Earth science m
   },
 };
 
+const ANSWER_KEYS_6 = {
+  'factors-multiples': 'Mineral_Factor_Analyzer.xlsx',
+  'scientific-notation': 'Solar_System_Explorer.xlsx',
+  'unit-conversions': 'Earth_Science_Measurement_Converter.xlsx',
+  'decimal-ops': 'Weather_Station_Dashboard.xlsx',
+  'ratios-rates': 'Ocean_Chemistry_Ratios.xlsx',
+  'percents': 'Atmosphere_Analyzer.xlsx',
+  'integers': 'Global_Elevation_Tracker.xlsx',
+  'coordinate-plane': 'Earthquake_Coordinate_Map.xlsx',
+  'alg-expressions': 'Rock_Age_Expressions.xlsx',
+  'equations': 'Evaporation_Equations.xlsx',
+  'inequalities': 'AQI_Inequality_Monitor.xlsx',
+  'variables-relationships': 'Earth_Temperature_Relationship.xlsx',
+  'area-polygons': 'Hawaii_Habitat_Area.xlsx',
+  'surface-area': 'Rock_Weathering_SA_Model.xlsx',
+  'volume': 'Glacier_Volume_Analysis.xlsx',
+  'statistics-data': 'Honolulu_Climate_Report.xlsx',
+  'word-problems': 'Earth_System_Report.xlsx',
+  'plate-tectonics': 'Tectonic_Plate_Motion_Calculator.xlsx',
+  'richter-scale': 'Global_Earthquake_Power_Comparator.xlsx',
+  'radioactive-decay': 'Geological_Age_Dating_Lab.xlsx',
+  'topographic-maps': 'Hawaiian_Volcano_Topography.xlsx'
+};
+
 function showHandout() {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
   document.getElementById('handout-screen').classList.add('active');
@@ -1147,6 +1176,13 @@ function showHandout() {
   }
   const stepsHtml = h.steps.map(s => `<li>${s}</li>`).join('');
   const reflectHtml = h.reflect.map((r,i) => `<li>${r}</li>`).join('');
+  const akFile = ANSWER_KEYS_6[currentUnit];
+  const answerKeyHtml = akFile ? `
+      <div style="background:#E8F5E9;border:2px solid #2E7D32;border-radius:8px;padding:14px;margin:14px 0;">
+        <strong style="color:#1B3A8A;">📗 Answer Key (for self-check):</strong>
+        <a href="answerkeys/${akFile}" download style="display:inline-block;background:#2E7D32;color:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;font-weight:600;margin:6px 8px 6px 0;">Download ${akFile}</a>
+        <div style="font-size:0.9rem;color:#555;margin-top:6px;">Completed workbook with all formulas, charts, and real-world data. Open in Excel or upload to Google Sheets (<em>File → Import → Upload</em>) to compare with your own work after you finish.</div>
+      </div>` : '';
   document.getElementById('handout-content').innerHTML = `
     <div class="handout-card">
       <h3>${h.title}</h3>
@@ -1158,6 +1194,7 @@ function showHandout() {
         <strong>🎯 What to Submit:</strong>
         ${h.deliverable}
       </div>
+      ${answerKeyHtml}
       <div class="handout-reflect">
         <strong>💭 Reflection Questions:</strong>
         <ol>${reflectHtml}</ol>
