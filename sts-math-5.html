@@ -105,7 +105,7 @@
           <div id="lesson-content" class="lesson-content"></div>
           <div class="nav-buttons">
             <button class="btn back-btn" onclick="showHome()">← Back</button>
-            <button class="btn" onclick="showHandout()">🔬 Science Connection</button>
+            <button class="btn" onclick="showHandout()">🌍 Real-World Math</button>
             <button class="btn" onclick="showWorksheet()">Worksheet →</button>
           </div>
         </div>
@@ -121,7 +121,7 @@
         </div>
         <div id="handout-screen" class="screen">
           <button class="btn back-btn" onclick="showLesson(currentUnit)">← Back to Lesson</button>
-          <h2 style="margin: 20px 0;">🔬 Science Connection</h2>
+          <h2 style="margin: 20px 0;">🌍 Real-World Math</h2>
           <div id="handout-content"></div>
           <div class="nav-buttons">
             <button class="btn back-btn" onclick="showLesson(currentUnit)">← Back to Lesson</button>
@@ -1057,6 +1057,27 @@ const HANDOUTS_5 = {
   }
 };
 
+const ANSWER_KEYS_5 = {
+  'place-value': 'Place_Value_Astronomy.xlsx',
+  'add-subtract': 'Classroom_Budget_Tracker.xlsx',
+  'mult-div': 'Stadium_Seating_Planner.xlsx',
+  'order-ops': 'Order_of_Operations_Decoder.xlsx',
+  'frac-add-sub': 'Recipe_Remix_Fractions.xlsx',
+  'frac-mult-div': 'Pizza_Party_Planner.xlsx',
+  'frac-convert': 'Measuring_Tape_Detective.xlsx',
+  'frac-vs-dec': 'Fractions_vs_Decimals.xlsx',
+  'dec-add-sub': 'Receipt_Detective.xlsx',
+  'dec-mult': 'Gas_Mileage_Math.xlsx',
+  'dec-div': 'Unit_Price_Shopper.xlsx',
+  'measurement': 'Metric_Measurement_Lab.xlsx',
+  'geometry': 'Quadrilateral_Zoo.xlsx',
+  'factoring': 'Prime_Number_Explorer.xlsx',
+  'exponents': 'Powers_of_10_Tour.xlsx',
+  'data-graphing': 'Backyard_Data_Scientist.xlsx',
+  'integers': 'Elevator_Integer_Lab.xlsx',
+  'algebra': 'Function_Machine_Builder.xlsx'
+};
+
 let completedUnits = {};
 let currentUnit = null;
 
@@ -1195,6 +1216,13 @@ function showHandout() {
   }
   const stepsHtml = h.steps.map(s => `<li>${s}</li>`).join('');
   const reflectHtml = h.reflect.map((r,i) => `<li>${r}</li>`).join('');
+  const akFile = ANSWER_KEYS_5[currentUnit];
+  const answerKeyHtml = akFile ? `
+      <div style="background:#E8F5E9;border:2px solid #2E7D32;border-radius:8px;padding:14px;margin:14px 0;">
+        <strong style="color:#1B3A8A;">📗 Answer Key (for self-check):</strong>
+        <a href="answerkeys/${akFile}" download style="display:inline-block;background:#2E7D32;color:#fff;padding:8px 16px;border-radius:6px;text-decoration:none;font-weight:600;margin:6px 8px 6px 0;">Download ${akFile}</a>
+        <div style="font-size:0.9rem;color:#555;margin-top:6px;">Completed workbook with all formulas, charts, and real-world data. Open in Excel or upload to Google Sheets (<em>File → Import → Upload</em>) to compare with your own work after you finish.</div>
+      </div>` : '';
   document.getElementById('handout-content').innerHTML = `
     <div class="handout-card">
       <h3>${h.title}</h3>
@@ -1206,6 +1234,7 @@ function showHandout() {
         <strong>🎯 What to Submit:</strong>
         ${h.deliverable}
       </div>
+      ${answerKeyHtml}
       <div class="handout-reflect">
         <strong>💭 Reflection Questions:</strong>
         <ol>${reflectHtml}</ol>
