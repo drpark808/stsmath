@@ -681,11 +681,11 @@ const QUIZZES = {
     { q: 'Find % change: (change÷original)×100%?', opts: ['formula', 'ratio', 'constant', 'sum'], ans: 0 }
   ],
   'percent-error': [
-    { q: 'Density measured 8.9 g/mL, actual 9.0 g/mL. Percent error = ?', answer: '1.11%' },
-    { q: 'Speed measured 4.5 m/s, actual 5.0 m/s. Percent error = ?', answer: '10%' },
-    { q: 'Difference between accuracy and precision?', answer: 'accuracy = closeness to true; precision = consistency' },
-    { q: 'Lab acceptable error for middle school?', answer: 'under 10%' },
-    { q: 'Pharmacy gives 290 mg vs. ordered 300 mg. Percent error = ?', answer: '3.33%' }
+    { q: 'Density measured 8.9 g/mL, actual 9.0 g/mL. Percent error = ?', opts: ['0.11%', '1.11%', '11.1%', '0.10%'], ans: 1 },
+    { q: 'Speed measured 4.5 m/s, actual 5.0 m/s. Percent error = ?', opts: ['0.5%', '5%', '10%', '50%'], ans: 2 },
+    { q: 'Difference between accuracy and precision?', opts: ['They are the same thing', 'Accuracy = closeness to true value; precision = consistency of repeated measurements', 'Accuracy = consistency; precision = closeness to true value', 'Both describe error size'], ans: 1 },
+    { q: 'Lab acceptable error for middle school?', opts: ['Under 1%', 'Under 10%', 'Under 50%', 'Any amount is fine'], ans: 1 },
+    { q: 'Pharmacy gives 290 mg vs. ordered 300 mg. Percent error = ?', opts: ['0.33%', '3.33%', '10%', '33.3%'], ans: 1 }
   ],
   'add-sub-rational': [
     { q: '3.5 + 2.5 = ?', opts: ['5', '6', '1', '0'], ans: 1 },

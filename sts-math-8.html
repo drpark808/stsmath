@@ -648,11 +648,11 @@ const QUIZZES = {
     { q: 'Format: a × 10ⁿ where:', opts: ['a = 1 to 10', 'a = 0 to 1', 'a < 10', 'a > 10'], ans: 0 }
   ],
   'percent-error': [
-    { q: 'Measured g = 9.7 m/s², actual 9.81 m/s². Percent error = ?', answer: '1.12%' },
-    { q: 'Measured 1.55×10⁻¹⁹ C, actual 1.60×10⁻¹⁹ C. Percent error = ?', answer: '3.13%' },
-    { q: 'Why can\'t percent error be used when actual value is 0?', answer: 'division by zero' },
-    { q: 'Measured speed of sound 340 m/s, actual 343 m/s. Percent error = ?', answer: '0.87%' },
-    { q: 'Engineering tolerance ±5% applies to: aerospace or construction beam?', answer: 'construction beam' }
+    { q: 'Measured g = 9.7 m/s², actual 9.81 m/s². Percent error = ?', opts: ['0.11%', '1.12%', '11.2%', '0.10%'], ans: 1 },
+    { q: 'Measured 1.55×10⁻¹⁹ C, actual 1.60×10⁻¹⁹ C. Percent error = ?', opts: ['0.31%', '3.13%', '31.3%', '5%'], ans: 1 },
+    { q: 'Why can\'t percent error be used when actual value is 0?', opts: ['Negative numbers are not allowed', 'Division by zero is undefined', 'Zero is not a real measurement', 'The formula rounds to 0%'], ans: 1 },
+    { q: 'Measured speed of sound 340 m/s, actual 343 m/s. Percent error = ?', opts: ['0.087%', '0.87%', '8.7%', '1.0%'], ans: 1 },
+    { q: 'Engineering tolerance ±5% applies to: aerospace or construction beam?', opts: ['Aerospace satellite', 'Construction beam', 'Surgical instrument', 'Spacecraft engine'], ans: 1 }
   ],
   'slope': [
     { q: 'Slope between (0,0) and (2,4):', opts: ['2', '4', '0.5', '6'], ans: 0 },
@@ -751,7 +751,7 @@ const QUIZZES = {
   'word-problems': [
     { q: 'Multi-step needs:', opts: ['one step', 'multiple operations', 'calculator', 'guess'], ans: 1 },
     { q: 'First step: read and identify:', opts: ['solve', 'given and unknown', 'answer', 'method'], ans: 1 },
-    { q: 'Check answer:', answer: '4 options' },
+    { q: 'After solving a word problem, the last step is to:', opts: ['Move on to the next problem', 'Check the answer for reasonableness', 'Round to the nearest whole number', 'Show your work twice'], ans: 1 },
     { q: 'Real-world often uses:', opts: ['pure math', 'equations/functions', 'decimals', 'negatives'], ans: 1 },
     { q: 'Cost = 500 + 20x breaks even when:', opts: ['cost = revenue', 'profit = 0', 'always', 'never'], ans: 0 }
   ],
