@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saint Theresa School — Math Classes &amp; Resources</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #eef2fa 0%, #f8f9fa 100%);
+      color: #1B3A8A;
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 40px 20px;
+    }
+    .container { max-width: 1100px; width: 100%; text-align: center; }
+    .header { margin-bottom: 30px; }
+    .seal {
+      width: 120px; height: 120px;
+      margin: 0 auto 18px;
+      display: block;
+    }
+    .seal img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #FFD100;
+      display: block;
+      box-shadow: 0 6px 18px rgba(27,58,138,0.18);
+    }
+    h1 {
+      color: #1B3A8A; font-size: 2.2rem; font-weight: 800;
+      margin-bottom: 6px; letter-spacing: -0.01em;
+    }
+    .subtitle { color: #555; font-style: italic; font-size: 1.05rem; margin-bottom: 4px; }
+    .est { color: #7a5f00; font-size: 0.9rem; font-weight: 600; margin-bottom: 36px; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 22px;
+    }
+    .card {
+      background: white;
+      border: 2px solid #1B3A8A;
+      border-radius: 14px;
+      padding: 30px 22px;
+      text-decoration: none;
+      color: #1B3A8A;
+      transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(27,58,138,0.08);
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 24px rgba(27,58,138,0.25);
+      background: #1B3A8A;
+      color: white;
+    }
+    .card:hover .card-theme { color: #FFD100; }
+    .card-grade { font-size: 3rem; font-weight: 800; line-height: 1; margin-bottom: 4px; }
+    .card-label { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
+    .card-theme { font-size: 0.82rem; opacity: 0.85; font-style: italic; transition: color 0.2s; }
+    footer { margin-top: 40px; font-size: 0.85rem; color: #888; }
+    @media (max-width: 600px) {
+      h1 { font-size: 1.7rem; }
+      .card-grade { font-size: 2.4rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="seal"><img src="sts-seal.jpg" alt="Saint Theresa School Seal"></div>
+      <h1>Math Classes &amp; Resources</h1>
+      <p class="subtitle">Saint Theresa School &mdash; Interactive lessons, worksheets, and quizzes</p>
+    </div>
+
+    <div class="grid">
+      <a class="card" href="STS Math 1.html">
+        <div class="card-grade">1</div>
+        <div class="card-label">1st Grade</div>
+        <div class="card-theme">Discovering the World with Math</div>
+      </a>
+      <a class="card" href="STS Math 2.html">
+        <div class="card-grade">2</div>
+        <div class="card-label">2nd Grade</div>
+        <div class="card-theme">Building Number Sense</div>
+      </a>
+      <a class="card" href="STS Math 3.html">
+        <div class="card-grade">3</div>
+        <div class="card-label">3rd Grade</div>
+        <div class="card-theme">Multiplication &amp; Beyond</div>
+      </a>
+      <a class="card" href="STS Math 4.html">
+        <div class="card-grade">4</div>
+        <div class="card-label">4th Grade</div>
+        <div class="card-theme">Exploring the World with Math</div>
+      </a>
+      <a class="card" href="STS Math 5.html">
+        <div class="card-grade">5</div>
+        <div class="card-label">5th Grade</div>
+        <div class="card-theme">Decimals, Fractions &amp; Geometry</div>
+      </a>
+      <a class="card" href="STS Math 6.html">
+        <div class="card-grade">6</div>
+        <div class="card-label">6th Grade</div>
+        <div class="card-theme">Ratios, Rates &amp; Expressions</div>
+      </a>
+      <a class="card" href="STS Math 7.html">
+        <div class="card-grade">7</div>
+        <div class="card-label">7th Grade</div>
+        <div class="card-theme">Pre-Algebra Foundations</div>
+      </a>
+      <a class="card" href="STS Math 8.html">
+        <div class="card-grade">8</div>
+        <div class="card-label">8th Grade</div>
+        <div class="card-theme">Introduction to Algebra</div>
+      </a>
+    </div>
+
+    <footer>
+      &copy; Saint Theresa School &middot; SY 2026-2027
+    </footer>
+  </div>
+</body>
+</html>

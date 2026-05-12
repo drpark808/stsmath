@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saint Theresa School — 3rd Grade Math Tutorial</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8f9fa; color: #333; }
+    .container { display: flex; height: 100vh; }
+    .sidebar { border-right: 3px solid #FFD100;  width: 250px; background: #1a2a4a; color: white; overflow-y: auto; padding: 20px; }
+    .sidebar h2 { font-size: 14px; margin-bottom: 15px; font-weight: bold; }
+    .sidebar-item { padding: 10px; margin: 5px 0; background: #111d35; border-radius: 4px; cursor: pointer; font-size: 13px; }
+    .sidebar-item:hover { background: #1B3A8A; }
+    .sidebar-item.active { background: #1B3A8A; }
+    .main { flex: 1; display: flex; flex-direction: column; }
+    .all-math-btn { background: #FFD100; color: #1a2a4a; border: none; cursor: pointer; font-size: 13px; font-weight: 700; padding: 8px 14px; border-radius: 6px; margin-right: 10px; text-decoration: none; display: inline-block; transition: all 0.18s; }
+    .all-math-btn:hover { background: #ffc400; transform: translateX(-2px); }
+    .home-btn { background: rgba(0,0,0,0.2); border: none; color: white; cursor: pointer; font-size: 14px; font-weight: 600; padding: 8px 14px; border-radius: 6px; margin-right: 16px; }
+    .home-btn:hover { background: rgba(0,0,0,0.35); }
+    .topbar { border-bottom: 4px solid #FFD100;  background: #1B3A8A; color: white; padding: 15px 30px; font-size: 18px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+    .topbar-right { display: flex; gap: 20px; align-items: center; font-size: 14px; }
+    .content { flex: 1; overflow-y: auto; padding: 30px; }
+    .screen { display: none; }
+    .screen.active { display: block; }
+    .units-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    .unit-card { background: white; border-radius: 8px; padding: 20px; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .unit-card:hover { transform: translateY(-4px); box-shadow: 0 4px 12px rgba(56,189,248,0.2); }
+    .unit-card-header { display: flex; gap: 15px; align-items: flex-start; margin-bottom: 15px; }
+    .unit-card-icon { font-size: 32px; }
+    .unit-card-meta { flex: 1; }
+    .unit-card-title { font-weight: bold; font-size: 16px; margin-bottom: 4px; }
+    .unit-card-cc { font-size: 12px; color: #666; }
+    .unit-card-desc { font-size: 13px; color: #555; margin-bottom: 12px; line-height: 1.4; }
+    .unit-card-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pill { background: #f0f0f0; padding: 4px 10px; border-radius: 16px; font-size: 11px; }
+    .lesson-content h2 { margin: 20px 0 10px 0; color: #1B3A8A; }
+    .lesson-content h3 { margin: 16px 0 8px; color: #1B3A8A; font-size: 1.05rem; }
+    .lesson-content p { margin-bottom: 12px; line-height: 1.6; }
+    .lesson-content ul, .lesson-content ol { margin-left: 20px; margin-bottom: 12px; }
+    .lesson-content li { margin-bottom: 8px; }
+    .btn { display: inline-block; padding: 10px 20px; background: #1B3A8A; color: white; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; margin: 5px; }
+    .btn:hover { background: #162E70; }
+    .btn-secondary { background: #6b7280; }
+    .btn-secondary:hover { background: #4b5563; }
+    .btn-ixl { display: inline-block; padding: 10px 15px; background: #3b82f6; color: white; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; margin: 5px 5px 5px 0; font-size: 13px; }
+    .btn-ixl:hover { background: #2563eb; }
+    .btn-yt { display: inline-block; padding: 10px 15px; background: #ef4444; color: white; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; margin: 5px 5px 5px 0; font-size: 13px; }
+    .btn-yt:hover { background: #dc2626; }
+    .resource-card { background: #f3f4f6; border-radius: 8px; padding: 15px; margin: 20px 0; }
+    .resource-card h3 { margin-bottom: 10px; color: #1B3A8A; font-size: 14px; }
+    .resource-btns { display: flex; flex-wrap: wrap; }
+    .problem { background: white; padding: 15px; margin: 12px 0; border-left: 4px solid #1B3A8A; border-radius: 4px; }
+    .problem h4 { margin-bottom: 8px; color: #1B3A8A; }
+    .problem input, .problem textarea { width: 100%; padding: 8px; margin: 8px 0; border: 1px solid #ddd; border-radius: 4px; font-family: 'Courier New', monospace; }
+    .answer-key { background: #fef3c7; padding: 10px; margin: 8px 0; border-radius: 4px; font-size: 13px; }
+    .quiz-question { background: white; padding: 15px; margin: 15px 0; border-radius: 4px; border-left: 4px solid #1B3A8A; }
+    .quiz-question h4 { margin-bottom: 10px; color: #1B3A8A; }
+    .quiz-question label { display: block; margin: 8px 0; cursor: pointer; }
+    .quiz-question input[type="radio"] { margin-right: 8px; }
+    .result-card { background: #fef3c7; padding: 20px; border-radius: 8px; margin: 15px 0; }
+    .result-card h3 { color: #059669; margin-bottom: 10px; }
+    .nav-buttons { display: flex; gap: 10px; margin: 20px 0; flex-wrap: wrap; }
+    .back-btn { background: #6b7280; }
+    .back-btn:hover { background: #4b5563; }
+
+    .handout-card { background: #fff; border-left: 5px solid #B8860B; border-radius: 10px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+    .handout-card h3 { margin: 0 0 8px; color: #B8860B; font-size: 1.2rem; }
+    .handout-science { font-size: 0.9rem; color: #666; margin-bottom: 12px; }
+    .handout-mission { background: #f8f9ff; border-radius: 6px; padding: 12px; margin-bottom: 16px; font-style: italic; color: #334; }
+    .handout-steps { margin: 0 0 16px; padding-left: 0; list-style: none; counter-reset: step-counter; }
+    .handout-steps li { counter-increment: step-counter; padding: 8px 12px 8px 44px; margin-bottom: 6px; background: #f0f4ff; border-radius: 6px; position: relative; font-size: 0.92rem; line-height: 1.5; }
+    .handout-steps li::before { content: counter(step-counter); position: absolute; left: 10px; top: 8px; width: 22px; height: 22px; background: #B8860B; color: #fff; border-radius: 50%; font-size: 0.78rem; font-weight: bold; display: flex; align-items: center; justify-content: center; }
+    .handout-deliverable { background: #fffbe6; border: 1px solid #f5d000; border-radius: 6px; padding: 12px; margin-bottom: 16px; }
+    .handout-deliverable strong { display: block; margin-bottom: 4px; color: #7a5f00; }
+    .handout-reflect { background: #fffbea; border: 1px solid #68d391; border-radius: 6px; padding: 12px; }
+    .handout-reflect strong { display: block; margin-bottom: 4px; color: #276749; }
+    .handout-reflect ol { margin: 0; padding-left: 20px; }
+    .handout-reflect li { margin-bottom: 6px; font-size: 0.9rem; }
+    code { background: #e8edf5; padding: 1px 5px; border-radius: 3px; font-family: 'Courier New', monospace; font-size: 0.88em; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <h2 style="margin:0 0 4px 0;">Saint Theresa School</h2><p style="margin:0 0 16px 0;color:#888;font-size:14px;">3rd Grade Math Topics</p>
+      <div id="sidebar-content"></div>
+      <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #444; font-size: 12px; color: #999;">
+        Progress: <span id="progress-text">0/15</span>
+      </div>
+    </div>
+    <div class="main">
+      <div class="topbar">
+        <a href="STS Math Index.html" class="all-math-btn" title="Back to STS home">&larr; All Math</a><button class="home-btn" onclick="showHome()">🏠 HOME</button>
+        <span style="font-size:12px;font-weight:normal;opacity:0.85;margin-right:10px;">Saint Theresa School &nbsp;&nbsp;</span><span id="topbar-title">Multiplication &amp; Beyond</span>
+        <div class="topbar-right">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj4KICA8ZGVmcz4KICAgIDxjbGlwUGF0aCBpZD0iaW5uZXIiPgogICAgICA8Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9Ijc4Ii8+CiAgICA8L2NsaXBQYXRoPgogICAgPHBhdGggaWQ9InRvcC1hcmMiIGQ9Ik0gMTgsMTAwIGE4Miw4MiAwIDAsMSAxNjQsMCIgZmlsbD0ibm9uZSIvPgogICAgPHBhdGggaWQ9ImJvdC1hcmMiIGQ9Ik0gMjIsMTEwIGE4MCw4MCAwIDAsMCAxNTYsMCIgZmlsbD0ibm9uZSIvPgogIDwvZGVmcz4KICA8IS0tIE91dGVyIGdvbGQgcmluZyAtLT4KICA8Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9Ijk5IiBmaWxsPSIjRkZEMTAwIiBzdHJva2U9IiMxQjNBOEEiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwhLS0gQmx1ZSB0ZXh0IGJhbmQgLS0+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI5OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUIzQThBIiBzdHJva2Utd2lkdGg9IjIyIi8+CiAgPCEtLSBHb2xkIGlubmVyIGFyZWEgLS0+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI4OCIgZmlsbD0iI0ZGRDEwMCIvPgogIDwhLS0gQmx1ZSBjcm9zcyBhcm1zIGNsaXBwZWQgdG8gY2lyY2xlIC0tPgogIDxnIGNsaXAtcGF0aD0idXJsKCNpbm5lcikiPgogICAgPHJlY3QgeD0iODYiIHk9IjIyIiB3aWR0aD0iMjgiIGhlaWdodD0iMTU2IiBmaWxsPSIjMUIzQThBIi8+CiAgICA8cmVjdCB4PSIyMiIgeT0iODYiIHdpZHRoPSIxNTYiIGhlaWdodD0iMjgiIGZpbGw9IiMxQjNBOEEiLz4KICAgIDwhLS0gU2hpZWxkIG91dGxpbmUgaW4gY2VudGVyIC0tPgogICAgPHBhdGggZD0iTTEwMCw2OCBMMTIwLDc1IEwxMjAsMTAwIFExMjAsMTE4IDEwMCwxMjYgUTgwLDExOCA4MCwxMDAgTDgwLDc1IFoiIGZpbGw9IiNGRkQxMDAiIHN0cm9rZT0iIzFCM0E4QSIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgICA8IS0tIEZsb3dlci9yb3NlIGluIHNoaWVsZCAtLT4KICAgIDxjaXJjbGUgY3g9IjEwMCIgY3k9Ijk3IiByPSI4IiBmaWxsPSIjMUIzQThBIi8+CiAgICA8Y2lyY2xlIGN4PSIxMDAiIGN5PSI4NyIgcj0iNSIgZmlsbD0iIzFCM0E4QSIvPgogICAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTA3IiByPSI1IiBmaWxsPSIjMUIzQThBIi8+CiAgICA8Y2lyY2xlIGN4PSI5MSIgY3k9Ijk3IiByPSI1IiBmaWxsPSIjMUIzQThBIi8+CiAgICA8Y2lyY2xlIGN4PSIxMDkiIGN5PSI5NyIgcj0iNSIgZmlsbD0iIzFCM0E4QSIvPgogIDwvZz4KICA8IS0tIFF1YWRyYW50IHN5bWJvbHMgKG91dHNpZGUgY3Jvc3MsIGluc2lkZSBvdXRlciByaW5nKSAtLT4KICA8IS0tIFRvcC1sZWZ0OiBCb29rIC0tPgogIDx0ZXh0IHg9IjU4IiB5PSI3MiIgZm9udC1zaXplPSIxOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzFCM0E4QSIgZm9udC1mYW1pbHk9InNlcmlmIj7wn5OWPC90ZXh0PgogIDwhLS0gVG9wLXJpZ2h0OiBGbGV1ci1kZS1saXMgLS0+CiAgPHRleHQgeD0iMTQyIiB5PSI3MiIgZm9udC1zaXplPSIxNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzFCM0E4QSIgZm9udC1mYW1pbHk9InNlcmlmIj7impw8L3RleHQ+CiAgPCEtLSBCb3R0b20tbGVmdDogTGluZXMgKGhhdGNoKSAtLT4KICA8bGluZSB4MT0iMzIiIHkxPSIxMTgiIHgyPSI1MCIgeTI9IjEzMCIgc3Ryb2tlPSIjMUIzQThBIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8bGluZSB4MT0iMzYiIHkxPSIxMTQiIHgyPSI1NCIgeTI9IjEyNiIgc3Ryb2tlPSIjMUIzQThBIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8bGluZSB4MT0iNDAiIHkxPSIxMTAiIHgyPSI1OCIgeTI9IjEyMiIgc3Ryb2tlPSIjMUIzQThBIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8IS0tIEJvdHRvbS1yaWdodDogUGxhbnQvY3Jvc3MgLS0+CiAgPHRleHQgeD0iMTQyIiB5PSIxMzYiIGZvbnQtc2l6ZT0iMTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMxQjNBOEEiIGZvbnQtZmFtaWx5PSJzZXJpZiI+4pygPC90ZXh0PgogIDwhLS0gQ2lyY3VsYXIgdGV4dDogU0FJTlQgVEhFUkVTQSBTQ0hPT0wgLS0+CiAgPHRleHQgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmaWxsPSIjRkZEMTAwIiBsZXR0ZXItc3BhY2luZz0iMiI+CiAgICA8dGV4dFBhdGggaHJlZj0iI3RvcC1hcmMiIHN0YXJ0T2Zmc2V0PSI4JSI+U0FJTlQgVEhFUkVTQSBTQ0hPT0w8L3RleHRQYXRoPgogIDwvdGV4dD4KICA8IS0tIEJvdHRvbSB0ZXh0OiAxOTMxIC0tPgogIDx0ZXh0IGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSJib2xkIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZmlsbD0iI0ZGRDEwMCIgbGV0dGVyLXNwYWNpbmc9IjMiPgogICAgPHRleHRQYXRoIGhyZWY9IiNib3QtYXJjIiBzdGFydE9mZnNldD0iMzUlIj4xOTMxPC90ZXh0UGF0aD4KICA8L3RleHQ+Cjwvc3ZnPg==" style="height:44px;width:44px;border-radius:50%;object-fit:contain;background:#FFD100;" alt="Saint Theresa School Seal"/>
+        </div>
+      </div>
+      <div class="content">
+        <div id="home-screen" class="screen active">
+          <div id="units-grid" class="units-grid"></div>
+        </div>
+        <div id="lesson-screen" class="screen">
+          <button class="btn back-btn" onclick="showHome()">← Back to Units</button>
+          <div id="lesson-content" class="lesson-content"></div>
+          <div class="nav-buttons">
+            <button class="btn back-btn" onclick="showHome()">← Back</button>
+            <button class="btn" onclick="showHandout()">🌺 Real-World Math</button>
+            <button class="btn" onclick="showWorksheet()">Worksheet →</button>
+          </div>
+        </div>
+        <div id="worksheet-screen" class="screen">
+          <button class="btn back-btn" onclick="showLesson(currentUnit)">← Back to Lesson</button>
+          <h2 style="margin: 20px 0;">📋 Worksheet</h2>
+          <div id="worksheet-content"></div>
+          <div class="nav-buttons">
+            <button class="btn back-btn" onclick="showLesson(currentUnit)">← Back</button>
+            <button class="btn" onclick="checkWorksheet()">Check Answers</button>
+            <button class="btn" onclick="showQuiz()">Quiz →</button>
+          </div>
+        </div>
+        <div id="handout-screen" class="screen">
+          <button class="btn back-btn" onclick="showLesson(currentUnit)">← Back to Lesson</button>
+          <h2 style="margin: 20px 0;">🌺 Real-World Math</h2>
+          <div id="handout-content"></div>
+          <div class="nav-buttons">
+            <button class="btn back-btn" onclick="showLesson(currentUnit)">← Back to Lesson</button>
+            <button class="btn" onclick="showWorksheet()">Worksheet →</button>
+          </div>
+        </div>
+        <div id="quiz-screen" class="screen">
+          <button class="btn back-btn" onclick="showWorksheet()">← Back to Worksheet</button>
+          <h2 style="margin: 20px 0;">📝 Quick Quiz</h2>
+          <div id="quiz-content"></div>
+          <div class="nav-buttons">
+            <button class="btn back-btn" onclick="showWorksheet()">← Back</button>
+            <button class="btn" onclick="submitQuiz()">Submit Quiz</button>
+          </div>
+        </div>
+        <div id="certificate-screen" class="screen">
+          <div style="text-align: center; padding: 40px;">
+            <h2 style="color: #1B3A8A; margin: 20px 0;">🎉 Unit Completed!</h2>
+            <div id="cert-content"></div>
+            <button class="btn" onclick="showHome()" style="margin-top: 20px;">Return to Home</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+const UNITS = [
+  { id: "place-value", title: "Place Value & Rounding", icon: "🔢", cc: "3.NBT.1",
+    desc: "Read numbers to ten thousands; round to nearest 10, 100, or 1,000.",
+    ixlUrl: "https://www.ixl.com/math/grade-3/place-value-names-up-to-ten-thousands",
+    ytSearch: "khan academy 3rd grade place value rounding" },
+  { id: "addition", title: "Addition", icon: "➕", cc: "3.NBT.2",
+    desc: "Add three- and four-digit numbers fluently using the standard algorithm.",
+    ixlUrl: "https://www.ixl.com/math/grade-3/add-two-numbers-up-to-three-digits-word-problems",
+    ytSearch: "khan academy 3rd grade multi digit addition" },
+  { id: "subtraction", title: "Subtraction", icon: "➖", cc: "3.NBT.2",
+    desc: "Subtract three- and four-digit numbers, including across zeros.",
+    ixlUrl: "https://www.ixl.com/math/grade-3/addition-and-subtraction-word-problems-up-to-three-digits",
+    ytSearch: "khan academy 3rd grade multi digit subtraction" },
+  { id: "multiplication", title: "Multiplication", icon: "✖️", cc: "3.OA.1-7",
+    desc: "Master multiplication facts up to 10 × 10 using arrays and properties.",
+    ixlUrl: "https://www.ixl.com/math/grade-3/multiplication-facts-up-to-10",
+    ytSearch: "khan academy 3rd grade multiplication facts" },
+  { id: "division", title: "Division", icon: "➗", cc: "3.OA.2-7",
+    desc: "Divide using arrays, equal groups, and inverse multiplication facts.",
+    ixlUrl: "https://www.ixl.com/math/grade-3/division-facts-up-to-10",
+    ytSearch: "khan academy 3rd grade division facts" },
+  { id: "order-ops", title: "Order of Operations", icon: "📋", cc: "3.OA.8",
+    desc: "Solve expressions using the correct order: parentheses, multiplication/division, addition/subtraction.",
+    ixlUrl: "https://www.ixl.com/math/grade-3/addition-subtraction-multiplication-and-division-facts",
+    ytSearch: "khan academy 3rd grade order of operations PEMDAS" },
+  { id: "roman-numerals", title: "Roman Numerals", icon: "🏛️", cc: "Numeracy/Heritage",
+    desc: "Read and write Roman numerals I, V, X, L, C and convert to/from standard form.",
+    ixlUrl: "https://www.ixl.com/math/grade-2/roman-numerals-i-v-x",
+    ytSearch: "khan academy roman numerals introduction" },
+  { id: "fractions-decimals", title: "Fractions & Decimals", icon: "🍕", cc: "3.NF.1-3",
+    desc: "Understand fractions, equivalent fractions, and connect to decimals.",
+    ixlUrl: "https://www.ixl.com/math/grade-3/fractions-of-number-lines",
+    ytSearch: "khan academy 3rd grade fractions decimals" },
+  { id: "measurement", title: "Measurement", icon: "📏", cc: "3.MD.1-4",
+    desc: "Measure lengths, weights, and liquid volumes in customary and metric units.",
+    ixlUrl: "https://www.ixl.com/math/grade-3/measure-using-an-inch-ruler",
+    ytSearch: "khan academy 3rd grade measurement length weight volume" },
+  { id: "counting-money", title: "Counting Money", icon: "💰", cc: "3.MD",
+    desc: "Count coins and bills up to $5; add, subtract, and make change with money.",
+    ixlUrl: "https://www.ixl.com/math/grade-3/count-coins-and-bills-up-to-5-dollar-bill",
+    ytSearch: "khan academy 3rd grade money word problems change" },
+  { id: "time-calendar", title: "Time & Calendar", icon: "🕐", cc: "3.MD.1",
+    desc: "Tell time to the nearest minute; find elapsed time; use a calendar.",
+    ixlUrl: "https://www.ixl.com/math/grade-3/read-clocks-and-write-times",
+    ytSearch: "khan academy 3rd grade elapsed time calendar" },
+  { id: "geometry", title: "Geometry", icon: "🔺", cc: "3.G.1-2",
+    desc: "Identify polygons by sides and angles; understand perimeter and area.",
+    ixlUrl: "https://www.ixl.com/math/grade-3/identify-polygons-up-to-12-sides",
+    ytSearch: "khan academy 3rd grade polygons perimeter area" },
+  { id: "data-graphing", title: "Data & Graphing", icon: "📊", cc: "3.MD.3-4",
+    desc: "Create and read scaled picture graphs, bar graphs, and line plots.",
+    ixlUrl: "https://www.ixl.com/math/grade-3/interpret-bar-graphs-multi-digit-numbers",
+    ytSearch: "khan academy 3rd grade scaled bar graphs picture graphs" },
+  { id: "word-problems", title: "Word Problems", icon: "📝", cc: "3.OA.8",
+    desc: "Solve multi-step word problems with all four operations.",
+    ixlUrl: "https://www.ixl.com/math/grade-3/addition-subtraction-multiplication-and-division-word-problems",
+    ytSearch: "khan academy 3rd grade multi step word problems" },
+  { id: "area-perimeter", title: "Area & Perimeter", icon: "📐", cc: "3.MD.5-8",
+    desc: "Find the area of rectangles by tiling and by multiplying side lengths; find perimeter from given side lengths.",
+    ixlUrl: "https://www.ixl.com/math/grade-3/find-the-area-of-rectangles-and-squares",
+    ytSearch: "khan academy 3rd grade area perimeter" }
+];
+
+const LESSONS = {
+  "place-value": `<h2>Place Value &amp; Rounding</h2><p>The position of each digit tells you how much it's worth.</p><h3>Through Ten Thousands</h3><p>Example: 42,365</p><ul><li>4 → 40,000 (ten thousands)</li><li>2 → 2,000 (thousands)</li><li>3 → 300 (hundreds)</li><li>6 → 60 (tens)</li><li>5 → 5 (ones)</li></ul><h3>Rounding</h3><p>Find the rounding place. Look at the digit to its right. 5 or greater → round up. Less than 5 → round down.</p><p>Round 4,789 to the nearest thousand: thousands digit is 4; next is 7 → round up → <strong>5,000</strong>.</p>`,
+
+  "addition": `<h2>Addition</h2><p>Stack numbers by place value, add from right to left, regroup when a column totals 10 or more.</p><h3>Example: 2,876 + 1,357</h3><pre>   1 1 1
+   2,876
+ + 1,357
+  ------
+   4,233</pre><p>Always estimate first — round each number and add mentally. If your real answer is close to the estimate, it's likely right.</p>`,
+
+  "subtraction": `<h2>Subtraction</h2><p>Stack and subtract from right to left. When the top digit is smaller, regroup (borrow) from the next column.</p><h3>Example: 5,002 − 1,347</h3><pre>     4 9 9 12
+   5,0 0 2
+ - 1,3 4 7
+  ---------
+   3,6 5 5</pre><p>To borrow across zeros: borrow from the thousands; the 0s become 9s and the ones become 12.</p>`,
+
+  "multiplication": `<h2>Multiplication</h2><p>Multiplication is repeated addition. <strong>4 × 6 = 24</strong> means 4 groups of 6, or 6 + 6 + 6 + 6 = 24.</p><h3>Times-Table Tricks</h3><ul><li><strong>×0:</strong> Anything × 0 = 0</li><li><strong>×1:</strong> Same number</li><li><strong>×2:</strong> Double</li><li><strong>×5:</strong> Half of (× 10) — 6 × 5 = 30 because 6 × 10 = 60</li><li><strong>×9:</strong> Multiply by 10 and subtract — 7 × 9 = 70 − 7 = 63</li><li><strong>×10:</strong> Add a zero</li></ul><h3>Commutative Property</h3><p>Order doesn't matter: 4 × 6 = 6 × 4. So if you know one, you know both!</p>`,
+
+  "division": `<h2>Division</h2><p>Division splits a number into equal groups. <strong>12 ÷ 3 = 4</strong> means 12 split into 3 equal groups, each with 4.</p><h3>Inverse of Multiplication</h3><p>Use times tables backward: 12 ÷ 3 = ? → Ask 'What times 3 = 12?' Answer: 4.</p><h3>Special Rules</h3><ul><li>Any number ÷ 1 = the number</li><li>Any number ÷ itself = 1</li><li>0 ÷ any number = 0</li><li>You CANNOT divide by 0 (undefined)</li></ul><h3>Fact Families</h3><p>3 × 4 = 12 → 4 × 3 = 12 → 12 ÷ 3 = 4 → 12 ÷ 4 = 3.</p>`,
+
+  "order-ops": `<h2>Order of Operations</h2><p>When you see multiple operations, follow this order:</p><ol><li><strong>P</strong>arentheses</li><li><strong>E</strong>xponents (later grade)</li><li><strong>M</strong>ultiplication &amp; <strong>D</strong>ivision — left to right</li><li><strong>A</strong>ddition &amp; <strong>S</strong>ubtraction — left to right</li></ol><p>Memorize: <em>Please Excuse My Dear Aunt Sally</em> (PEMDAS).</p><h3>Example</h3><p>6 + 2 × (3 + 4)</p><ul><li>Parentheses first: (3 + 4) = 7 → 6 + 2 × 7</li><li>Multiplication: 2 × 7 = 14 → 6 + 14</li><li>Addition: <strong>20</strong></li></ul>`,
+
+  "roman-numerals": `<h2>Roman Numerals</h2><p>The Romans wrote numbers using letters. You see them on clock faces and chapter numbers.</p><table style='border-collapse:collapse;'><tr><th style='padding:4px 10px;border-bottom:1px solid #ccc;text-align:left;'>Symbol</th><th style='padding:4px 10px;border-bottom:1px solid #ccc;text-align:left;'>Value</th></tr><tr><td style='padding:4px 10px;'>I</td><td>1</td></tr><tr><td style='padding:4px 10px;'>V</td><td>5</td></tr><tr><td style='padding:4px 10px;'>X</td><td>10</td></tr><tr><td style='padding:4px 10px;'>L</td><td>50</td></tr><tr><td style='padding:4px 10px;'>C</td><td>100</td></tr></table><h3>Rules</h3><ol><li>Largest to smallest, left to right.</li><li>A smaller symbol before a larger one means <em>subtract</em>: IV = 4, IX = 9, XL = 40, XC = 90.</li><li>You can repeat a symbol up to 3 times: III = 3, XXX = 30.</li></ol><p><strong>Example:</strong> XXVII = 10 + 10 + 5 + 1 + 1 = <strong>27</strong>.</p>`,
+
+  "fractions-decimals": `<h2>Fractions &amp; Decimals</h2><h3>Parts of a Fraction</h3><p>The top number (numerator) counts the parts. The bottom (denominator) tells how many equal parts make the whole.</p><h3>Equivalent Fractions</h3><p>Multiply or divide top and bottom by the same number.</p><p>1/2 = 2/4 = 3/6 = 4/8</p><h3>Decimals Connection</h3><p>Decimals are a shorthand for fractions with denominators 10, 100, 1000.</p><ul><li>0.5 = 5/10 = 1/2</li><li>0.25 = 25/100 = 1/4</li><li>0.75 = 75/100 = 3/4</li></ul><h3>Comparing Fractions</h3><p>Same denominator? Compare numerators. Same numerator? Smaller denominator = bigger fraction.</p>`,
+
+  "measurement": `<h2>Measurement</h2><h3>Length</h3><p>Inches (in), feet (ft), yards (yd), miles (mi); centimeters (cm), meters (m), kilometers (km).</p><p>12 in = 1 ft &nbsp;&middot;&nbsp; 3 ft = 1 yd &nbsp;&middot;&nbsp; 100 cm = 1 m</p><h3>Weight/Mass</h3><p>Ounces (oz), pounds (lb), tons; grams (g), kilograms (kg).</p><p>16 oz = 1 lb &nbsp;&middot;&nbsp; 1,000 g = 1 kg</p><h3>Liquid Volume</h3><p>Cups (c), pints (pt), quarts (qt), gallons (gal); milliliters (mL), liters (L).</p><p>2 c = 1 pt &nbsp;&middot;&nbsp; 2 pt = 1 qt &nbsp;&middot;&nbsp; 4 qt = 1 gal &nbsp;&middot;&nbsp; 1,000 mL = 1 L</p>`,
+
+  "counting-money": `<h2>Counting Money</h2><h3>Bills &amp; Coins</h3><ul><li>$1, $5, $10, $20 bills</li><li>50¢, 25¢, 10¢, 5¢, 1¢ coins</li></ul><h3>Adding Money</h3><p>Line up the decimal points (dollars and cents columns).</p><pre>  $3.45
++ $2.78
+------
+  $6.23</pre><h3>Making Change</h3><p>Count UP from the price. If something is $4.65 and you give $5:<br>$4.65 → $4.75 (dime) → $4.85 (dime) → $4.95 (dime) → $5.00 (nickel) → change = <strong>35¢</strong>.</p>`,
+
+  "time-calendar": `<h2>Time &amp; Calendar</h2><h3>Telling Time to the Minute</h3><p>Each small mark on the clock = 1 minute. Between numbers (5 minutes apart) there are 5 small marks.</p><h3>Elapsed Time</h3><p>How much time has passed?</p><p>Start: 2:15 PM. End: 4:30 PM. Count forward: 2:15 → 3:15 (1 hr) → 4:15 (2 hr) → 4:30 (+15 min) = <strong>2 hours 15 minutes</strong>.</p><h3>Calendar Facts</h3><ul><li>12 months in a year</li><li>365 days (366 in a leap year)</li><li>52 weeks in a year</li><li>7 days in a week</li></ul>`,
+
+  "geometry": `<h2>Geometry</h2><h3>Polygons by Sides</h3><ul><li>3 — triangle</li><li>4 — quadrilateral (square, rectangle, rhombus, trapezoid)</li><li>5 — pentagon</li><li>6 — hexagon</li><li>8 — octagon</li></ul><h3>Perimeter</h3><p>The distance around a shape. Add the lengths of all sides.</p><p>A 5×3 rectangle: P = 5 + 3 + 5 + 3 = <strong>16</strong> units.</p><h3>Area</h3><p>The space inside a 2D shape. For rectangles: <strong>Area = length × width</strong>.</p><p>A 5×3 rectangle: A = 5 × 3 = <strong>15</strong> square units.</p>`,
+
+  "data-graphing": `<h2>Data &amp; Graphing</h2><h3>Scaled Picture Graph</h3><p>Each picture stands for more than one — like '🍌 = 4 bananas'. To find totals, multiply the pictures.</p><h3>Bar Graph</h3><p>Bars show data; the y-axis (vertical) has numbers — read the bar's height.</p><h3>Line Plot</h3><p>Marks above a number line show how many of each value. Useful for fractional measurements like 1/2 in, 1/4 in.</p><h3>Common Questions</h3><ul><li>How many in all?</li><li>Which has the most/least?</li><li>How many more A than B?</li><li>What is the range (largest minus smallest)?</li></ul>`,
+
+  "word-problems": `<h2>Word Problems</h2><h3>5-Step Method</h3><ol><li><strong>Read</strong> the whole problem.</li><li><strong>Underline</strong> the question and numbers.</li><li><strong>Decide</strong> the operation: + − × ÷.</li><li><strong>Write</strong> the math sentence.</li><li><strong>Solve</strong> and answer in a sentence.</li></ol><h3>Clue Words</h3><ul><li>Add: total, sum, in all, altogether</li><li>Subtract: left, difference, less, more than</li><li>Multiply: times, product, each, every</li><li>Divide: equal groups, split, per, each</li></ul><h3>Two-Step Example</h3><p>Tutu baked 4 trays of 12 cookies. The family ate 18. How many left?</p><p>Step 1: 4 × 12 = 48 cookies.<br>Step 2: 48 − 18 = <strong>30</strong> left.</p>`,
+  "area-perimeter": `<h2>Area &amp; Perimeter</h2><h3>Perimeter</h3><p><strong>Perimeter</strong> is the distance <em>around</em> a flat shape. Add the lengths of every side.</p><p>Example: a rectangle 5 ft long and 3 ft wide has perimeter P = 5 + 3 + 5 + 3 = <strong>16 ft</strong>.</p><p>Shortcut for rectangles: P = 2(length + width). 2(5 + 3) = 2 × 8 = 16 ft.</p><h3>Area</h3><p><strong>Area</strong> is the space <em>inside</em> a flat shape, measured in square units (like square feet, ft²).</p><p>Tile a rectangle with unit squares and count: a 5 × 3 rectangle holds 15 unit squares → area = <strong>15 sq ft</strong>.</p><p>Or use the formula <strong>Area = length × width</strong>: 5 × 3 = 15 sq ft.</p><h3>Square</h3><p>A square has all four sides equal. If a side is <em>s</em>: P = 4s, A = s × s = s².</p><h3>Composite (L-Shaped) Figures</h3><p>Split into rectangles, find each area, and add. Or find the area of a big rectangle and subtract the missing corner.</p><h3>Real Units</h3><p>Perimeter uses single units (ft, m, in). Area uses square units (sq ft, m², in²). Never mix them up!</p>`
+};
+
+const WORKSHEETS = {
+  "place-value": [
+    {q: "In 5,742, what is the value of the 5?", answer: "5,000"},
+    {q: "Round 2,847 to the nearest hundred.", answer: "2,800"},
+    {q: "Round 6,289 to the nearest thousand.", answer: "6,000"},
+    {q: "Write 9,000 + 300 + 40 + 7 as a number.", answer: "9,347"},
+    {q: "What is 100 more than 5,629?", answer: "5,729"}
+  ],
+  "addition": [
+    {q: "3,452 + 2,189 = ?", answer: "5,641"},
+    {q: "1,876 + 945 = ?", answer: "2,821"},
+    {q: "567 + 893 = ?", answer: "1,460"},
+    {q: "4,008 + 1,995 = ?", answer: "6,003"},
+    {q: "2,750 + 2,250 = ?", answer: "5,000"}
+  ],
+  "subtraction": [
+    {q: "5,234 − 1,876 = ?", answer: "3,358"},
+    {q: "4,000 − 1,675 = ?", answer: "2,325"},
+    {q: "3,002 − 875 = ?", answer: "2,127"},
+    {q: "6,500 − 2,750 = ?", answer: "3,750"},
+    {q: "1,234 − 567 = ?", answer: "667"}
+  ],
+  "multiplication": [
+    {q: "7 × 8 = ?", answer: "56"},
+    {q: "6 × 9 = ?", answer: "54"},
+    {q: "4 × 7 = ?", answer: "28"},
+    {q: "0 × 25 = ?", answer: "0"},
+    {q: "5 × 12 = ?", answer: "60"}
+  ],
+  "division": [
+    {q: "48 ÷ 6 = ?", answer: "8"},
+    {q: "72 ÷ 9 = ?", answer: "8"},
+    {q: "0 ÷ 7 = ?", answer: "0"},
+    {q: "35 ÷ 5 = ?", answer: "7"},
+    {q: "100 ÷ 10 = ?", answer: "10"}
+  ],
+  "order-ops": [
+    {q: "Solve: 3 + 5 × 2", answer: "13 (multiply first: 5×2=10, then 3+10)"},
+    {q: "Solve: (3 + 5) × 2", answer: "16 (parentheses first)"},
+    {q: "Solve: 20 − 4 × 3", answer: "8 (multiply first)"},
+    {q: "Solve: 10 + 6 ÷ 2", answer: "13 (divide first)"},
+    {q: "Solve: (12 − 4) ÷ 2", answer: "4"}
+  ],
+  "roman-numerals": [
+    {q: "Write 14 as a Roman numeral.", answer: "XIV"},
+    {q: "What number is XXIX?", answer: "29"},
+    {q: "Write 50 as a Roman numeral.", answer: "L"},
+    {q: "What number is XLII?", answer: "42"},
+    {q: "Write 9 as a Roman numeral.", answer: "IX"}
+  ],
+  "fractions-decimals": [
+    {q: "What is 2/4 in simplest form?", answer: "1/2"},
+    {q: "Write 0.5 as a fraction.", answer: "1/2 (or 5/10)"},
+    {q: "Which is bigger: 3/8 or 5/8?", answer: "5/8"},
+    {q: "Write 0.25 as a fraction.", answer: "1/4 (or 25/100)"},
+    {q: "Find an equivalent: 1/3 = ?/9", answer: "3/9"}
+  ],
+  "measurement": [
+    {q: "How many inches in 3 feet?", answer: "36"},
+    {q: "How many cm in 2 m?", answer: "200"},
+    {q: "How many ounces in 1 pound?", answer: "16"},
+    {q: "How many quarts in 1 gallon?", answer: "4"},
+    {q: "Best unit for measuring a swimming pool: cm, m, or km?", answer: "meters"}
+  ],
+  "counting-money": [
+    {q: "$2.45 + $1.79 = ?", answer: "$4.24"},
+    {q: "$5.00 − $3.65 = ?", answer: "$1.35"},
+    {q: "3 quarters + 2 dimes + 4 pennies = ?", answer: "$0.99"},
+    {q: "Item costs $7.30; you give $10. How much change?", answer: "$2.70"},
+    {q: "Convert 250¢ to dollars.", answer: "$2.50"}
+  ],
+  "time-calendar": [
+    {q: "Start: 3:15 PM. End: 5:45 PM. Elapsed time?", answer: "2 hours 30 min"},
+    {q: "How many days in 4 weeks?", answer: "28"},
+    {q: "How many months from March to October?", answer: "7"},
+    {q: "If today is Wednesday, what day was it 5 days ago?", answer: "Friday"},
+    {q: "8:55 AM — how many minutes until 9:30 AM?", answer: "35 minutes"}
+  ],
+  "geometry": [
+    {q: "Perimeter of a rectangle 6 in by 4 in:", answer: "20 in"},
+    {q: "Area of a rectangle 6 in by 4 in:", answer: "24 sq in"},
+    {q: "Name a polygon with 6 sides.", answer: "hexagon"},
+    {q: "How many sides does an octagon have?", answer: "8"},
+    {q: "Perimeter of a square with side 5 cm:", answer: "20 cm"}
+  ],
+  "data-graphing": [
+    {q: "If a pictograph uses 🍕 = 4, how many pizzas are 6 pictures?", answer: "24"},
+    {q: "Bar graph: dogs 18, cats 12, fish 6. Total animals?", answer: "36"},
+    {q: "Same graph — how many more dogs than fish?", answer: "12"},
+    {q: "If 5 students scored 8, 3 scored 9, and 2 scored 10 — total students?", answer: "10"},
+    {q: "Range of scores: 6, 8, 8, 9, 10, 7", answer: "4 (10 − 6)"}
+  ],
+  "word-problems": [
+    {q: "Auntie made 8 pans of 24 lau lau. How many lau lau total?", answer: "192"},
+    {q: "There are 45 students. They form 9 equal groups. How many in each?", answer: "5 students"},
+    {q: "Kai had $20. He bought 3 shave ice at $3.50 each. How much left?", answer: "$9.50"},
+    {q: "A book has 240 pages. Maile reads 35 a day. How long to finish?", answer: "7 days (6 days × 35 = 210; day 7 finishes)"},
+    {q: "School has 6 classes × 22 students each. Total?", answer: "132 students"}
+  ],
+  "area-perimeter": [
+    { q: "What is the perimeter of a rectangle 7 ft long and 4 ft wide?", answer: "22 ft" },
+    { q: "What is the area of a rectangle 6 in long and 5 in wide?", answer: "30 sq in" },
+    { q: "A square garden has sides of 9 m. What is its perimeter?", answer: "36 m" },
+    { q: "A square has area 49 sq cm. How long is one side?", answer: "7 cm" },
+    { q: "A rectangle has perimeter 20 ft and width 4 ft. What is the length?", answer: "6 ft" }
+  ]
+};
+
+const QUIZZES = {
+  "place-value": [
+    {q: "In 8,365, the value of the 8 is...", opts: ["8", "800", "8,000"], ans: 2},
+    {q: "Round 4,675 to the nearest hundred.", opts: ["4,600", "4,700", "5,000"], ans: 1},
+    {q: "Write 'three thousand, two hundred fifty' as digits.", opts: ["3,250", "32,500", "30,250"], ans: 0}
+  ],
+  "addition": [
+    {q: "2,456 + 1,789 = ?", opts: ["4,235", "4,245", "4,255"], ans: 1},
+    {q: "789 + 456 = ?", opts: ["1,245", "1,255", "1,145"], ans: 0},
+    {q: "When adding 3-digit numbers, you regroup when a column totals...", opts: ["5 or more", "9 or more", "10 or more"], ans: 2}
+  ],
+  "subtraction": [
+    {q: "3,200 − 1,567 = ?", opts: ["1,533", "1,633", "1,733"], ans: 1},
+    {q: "To subtract across zeros, you...", opts: ["skip the zero", "borrow from the next column", "add instead"], ans: 1},
+    {q: "1,000 − 256 = ?", opts: ["744", "754", "844"], ans: 0}
+  ],
+  "multiplication": [
+    {q: "8 × 7 = ?", opts: ["48", "54", "56"], ans: 2},
+    {q: "0 × 99 = ?", opts: ["99", "100", "0"], ans: 2},
+    {q: "5 × 6 = 6 × 5 is true because of the...", opts: ["associative property", "commutative property", "distributive property"], ans: 1}
+  ],
+  "division": [
+    {q: "63 ÷ 9 = ?", opts: ["6", "7", "9"], ans: 1},
+    {q: "0 ÷ 5 = ?", opts: ["0", "5", "undefined"], ans: 0},
+    {q: "Division is the inverse of...", opts: ["addition", "subtraction", "multiplication"], ans: 2}
+  ],
+  "order-ops": [
+    {q: "4 + 3 × 2 = ?", opts: ["10", "14", "20"], ans: 0},
+    {q: "(4 + 3) × 2 = ?", opts: ["10", "14", "20"], ans: 1},
+    {q: "What does the P in PEMDAS stand for?", opts: ["Place", "Parentheses", "Power"], ans: 1}
+  ],
+  "roman-numerals": [
+    {q: "What number is XV?", opts: ["10", "15", "20"], ans: 1},
+    {q: "Write 9 in Roman numerals.", opts: ["VIIII", "IX", "XI"], ans: 1},
+    {q: "What number is XL?", opts: ["40", "60", "90"], ans: 0}
+  ],
+  "fractions-decimals": [
+    {q: "Which is equivalent to 1/2?", opts: ["2/3", "2/4", "3/5"], ans: 1},
+    {q: "0.25 = ?", opts: ["1/2", "1/4", "1/3"], ans: 1},
+    {q: "Which is biggest?", opts: ["1/2", "1/3", "1/4"], ans: 0}
+  ],
+  "measurement": [
+    {q: "How many inches in 5 feet?", opts: ["50", "60", "70"], ans: 1},
+    {q: "1 pound = ?", opts: ["8 oz", "12 oz", "16 oz"], ans: 2},
+    {q: "4 quarts = ?", opts: ["1 gallon", "1 cup", "1 pint"], ans: 0}
+  ],
+  "counting-money": [
+    {q: "$10 − $4.75 = ?", opts: ["$5.25", "$5.35", "$6.25"], ans: 0},
+    {q: "$3.50 × 4 = ?", opts: ["$12.00", "$14.00", "$15.00"], ans: 1},
+    {q: "How many dimes in $1?", opts: ["5", "10", "20"], ans: 1}
+  ],
+  "time-calendar": [
+    {q: "From 2:00 PM to 4:30 PM is...", opts: ["2 hours", "2 hr 30 min", "3 hours"], ans: 1},
+    {q: "How many days in a non-leap year?", opts: ["360", "365", "366"], ans: 1},
+    {q: "How many weeks in a year (approximately)?", opts: ["50", "52", "60"], ans: 1}
+  ],
+  "geometry": [
+    {q: "Area of a 7×3 rectangle:", opts: ["10", "20", "21"], ans: 2},
+    {q: "Perimeter of a square with side 4:", opts: ["8", "12", "16"], ans: 2},
+    {q: "How many sides does a hexagon have?", opts: ["5", "6", "8"], ans: 1}
+  ],
+  "data-graphing": [
+    {q: "If 🍩 = 5 donuts, then 4 pictures = ?", opts: ["9", "16", "20"], ans: 2},
+    {q: "Range of: 12, 8, 5, 10, 14", opts: ["5", "9", "14"], ans: 1},
+    {q: "On a bar graph, the y-axis usually shows...", opts: ["category names", "the count", "colors"], ans: 1}
+  ],
+  "word-problems": [
+    {q: "Words like 'product' mean to:", opts: ["add", "subtract", "multiply"], ans: 2},
+    {q: "If 6 baskets each have 12 apples, total apples?", opts: ["18", "60", "72"], ans: 2},
+    {q: "$15 split among 3 friends equally = each gets...", opts: ["$3", "$5", "$15"], ans: 1}
+  ],
+  "area-perimeter": [
+    { q: "Perimeter is measured in:", choices: ["square units", "single units", "cubic units"], correct: 1 },
+    { q: "Area of an 8 × 4 rectangle:", choices: ["12 sq units", "24 sq units", "32 sq units"], correct: 2 },
+    { q: "Perimeter of a 6 × 3 rectangle:", choices: ["9", "18", "36"], correct: 1 },
+    { q: "A square has side 5 cm. Its area is:", choices: ["10 sq cm", "20 sq cm", "25 sq cm"], correct: 2 }
+  ]
+};
+
+const HANDOUTS = {
+  "place-value": {science: "Reading Big Numbers on Hawaiian Highways", mission: "Find and read 4-digit numbers.", steps: ["On a drive (with a grown-up), look for mile markers, route numbers, or city populations.", "Pick a 4-digit number you see.", "Write each digit's place and value.", "Round to the nearest hundred.", "Round to the nearest thousand."], deliverable: "Three 4-digit numbers fully analyzed.", reflect: ["Why do we put commas in big numbers?", "How does rounding help with mental math?", "Where else do big numbers appear in real life?"]},
+  "addition": {science: "Lūʻau Guest Count", mission: "Add up multi-digit guest totals.", steps: ["Tutu's family invited 1,250 people. ʻOhana from O'ahu added 875.", "How many guests total?", "If 156 cancelled and 89 new RSVPs came in — what's the new total?", "Use estimation to check your work first.", "Repeat with different numbers from your own family event."], deliverable: "Three addition problems with answers and estimates.", reflect: ["Why estimate before solving?", "When did you need to regroup?", "How does grouping numbers help with mental math?"]},
+  "subtraction": {science: "Lava Flow Calculations", mission: "Calculate how much land a lava flow covered.", steps: ["A lava flow covered 1,250 acres in 2014.", "Of that, 850 acres burned. How many were saved by water/firefighters?", "Now imagine a 3,200-acre flow: 1,675 saved. How many burned?", "Estimate by rounding the numbers first.", "Check by adding your answer back."], deliverable: "Two subtraction problems with sentence answers.", reflect: ["How does borrowing across zeros work?", "Why is estimation important?", "Where does subtraction help scientists?"]},
+  "multiplication": {science: "Coconuts on a Tree", mission: "Multiply your way to a big harvest count.", steps: ["A coconut tree has 8 fronds, each holding 4 coconuts. How many coconuts?", "What about 12 fronds × 6 coconuts each?", "Try a 3-row, 9-column array of beans. How many?", "Use the commutative property: 6 × 4 vs 4 × 6 — same?", "Make up your own multiplication story problem."], deliverable: "Three multiplication answers + your own story problem.", reflect: ["How is multiplication faster than repeated addition?", "Which times tables are easiest to remember?", "When in real life do you multiply?"]},
+  "division": {science: "Sharing Mango Harvest Fairly", mission: "Use division to split a harvest equally.", steps: ["48 mangoes among 6 friends. How many each?", "72 cookies among 8 ʻohana. How many per ʻohana?", "100 ÷ 10 = ?", "If 50 lei need to be split into bundles of 5, how many bundles?", "Check with multiplication: 8 × 9 = 72 ✓"], deliverable: "Four division problems with sentence answers.", reflect: ["What does 'equal groups' mean?", "How is division the opposite of multiplication?", "When would you need to divide in real life?"]},
+  "order-ops": {science: "Following the PEMDAS Recipe", mission: "Solve a tricky expression the right way.", steps: ["Solve: 3 + 4 × 2. Hint: multiply BEFORE adding!", "Solve: (3 + 4) × 2. With parentheses, add first.", "Notice: those two answers are different! Why?", "Try: 20 − (6 + 4) ÷ 2. What's first? Parentheses.", "Make up your own expression and try it on a friend."], deliverable: "Three solved expressions + your own problem.", reflect: ["Why does the order of operations matter?", "What changes when you add parentheses?", "How is math like following a recipe?"]},
+  "roman-numerals": {science: "Clock Face Detective", mission: "Decode Roman numerals on real clocks.", steps: ["Find a clock with Roman numerals (church, museum, school).", "Write the number each Roman numeral represents (I through XII).", "Notice IV (4) vs IIII — some clocks use IIII instead of IV. Why? (Tradition!)", "Write your house number in Roman numerals.", "Write today's date in Roman numerals (e.g., 12 = XII)."], deliverable: "Photos or sketches of 3 Roman numerals you found.", reflect: ["Why don't we use Roman numerals for everyday math?", "What's tricky about the subtraction rule (IV, IX)?", "Where else do you see Roman numerals?"]},
+  "fractions-decimals": {science: "Recipe Fractions", mission: "Halve or double a Hawaiian recipe.", steps: ["A poke recipe calls for 1/2 cup soy sauce and 1/4 cup green onions.", "If you make a double batch, how much of each?", "If you make a half batch, how much?", "Convert 1/2 to a decimal: 0.5. What's 1/4 as a decimal?", "Find equivalent fractions: 1/2 = ?/8."], deliverable: "Your scaled recipe (double or half).", reflect: ["Why do recipes use fractions?", "When are decimals easier than fractions?", "How can you tell which fraction is bigger?"]},
+  "measurement": {science: "Hawaiian Coastline Measure", mission: "Measure paths and shapes around your home.", steps: ["Measure the perimeter of your bedroom in feet.", "Convert that to inches.", "Find something that weighs about 1 pound (a soccer ball, a loaf of bread).", "Pour 1 cup of water into a bowl. Now 1 pint (double it). 1 quart (double again).", "Compare metric: 1 meter is about how many feet? (~3.3 ft)"], deliverable: "Three measurements with units (length, weight, volume).", reflect: ["When would you use metric vs customary units?", "Why do we have different units at all?", "Which units feel most natural?"]},
+  "counting-money": {science: "Shave Ice Business Math", mission: "Run a pretend shave ice stand.", steps: ["You sell shave ice for $3.50 each.", "You sold 12 today. How much money in total?", "You paid $15 for supplies. What's your profit?", "Customer gives $10 for one shave ice. Make change.", "If 4 friends each buy 2 shave ice, what's the total bill?"], deliverable: "Total sales, profit, and change calculations.", reflect: ["What's the difference between revenue and profit?", "How does multiplication help with money?", "Why is making change important?"]},
+  "time-calendar": {science: "Elapsed Time at the Beach", mission: "Track time on a beach day.", steps: ["You leave home at 9:15 AM and reach the beach at 9:50 AM. How long was the drive?", "You swim from 10:00 AM to 11:35 AM. Elapsed time?", "Lunch is 12:00 PM, then a nap from 12:30 to 1:45 PM. How long did the nap last?", "Snack at 3:00 PM, leave at 4:45 PM. How long after snack?", "Total beach time: arrived 9:50, left 4:45. How long?"], deliverable: "All elapsed times calculated.", reflect: ["How do you 'count up' across an hour boundary?", "Why is time math tricky compared to regular subtraction?", "When do adults need elapsed-time math?"]},
+  "geometry": {science: "Hālau Stage Design", mission: "Design a hula stage with perimeter and area.", steps: ["The stage is 20 feet long and 12 feet wide.", "What's the perimeter (you need fabric trim around it)?", "What's the area (you need stage flooring)?", "Add a triangle prop area (3 sides of 5 ft each). Perimeter?", "Sketch the layout on paper and label dimensions."], deliverable: "A sketch with perimeter and area calculations.", reflect: ["What's the difference between perimeter and area?", "Which would tell you how much fabric vs how much flooring you need?", "When else do you need to measure shapes?"]},
+  "data-graphing": {science: "Favorite Hawaiian Dish Survey", mission: "Survey your class and make a scaled bar graph.", steps: ["Ask 20 classmates: Favorite — lau lau, kalua pig, poke, or musubi?", "Make tally marks.", "Choose a scale (1 box = 2 votes works well).", "Draw the scaled bar graph.", "Answer: which is the favorite? least favorite? range?"], deliverable: "Tally sheet + scaled bar graph + summary.", reflect: ["Why scale a graph?", "What if you had 200 votes — would you change the scale?", "Where else do you see scaled graphs?"]},
+  "word-problems": {science: "Lūʻau Planning Math", mission: "Solve real multi-step lūʻau problems.", steps: ["75 guests, each eating 3 musubi. Total musubi needed?", "Auntie has 145; how many more?", "8 musicians, each playing 4 songs. Total songs?", "If concert is 3 hours and each song is 5 min — how many songs fit?", "Make your own 2-step problem about a Hawaiian event."], deliverable: "All 4 problems answered + your own.", reflect: ["Which step did you do first in the 2-step problems?", "How do you know what operation to use?", "What words signaled multiply or divide?"]},
+  "area-perimeter": { science: "Hālau Floor & Lei Frame", mission: "Use perimeter and area to plan a dance floor and lei frame.", steps: ["Imagine you're designing a 12 ft by 8 ft hālau (hula) floor.", "Find the perimeter — you need this much wood for the floor's border trim.", "Find the area — you need this much bamboo matting for the floor itself.", "Now design a square lei-display frame with sides of 4 ft. What's its area and perimeter?", "If matting costs $3 per square foot, how much will the hālau floor cost?"], deliverable: "All four answers plus your matting cost.", reflect: ["Why is perimeter in feet but area in square feet?", "Can two shapes have the same perimeter but different areas? (Try 6×4 vs 5×5 squares.)", "Where else does area matter in daily life? (Painting walls, carpeting a room...)"] }
+};
+
+let completedUnits = {};
+let currentUnit = null;
+
+function resourceCardHTML(unit) {
+  const ixlBtn = unit.ixlUrl ? `<a class="btn-ixl" href="${unit.ixlUrl}" target="_blank">📘 IXL Practice</a>` : '';
+  const ytBtn = `<a class="btn-yt" href="https://www.youtube.com/results?search_query=${encodeURIComponent(unit.ytSearch)}" target="_blank">▶️ YouTube</a>`;
+  return `<div class="resource-card"><h3>📚 Practice & Watch</h3><div class="resource-btns">${ixlBtn}${ytBtn}</div></div>`;
+}
+
+function renderHome() {
+  const grid = document.getElementById('units-grid');
+  grid.innerHTML = '';
+  UNITS.forEach(unit => {
+    const card = document.createElement('div');
+    card.className = 'unit-card';
+    card.onclick = () => showLesson(unit.id);
+    card.innerHTML = `
+      <div class="unit-card-header">
+        <div class="unit-card-icon">${unit.icon}</div>
+        <div class="unit-card-meta">
+          <div class="unit-card-title">${unit.title}${completedUnits[unit.id]?' ✅':''}</div>
+          <div class="unit-card-cc">${unit.cc}</div>
+        </div>
+      </div>
+      <div class="unit-card-desc">${unit.desc}</div>
+      <div class="unit-card-pills">
+        <div class="pill">📖 Lesson</div>
+        ${unit.ixlUrl?'<div class="pill">📘 IXL</div>':''}
+        <div class="pill">🌺 Real-World</div>
+        <div class="pill">📋 Worksheet</div>
+        <div class="pill">▶️ YouTube</div>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+function renderSidebar() {
+  const sidebar = document.getElementById('sidebar-content');
+  sidebar.innerHTML = '';
+  UNITS.forEach((unit, idx) => {
+    const item = document.createElement('div');
+    item.className = 'sidebar-item' + (currentUnit === unit.id ? ' active' : '');
+    item.textContent = `${idx + 1}. ${unit.title}${completedUnits[unit.id]?' ✅':''}`;
+    item.onclick = () => showLesson(unit.id);
+    sidebar.appendChild(item);
+  });
+}
+
+function setTopbar() {
+  document.getElementById('topbar-title').textContent = currentUnit ? UNITS.find(u => u.id === currentUnit).title : 'Multiplication &amp; Beyond';
+}
+
+function updateProgress() {
+  const n = Object.keys(completedUnits).length;
+  document.getElementById('progress-text').textContent = `${n}/${UNITS.length}`;
+}
+
+function showHome() {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('home-screen').classList.add('active');
+  currentUnit = null;
+  renderHome();
+  renderSidebar();
+  setTopbar();
+  updateProgress();
+}
+
+function showLesson(unitId) {
+  currentUnit = unitId;
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('lesson-screen').classList.add('active');
+  const unit = UNITS.find(u => u.id === unitId);
+  document.getElementById('lesson-content').innerHTML = LESSONS[unitId] + resourceCardHTML(unit);
+  renderSidebar();
+  setTopbar();
+}
+
+function showWorksheet() {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('worksheet-screen').classList.add('active');
+  const ws = WORKSHEETS[currentUnit];
+  let html = '';
+  ws.forEach((p, idx) => {
+    html += `<div class="problem"><h4>Problem ${idx + 1}</h4><p>${p.q}</p><textarea id="ans-${idx}" placeholder="Your answer..."></textarea></div>`;
+  });
+  document.getElementById('worksheet-content').innerHTML = html;
+}
+
+function checkWorksheet() {
+  const ws = WORKSHEETS[currentUnit];
+  let html = '';
+  ws.forEach((p, idx) => {
+    const userAns = document.getElementById(`ans-${idx}`).value;
+    html += `<div class="problem"><h4>Problem ${idx + 1}</h4><p>${p.q}</p><div class="answer-key"><strong>Answer:</strong> ${p.answer}</div><p><strong>Your answer:</strong> ${userAns || '(no answer)'}</p></div>`;
+  });
+  document.getElementById('worksheet-content').innerHTML = html;
+}
+
+function showHandout() {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('handout-screen').classList.add('active');
+  const h = HANDOUTS[currentUnit];
+  let html = `<div class="handout-card">
+    <h3>${h.science}</h3>
+    <div class="handout-science">A hands-on activity to use today's math at home or in your neighborhood.</div>
+    <div class="handout-mission">🎯 <strong>Mission:</strong> ${h.mission}</div>
+    <strong style="color:#1B3A8A;">Steps:</strong>
+    <ol class="handout-steps">${h.steps.map(s => `<li>${s}</li>`).join('')}</ol>
+    <div class="handout-deliverable"><strong>📦 What to bring back to class:</strong>${h.deliverable}</div>
+    <div class="handout-reflect"><strong>🤔 Reflect:</strong><ol>${h.reflect.map(r => `<li>${r}</li>`).join('')}</ol></div>
+  </div>`;
+  document.getElementById('handout-content').innerHTML = html;
+}
+
+function showQuiz() {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('quiz-screen').classList.add('active');
+  const quiz = QUIZZES[currentUnit];
+  let html = '';
+  quiz.forEach((q, idx) => {
+    html += `<div class="quiz-question"><h4>Question ${idx + 1}</h4><p>${q.q}</p>`;
+    q.opts.forEach((opt, optIdx) => {
+      html += `<label><input type="radio" name="q${idx}" value="${optIdx}"> ${opt}</label>`;
+    });
+    html += `</div>`;
+  });
+  document.getElementById('quiz-content').innerHTML = html;
+}
+
+function submitQuiz() {
+  const quiz = QUIZZES[currentUnit];
+  let score = 0;
+  quiz.forEach((q, idx) => {
+    const selected = document.querySelector(`input[name="q${idx}"]:checked`);
+    if (selected && parseInt(selected.value) === q.ans) score++;
+  });
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('certificate-screen').classList.add('active');
+  const pct = Math.round((score / quiz.length) * 100);
+  document.getElementById('cert-content').innerHTML = `
+    <div class="result-card">
+      <h3>Score: ${score} out of ${quiz.length} (${pct}%)</h3>
+      <p>${pct === 100 ? "Perfect! 🌟" : pct >= 67 ? "Nice work! Keep practicing." : "Good try! Review the lesson and try again."}</p>
+    </div>
+  `;
+  if (pct >= 67) completedUnits[currentUnit] = true;
+  updateProgress();
+}
+
+// Initial render
+showHome();
+  </script>
+</body>
+</html>

@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saint Theresa School — 1st Grade Math Tutorial</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8f9fa; color: #333; }
+    .container { display: flex; height: 100vh; }
+    .sidebar { border-right: 3px solid #FFD100;  width: 250px; background: #1a2a4a; color: white; overflow-y: auto; padding: 20px; }
+    .sidebar h2 { font-size: 14px; margin-bottom: 15px; font-weight: bold; }
+    .sidebar-item { padding: 10px; margin: 5px 0; background: #111d35; border-radius: 4px; cursor: pointer; font-size: 13px; }
+    .sidebar-item:hover { background: #1B3A8A; }
+    .sidebar-item.active { background: #1B3A8A; }
+    .main { flex: 1; display: flex; flex-direction: column; }
+    .all-math-btn { background: #FFD100; color: #1a2a4a; border: none; cursor: pointer; font-size: 13px; font-weight: 700; padding: 8px 14px; border-radius: 6px; margin-right: 10px; text-decoration: none; display: inline-block; transition: all 0.18s; }
+    .all-math-btn:hover { background: #ffc400; transform: translateX(-2px); }
+    .home-btn { background: rgba(0,0,0,0.2); border: none; color: white; cursor: pointer; font-size: 14px; font-weight: 600; padding: 8px 14px; border-radius: 6px; margin-right: 16px; }
+    .home-btn:hover { background: rgba(0,0,0,0.35); }
+    .topbar { border-bottom: 4px solid #FFD100;  background: #1B3A8A; color: white; padding: 15px 30px; font-size: 18px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
+    .topbar-right { display: flex; gap: 20px; align-items: center; font-size: 14px; }
+    .content { flex: 1; overflow-y: auto; padding: 30px; }
+    .screen { display: none; }
+    .screen.active { display: block; }
+    .units-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+    .unit-card { background: white; border-radius: 8px; padding: 20px; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    .unit-card:hover { transform: translateY(-4px); box-shadow: 0 4px 12px rgba(56,189,248,0.2); }
+    .unit-card-header { display: flex; gap: 15px; align-items: flex-start; margin-bottom: 15px; }
+    .unit-card-icon { font-size: 32px; }
+    .unit-card-meta { flex: 1; }
+    .unit-card-title { font-weight: bold; font-size: 16px; margin-bottom: 4px; }
+    .unit-card-cc { font-size: 12px; color: #666; }
+    .unit-card-desc { font-size: 13px; color: #555; margin-bottom: 12px; line-height: 1.4; }
+    .unit-card-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .pill { background: #f0f0f0; padding: 4px 10px; border-radius: 16px; font-size: 11px; }
+    .lesson-content h2 { margin: 20px 0 10px 0; color: #1B3A8A; }
+    .lesson-content h3 { margin: 16px 0 8px; color: #1B3A8A; font-size: 1.05rem; }
+    .lesson-content p { margin-bottom: 12px; line-height: 1.6; }
+    .lesson-content ul, .lesson-content ol { margin-left: 20px; margin-bottom: 12px; }
+    .lesson-content li { margin-bottom: 8px; }
+    .btn { display: inline-block; padding: 10px 20px; background: #1B3A8A; color: white; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; margin: 5px; }
+    .btn:hover { background: #162E70; }
+    .btn-secondary { background: #6b7280; }
+    .btn-secondary:hover { background: #4b5563; }
+    .btn-ixl { display: inline-block; padding: 10px 15px; background: #3b82f6; color: white; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; margin: 5px 5px 5px 0; font-size: 13px; }
+    .btn-ixl:hover { background: #2563eb; }
+    .btn-yt { display: inline-block; padding: 10px 15px; background: #ef4444; color: white; border: none; border-radius: 4px; cursor: pointer; text-decoration: none; margin: 5px 5px 5px 0; font-size: 13px; }
+    .btn-yt:hover { background: #dc2626; }
+    .resource-card { background: #f3f4f6; border-radius: 8px; padding: 15px; margin: 20px 0; }
+    .resource-card h3 { margin-bottom: 10px; color: #1B3A8A; font-size: 14px; }
+    .resource-btns { display: flex; flex-wrap: wrap; }
+    .problem { background: white; padding: 15px; margin: 12px 0; border-left: 4px solid #1B3A8A; border-radius: 4px; }
+    .problem h4 { margin-bottom: 8px; color: #1B3A8A; }
+    .problem input, .problem textarea { width: 100%; padding: 8px; margin: 8px 0; border: 1px solid #ddd; border-radius: 4px; font-family: 'Courier New', monospace; }
+    .answer-key { background: #fef3c7; padding: 10px; margin: 8px 0; border-radius: 4px; font-size: 13px; }
+    .quiz-question { background: white; padding: 15px; margin: 15px 0; border-radius: 4px; border-left: 4px solid #1B3A8A; }
+    .quiz-question h4 { margin-bottom: 10px; color: #1B3A8A; }
+    .quiz-question label { display: block; margin: 8px 0; cursor: pointer; }
+    .quiz-question input[type="radio"] { margin-right: 8px; }
+    .result-card { background: #fef3c7; padding: 20px; border-radius: 8px; margin: 15px 0; }
+    .result-card h3 { color: #059669; margin-bottom: 10px; }
+    .nav-buttons { display: flex; gap: 10px; margin: 20px 0; flex-wrap: wrap; }
+    .back-btn { background: #6b7280; }
+    .back-btn:hover { background: #4b5563; }
+
+    .handout-card { background: #fff; border-left: 5px solid #B8860B; border-radius: 10px; padding: 24px; margin-bottom: 20px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+    .handout-card h3 { margin: 0 0 8px; color: #B8860B; font-size: 1.2rem; }
+    .handout-science { font-size: 0.9rem; color: #666; margin-bottom: 12px; }
+    .handout-mission { background: #f8f9ff; border-radius: 6px; padding: 12px; margin-bottom: 16px; font-style: italic; color: #334; }
+    .handout-steps { margin: 0 0 16px; padding-left: 0; list-style: none; counter-reset: step-counter; }
+    .handout-steps li { counter-increment: step-counter; padding: 8px 12px 8px 44px; margin-bottom: 6px; background: #f0f4ff; border-radius: 6px; position: relative; font-size: 0.92rem; line-height: 1.5; }
+    .handout-steps li::before { content: counter(step-counter); position: absolute; left: 10px; top: 8px; width: 22px; height: 22px; background: #B8860B; color: #fff; border-radius: 50%; font-size: 0.78rem; font-weight: bold; display: flex; align-items: center; justify-content: center; }
+    .handout-deliverable { background: #fffbe6; border: 1px solid #f5d000; border-radius: 6px; padding: 12px; margin-bottom: 16px; }
+    .handout-deliverable strong { display: block; margin-bottom: 4px; color: #7a5f00; }
+    .handout-reflect { background: #fffbea; border: 1px solid #68d391; border-radius: 6px; padding: 12px; }
+    .handout-reflect strong { display: block; margin-bottom: 4px; color: #276749; }
+    .handout-reflect ol { margin: 0; padding-left: 20px; }
+    .handout-reflect li { margin-bottom: 6px; font-size: 0.9rem; }
+    code { background: #e8edf5; padding: 1px 5px; border-radius: 3px; font-family: 'Courier New', monospace; font-size: 0.88em; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <h2 style="margin:0 0 4px 0;">Saint Theresa School</h2><p style="margin:0 0 16px 0;color:#888;font-size:14px;">1st Grade Math Topics</p>
+      <div id="sidebar-content"></div>
+      <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #444; font-size: 12px; color: #999;">
+        Progress: <span id="progress-text">0/14</span>
+      </div>
+    </div>
+    <div class="main">
+      <div class="topbar">
+        <a href="STS Math Index.html" class="all-math-btn" title="Back to STS home">&larr; All Math</a><button class="home-btn" onclick="showHome()">🏠 HOME</button>
+        <span style="font-size:12px;font-weight:normal;opacity:0.85;margin-right:10px;">Saint Theresa School &nbsp;&nbsp;</span><span id="topbar-title">Discovering the World with Math</span>
+        <div class="topbar-right">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj4KICA8ZGVmcz4KICAgIDxjbGlwUGF0aCBpZD0iaW5uZXIiPgogICAgICA8Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9Ijc4Ii8+CiAgICA8L2NsaXBQYXRoPgogICAgPHBhdGggaWQ9InRvcC1hcmMiIGQ9Ik0gMTgsMTAwIGE4Miw4MiAwIDAsMSAxNjQsMCIgZmlsbD0ibm9uZSIvPgogICAgPHBhdGggaWQ9ImJvdC1hcmMiIGQ9Ik0gMjIsMTEwIGE4MCw4MCAwIDAsMCAxNTYsMCIgZmlsbD0ibm9uZSIvPgogIDwvZGVmcz4KICA8IS0tIE91dGVyIGdvbGQgcmluZyAtLT4KICA8Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9Ijk5IiBmaWxsPSIjRkZEMTAwIiBzdHJva2U9IiMxQjNBOEEiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwhLS0gQmx1ZSB0ZXh0IGJhbmQgLS0+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI5OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUIzQThBIiBzdHJva2Utd2lkdGg9IjIyIi8+CiAgPCEtLSBHb2xkIGlubmVyIGFyZWEgLS0+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI4OCIgZmlsbD0iI0ZGRDEwMCIvPgogIDwhLS0gQmx1ZSBjcm9zcyBhcm1zIGNsaXBwZWQgdG8gY2lyY2xlIC0tPgogIDxnIGNsaXAtcGF0aD0idXJsKCNpbm5lcikiPgogICAgPHJlY3QgeD0iODYiIHk9IjIyIiB3aWR0aD0iMjgiIGhlaWdodD0iMTU2IiBmaWxsPSIjMUIzQThBIi8+CiAgICA8cmVjdCB4PSIyMiIgeT0iODYiIHdpZHRoPSIxNTYiIGhlaWdodD0iMjgiIGZpbGw9IiMxQjNBOEEiLz4KICAgIDwhLS0gU2hpZWxkIG91dGxpbmUgaW4gY2VudGVyIC0tPgogICAgPHBhdGggZD0iTTEwMCw2OCBMMTIwLDc1IEwxMjAsMTAwIFExMjAsMTE4IDEwMCwxMjYgUTgwLDExOCA4MCwxMDAgTDgwLDc1IFoiIGZpbGw9IiNGRkQxMDAiIHN0cm9rZT0iIzFCM0E4QSIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgICA8IS0tIEZsb3dlci9yb3NlIGluIHNoaWVsZCAtLT4KICAgIDxjaXJjbGUgY3g9IjEwMCIgY3k9Ijk3IiByPSI4IiBmaWxsPSIjMUIzQThBIi8+CiAgICA8Y2lyY2xlIGN4PSIxMDAiIGN5PSI4NyIgcj0iNSIgZmlsbD0iIzFCM0E4QSIvPgogICAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTA3IiByPSI1IiBmaWxsPSIjMUIzQThBIi8+CiAgICA8Y2lyY2xlIGN4PSI5MSIgY3k9Ijk3IiByPSI1IiBmaWxsPSIjMUIzQThBIi8+CiAgICA8Y2lyY2xlIGN4PSIxMDkiIGN5PSI5NyIgcj0iNSIgZmlsbD0iIzFCM0E4QSIvPgogIDwvZz4KICA8IS0tIFF1YWRyYW50IHN5bWJvbHMgKG91dHNpZGUgY3Jvc3MsIGluc2lkZSBvdXRlciByaW5nKSAtLT4KICA8IS0tIFRvcC1sZWZ0OiBCb29rIC0tPgogIDx0ZXh0IHg9IjU4IiB5PSI3MiIgZm9udC1zaXplPSIxOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzFCM0E4QSIgZm9udC1mYW1pbHk9InNlcmlmIj7wn5OWPC90ZXh0PgogIDwhLS0gVG9wLXJpZ2h0OiBGbGV1ci1kZS1saXMgLS0+CiAgPHRleHQgeD0iMTQyIiB5PSI3MiIgZm9udC1zaXplPSIxNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzFCM0E4QSIgZm9udC1mYW1pbHk9InNlcmlmIj7impw8L3RleHQ+CiAgPCEtLSBCb3R0b20tbGVmdDogTGluZXMgKGhhdGNoKSAtLT4KICA8bGluZSB4MT0iMzIiIHkxPSIxMTgiIHgyPSI1MCIgeTI9IjEzMCIgc3Ryb2tlPSIjMUIzQThBIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8bGluZSB4MT0iMzYiIHkxPSIxMTQiIHgyPSI1NCIgeTI9IjEyNiIgc3Ryb2tlPSIjMUIzQThBIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8bGluZSB4MT0iNDAiIHkxPSIxMTAiIHgyPSI1OCIgeTI9IjEyMiIgc3Ryb2tlPSIjMUIzQThBIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8IS0tIEJvdHRvbS1yaWdodDogUGxhbnQvY3Jvc3MgLS0+CiAgPHRleHQgeD0iMTQyIiB5PSIxMzYiIGZvbnQtc2l6ZT0iMTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMxQjNBOEEiIGZvbnQtZmFtaWx5PSJzZXJpZiI+4pygPC90ZXh0PgogIDwhLS0gQ2lyY3VsYXIgdGV4dDogU0FJTlQgVEhFUkVTQSBTQ0hPT0wgLS0+CiAgPHRleHQgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmaWxsPSIjRkZEMTAwIiBsZXR0ZXItc3BhY2luZz0iMiI+CiAgICA8dGV4dFBhdGggaHJlZj0iI3RvcC1hcmMiIHN0YXJ0T2Zmc2V0PSI4JSI+U0FJTlQgVEhFUkVTQSBTQ0hPT0w8L3RleHRQYXRoPgogIDwvdGV4dD4KICA8IS0tIEJvdHRvbSB0ZXh0OiAxOTMxIC0tPgogIDx0ZXh0IGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSJib2xkIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZmlsbD0iI0ZGRDEwMCIgbGV0dGVyLXNwYWNpbmc9IjMiPgogICAgPHRleHRQYXRoIGhyZWY9IiNib3QtYXJjIiBzdGFydE9mZnNldD0iMzUlIj4xOTMxPC90ZXh0UGF0aD4KICA8L3RleHQ+Cjwvc3ZnPg==" style="height:44px;width:44px;border-radius:50%;object-fit:contain;background:#FFD100;" alt="Saint Theresa School Seal"/>
+        </div>
+      </div>
+      <div class="content">
+        <div id="home-screen" class="screen active">
+          <div id="units-grid" class="units-grid"></div>
+        </div>
+        <div id="lesson-screen" class="screen">
+          <button class="btn back-btn" onclick="showHome()">← Back to Units</button>
+          <div id="lesson-content" class="lesson-content"></div>
+          <div class="nav-buttons">
+            <button class="btn back-btn" onclick="showHome()">← Back</button>
+            <button class="btn" onclick="showHandout()">🌺 Real-World Math</button>
+            <button class="btn" onclick="showWorksheet()">Worksheet →</button>
+          </div>
+        </div>
+        <div id="worksheet-screen" class="screen">
+          <button class="btn back-btn" onclick="showLesson(currentUnit)">← Back to Lesson</button>
+          <h2 style="margin: 20px 0;">📋 Worksheet</h2>
+          <div id="worksheet-content"></div>
+          <div class="nav-buttons">
+            <button class="btn back-btn" onclick="showLesson(currentUnit)">← Back</button>
+            <button class="btn" onclick="checkWorksheet()">Check Answers</button>
+            <button class="btn" onclick="showQuiz()">Quiz →</button>
+          </div>
+        </div>
+        <div id="handout-screen" class="screen">
+          <button class="btn back-btn" onclick="showLesson(currentUnit)">← Back to Lesson</button>
+          <h2 style="margin: 20px 0;">🌺 Real-World Math</h2>
+          <div id="handout-content"></div>
+          <div class="nav-buttons">
+            <button class="btn back-btn" onclick="showLesson(currentUnit)">← Back to Lesson</button>
+            <button class="btn" onclick="showWorksheet()">Worksheet →</button>
+          </div>
+        </div>
+        <div id="quiz-screen" class="screen">
+          <button class="btn back-btn" onclick="showWorksheet()">← Back to Worksheet</button>
+          <h2 style="margin: 20px 0;">📝 Quick Quiz</h2>
+          <div id="quiz-content"></div>
+          <div class="nav-buttons">
+            <button class="btn back-btn" onclick="showWorksheet()">← Back</button>
+            <button class="btn" onclick="submitQuiz()">Submit Quiz</button>
+          </div>
+        </div>
+        <div id="certificate-screen" class="screen">
+          <div style="text-align: center; padding: 40px;">
+            <h2 style="color: #1B3A8A; margin: 20px 0;">🎉 Unit Completed!</h2>
+            <div id="cert-content"></div>
+            <button class="btn" onclick="showHome()" style="margin-top: 20px;">Return to Home</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+const UNITS = [
+  { id: "numbers-counting", title: "Numbers & Counting", icon: "🔢", cc: "1.NBT.1",
+    desc: "Read, write, and count numbers up to 120 with number charts.",
+    ixlUrl: "https://www.ixl.com/math/grade-1/count-on-the-hundred-chart",
+    ytSearch: "khan academy 1st grade counting numbers 100" },
+  { id: "number-patterns", title: "Number Patterns", icon: "🧩", cc: "1.OA.5",
+    desc: "Find and continue patterns by counting up by 1s, 2s, 5s, and 10s.",
+    ixlUrl: "https://www.ixl.com/math/grade-1/skip-count-by-twos-fives-and-tens",
+    ytSearch: "khan academy 1st grade skip counting patterns" },
+  { id: "comparing-numbers", title: "Comparing Numbers", icon: "⚖️", cc: "1.NBT.3",
+    desc: "Compare two numbers using greater than, less than, and equal to.",
+    ixlUrl: "https://www.ixl.com/math/grade-1/compare-numbers-up-to-100-using-symbols",
+    ytSearch: "khan academy 1st grade comparing numbers greater less" },
+  { id: "base-ten-blocks", title: "Base Ten Blocks", icon: "🧱", cc: "1.NBT.2",
+    desc: "Build and read numbers using tens and ones with base-ten blocks.",
+    ixlUrl: "https://www.ixl.com/math/grade-1/place-value-models-for-two-digit-numbers",
+    ytSearch: "khan academy 1st grade base ten blocks tens ones" },
+  { id: "place-value", title: "Place Value", icon: "1️⃣0️⃣", cc: "1.NBT.2",
+    desc: "Understand the value of each digit in a two-digit number.",
+    ixlUrl: "https://www.ixl.com/math/grade-1/build-and-break-apart-two-digit-numbers-with-models",
+    ytSearch: "khan academy 1st grade place value tens ones" },
+  { id: "addition", title: "Addition", icon: "➕", cc: "1.OA.6",
+    desc: "Add numbers within 20 using fingers, counters, and number lines.",
+    ixlUrl: "https://www.ixl.com/math/grade-1/addition-facts-sums-up-to-10",
+    ytSearch: "khan academy 1st grade addition within 20" },
+  { id: "subtraction", title: "Subtraction", icon: "➖", cc: "1.OA.6",
+    desc: "Subtract numbers within 20 by counting back and using related addition facts.",
+    ixlUrl: "https://www.ixl.com/math/grade-1/subtraction-facts-up-to-10",
+    ytSearch: "khan academy 1st grade subtraction within 20" },
+  { id: "fractions", title: "Fractions", icon: "🍕", cc: "1.G.3",
+    desc: "Split shapes into halves and quarters; understand 'equal parts'.",
+    ixlUrl: "https://www.ixl.com/math/grade-1/identify-halves-and-fourths",
+    ytSearch: "khan academy 1st grade halves quarters equal parts" },
+  { id: "measurement", title: "Measurement", icon: "📏", cc: "1.MD.1-2",
+    desc: "Compare lengths and measure objects using non-standard and standard units.",
+    ixlUrl: "https://www.ixl.com/math/grade-1/measure-using-an-inch-ruler",
+    ytSearch: "khan academy 1st grade measuring length ruler" },
+  { id: "counting-money", title: "Counting Money", icon: "💰", cc: "1.MD (HI)",
+    desc: "Identify U.S. coins (penny, nickel, dime, quarter) and add up their values.",
+    ixlUrl: "https://www.ixl.com/math/grade-1/count-pennies-nickels-dimes-and-quarters",
+    ytSearch: "khan academy 1st grade counting coins money" },
+  { id: "telling-time", title: "Telling Time", icon: "🕐", cc: "1.MD.3",
+    desc: "Read and write time to the hour and half-hour on analog and digital clocks.",
+    ixlUrl: "https://www.ixl.com/math/grade-1/read-clocks-and-write-times",
+    ytSearch: "khan academy 1st grade telling time hour half hour" },
+  { id: "geometry", title: "Geometry", icon: "🔺", cc: "1.G.1-2",
+    desc: "Identify and describe 2D and 3D shapes (circles, squares, cubes, spheres).",
+    ixlUrl: "https://www.ixl.com/math/grade-1/name-the-two-dimensional-shape",
+    ytSearch: "khan academy 1st grade 2d 3d shapes" },
+  { id: "data-graphing", title: "Data & Graphing", icon: "📊", cc: "1.MD.4",
+    desc: "Organize and read picture graphs, tally charts, and bar graphs.",
+    ixlUrl: "https://www.ixl.com/math/grade-1/interpret-picture-graphs",
+    ytSearch: "khan academy 1st grade picture graphs tally charts" },
+  { id: "word-problems", title: "Word Problems", icon: "📝", cc: "1.OA.1",
+    desc: "Solve real-world story problems using addition and subtraction within 20.",
+    ixlUrl: "https://www.ixl.com/math/grade-1/addition-word-problems-sums-up-to-10",
+    ytSearch: "khan academy 1st grade word problems addition subtraction" }
+];
+
+const LESSONS = {
+  "numbers-counting": "<h2>Numbers & Counting</h2><p>We use <strong>numbers</strong> to count things. We start at <strong>1</strong>, then 2, 3, 4… all the way up to 100 and beyond.</p><h3>The Hundred Chart</h3><p>A hundred chart is a square with 10 rows and 10 columns. It helps you see how numbers grow.</p><ul><li>Each <strong>row</strong> has 10 numbers (1–10, 11–20, 21–30, and so on).</li><li>Moving <strong>right</strong> adds 1.</li><li>Moving <strong>down</strong> adds 10.</li></ul><h3>Counting Tips</h3><ul><li>Use your fingers when numbers are small.</li><li>Touch each thing you count one time so you don't skip or count twice.</li><li>The last number you say is the total.</li></ul><p><strong>Try it:</strong> Count the windows in your classroom. Did you get the same number twice? Try it again and check.</p>",
+
+  "number-patterns": "<h2>Number Patterns</h2><p>A <strong>pattern</strong> is something that repeats in a special way. In math, patterns help us find the next number in a list.</p><h3>Skip Counting</h3><ul><li><strong>By 2s:</strong> 2, 4, 6, 8, 10, 12, …</li><li><strong>By 5s:</strong> 5, 10, 15, 20, 25, 30, …</li><li><strong>By 10s:</strong> 10, 20, 30, 40, 50, …</li></ul><h3>Find the Missing Number</h3><p>If the pattern is 5, 10, 15, __, 25 — the missing number is <strong>20</strong>. We add 5 each time.</p><h3>Why It Matters</h3><p>Skip counting helps you count fast — by 2s you can count shoes, by 5s you can count fingers, by 10s you can count toes!</p>",
+
+  "comparing-numbers": "<h2>Comparing Numbers</h2><p>When you have two numbers, you can ask: which one is bigger? We compare them using these signs:</p><ul><li><strong>&gt;</strong> means <em>greater than</em> (the bigger number)</li><li><strong>&lt;</strong> means <em>less than</em> (the smaller number)</li><li><strong>=</strong> means <em>equal to</em> (the same)</li></ul><h3>The Alligator Trick</h3><p>The <strong>&gt;</strong> and <strong>&lt;</strong> signs look like an alligator's open mouth. The alligator always eats the <em>bigger</em> number.</p><ul><li>7 &gt; 4 (alligator eats the 7)</li><li>3 &lt; 8 (alligator eats the 8)</li><li>5 = 5 (same, no eating!)</li></ul><h3>Tip</h3><p>For two-digit numbers, compare the <strong>tens</strong> first. 42 vs 27 → 4 tens beats 2 tens, so 42 is bigger.</p>",
+
+  "base-ten-blocks": "<h2>Base Ten Blocks</h2><p><strong>Base-ten blocks</strong> are little blocks that help you see numbers.</p><ul><li>A <strong>unit</strong> is one small cube — it stands for <strong>1</strong>.</li><li>A <strong>rod</strong> is a stick of 10 little cubes — it stands for <strong>10</strong>.</li><li>A <strong>flat</strong> is a square of 100 little cubes — it stands for <strong>100</strong>.</li></ul><h3>Building Numbers</h3><p>To show <strong>34</strong>: take <strong>3 rods</strong> (30) + <strong>4 unit cubes</strong> (4) = 34.</p><p>To show <strong>52</strong>: take <strong>5 rods</strong> (50) + <strong>2 unit cubes</strong> (2) = 52.</p><h3>Tip</h3><p>Always count the rods (tens) <em>first</em>, then the unit cubes (ones).</p>",
+
+  "place-value": "<h2>Place Value</h2><p>Every digit in a number has a <strong>place</strong>. The place tells you how much that digit is worth.</p><h3>Tens and Ones</h3><p>A two-digit number has a <strong>tens</strong> place and a <strong>ones</strong> place.</p><p>In <strong>47</strong>:</p><ul><li>The <strong>4</strong> is in the tens place → it means <strong>4 tens = 40</strong></li><li>The <strong>7</strong> is in the ones place → it means <strong>7 ones = 7</strong></li><li>So 47 = 40 + 7</li></ul><h3>More Examples</h3><ul><li><strong>63</strong> = 6 tens + 3 ones = 60 + 3</li><li><strong>28</strong> = 2 tens + 8 ones = 20 + 8</li><li><strong>90</strong> = 9 tens + 0 ones = 90</li></ul><p><em>Big idea:</em> the place of a digit changes how much it is worth.</p>",
+
+  "addition": "<h2>Addition</h2><p>Addition is <strong>putting numbers together</strong>. The plus sign (+) means \"add.\"</p><h3>Ways to Add</h3><ul><li><strong>Count up:</strong> Start at the bigger number and count up. 6 + 3 → say \"6, then 7, 8, 9\" → <strong>9</strong>.</li><li><strong>Use your fingers:</strong> Hold up 4 on one hand and 3 on the other. Count them all = 7.</li><li><strong>Number line:</strong> Start at 5, hop 2 to the right → land on <strong>7</strong>.</li><li><strong>Make 10:</strong> 8 + 5 = 8 + 2 + 3 = 10 + 3 = 13.</li></ul><h3>Doubles</h3><p>Doubles are easy to memorize: 2+2=4, 3+3=6, 4+4=8, 5+5=10, 6+6=12, 7+7=14, 8+8=16, 9+9=18.</p>",
+
+  "subtraction": "<h2>Subtraction</h2><p>Subtraction is <strong>taking away</strong>. The minus sign (−) means \"take away.\"</p><h3>Ways to Subtract</h3><ul><li><strong>Count back:</strong> 9 − 3 → say \"9, then 8, 7, 6\" → <strong>6</strong>.</li><li><strong>Take away with fingers:</strong> Hold up 7 fingers. Fold 2 down. Count what's left → 5.</li><li><strong>Think addition:</strong> 12 − 5 = ? Ask \"5 plus what equals 12?\" 5 + 7 = 12 → answer is <strong>7</strong>.</li><li><strong>Number line:</strong> Start at 8, hop 3 to the left → land on <strong>5</strong>.</li></ul><h3>Zero Tricks</h3><ul><li>Anything minus 0 stays the same: 6 − 0 = 6.</li><li>Anything minus itself is 0: 7 − 7 = 0.</li></ul>",
+
+  "fractions": "<h2>Fractions</h2><p>A <strong>fraction</strong> is part of a whole. The whole is split into <em>equal</em> pieces.</p><h3>Halves</h3><p>If you split something into <strong>2 equal parts</strong>, each part is one <strong>half</strong>. Two halves make a whole.</p><p><em>Example:</em> Cut a pizza right down the middle. Each piece is half the pizza.</p><h3>Fourths (Quarters)</h3><p>If you split something into <strong>4 equal parts</strong>, each part is one <strong>fourth</strong> (also called a <strong>quarter</strong>). Four fourths make a whole.</p><p><em>Example:</em> Cut a sandwich into 4 same-size pieces. Each is one fourth.</p><h3>The Big Rule</h3><p><strong>Equal parts only!</strong> If the pieces are not the same size, they are not halves or fourths.</p>",
+
+  "measurement": "<h2>Measurement</h2><p><strong>Measurement</strong> tells us how long, tall, or heavy something is.</p><h3>Length</h3><p>To measure how long something is:</p><ol><li>Line up your ruler with one end of the object.</li><li>Make sure the ruler starts at <strong>0</strong>.</li><li>Read the number where the object ends.</li></ol><p>We use <strong>inches</strong> (in) or <strong>centimeters</strong> (cm).</p><h3>Compare Lengths</h3><p>If a pencil is 6 inches long and a crayon is 4 inches long, the pencil is <strong>longer</strong> (or the crayon is <strong>shorter</strong>).</p><h3>Non-Standard Units</h3><p>You can measure with anything that is the same size — paper clips, your hand, or footsteps! Just make sure each one is the same.</p>",
+
+  "counting-money": "<h2>Counting Money</h2><p>The four most common coins are:</p><ul><li><strong>Penny</strong> = 1 cent (1¢) &mdash; brown</li><li><strong>Nickel</strong> = 5 cents (5¢) &mdash; silver, thick</li><li><strong>Dime</strong> = 10 cents (10¢) &mdash; silver, small</li><li><strong>Quarter</strong> = 25 cents (25¢) &mdash; silver, big</li></ul><h3>Adding Coins</h3><p>To find the total, add the values together. Start with the biggest coin first.</p><p><em>Example:</em> 1 quarter + 1 dime + 2 pennies = 25 + 10 + 1 + 1 = <strong>37¢</strong>.</p><h3>Tip</h3><p>Skip-count to add coins quickly:</p><ul><li>Pennies: count by 1s</li><li>Nickels: count by 5s</li><li>Dimes: count by 10s</li><li>Quarters: count by 25s (25, 50, 75, 100)</li></ul>",
+
+  "telling-time": "<h2>Telling Time</h2><p>A clock has two hands:</p><ul><li>The <strong>short hand</strong> shows the <strong>hour</strong>.</li><li>The <strong>long hand</strong> shows the <strong>minutes</strong>.</li></ul><h3>Time to the Hour</h3><p>When the long hand points to <strong>12</strong>, it is <em>on the hour</em>. Read the short hand and say \"o'clock.\"</p><p><em>Example:</em> short hand on 3, long hand on 12 → <strong>3:00</strong> (\"three o'clock\").</p><h3>Time to the Half-Hour</h3><p>When the long hand points to <strong>6</strong>, it is <em>half past</em> the hour. The short hand is between two numbers.</p><p><em>Example:</em> short hand between 4 and 5, long hand on 6 → <strong>4:30</strong> (\"four-thirty\" or \"half past four\").</p><h3>Digital Clocks</h3><p>A digital clock shows the time with numbers like <strong>2:00</strong> or <strong>2:30</strong>. The number before the dots is the hour; the number after is the minutes.</p>",
+
+  "geometry": "<h2>Geometry — Shapes Around Us</h2><p><strong>Geometry</strong> is the math of shapes.</p><h3>2D Shapes (Flat)</h3><ul><li><strong>Circle</strong> — round, no corners</li><li><strong>Triangle</strong> — 3 sides, 3 corners</li><li><strong>Square</strong> — 4 equal sides, 4 corners</li><li><strong>Rectangle</strong> — 4 sides (2 long, 2 short), 4 corners</li><li><strong>Hexagon</strong> — 6 sides, 6 corners</li></ul><h3>3D Shapes (Solid)</h3><ul><li><strong>Sphere</strong> — like a ball (no edges)</li><li><strong>Cube</strong> — like a dice (6 square faces)</li><li><strong>Cylinder</strong> — like a can (2 circle ends)</li><li><strong>Cone</strong> — like an ice cream cone</li><li><strong>Pyramid</strong> — pointy top, triangle sides</li></ul><h3>Vocabulary</h3><ul><li><strong>Side:</strong> the straight line of a flat shape</li><li><strong>Corner (vertex):</strong> where two sides meet</li><li><strong>Face:</strong> the flat side of a solid shape</li></ul>",
+
+  "data-graphing": "<h2>Data & Graphing</h2><p><strong>Data</strong> means information. We can show data in pictures so it's easy to read.</p><h3>Tally Marks</h3><p>Tally marks are little lines that help us count groups of 5:</p><p>| = 1 &nbsp;&nbsp; || = 2 &nbsp;&nbsp; ||| = 3 &nbsp;&nbsp; |||| = 4 &nbsp;&nbsp; <strong>||||̸</strong> = 5 (four lines with a slash)</p><h3>Picture Graphs (Pictographs)</h3><p>A picture graph uses a small drawing for each thing counted. Example: 🐠🐠🐠🐠 means 4 fish.</p><h3>Bar Graphs</h3><p>A bar graph uses bars. Taller bars mean more.</p><h3>Reading Graphs</h3><p>To read a graph, ask:</p><ul><li><strong>How many</strong> of each thing?</li><li><strong>Which has the most?</strong> (tallest / longest bar)</li><li><strong>Which has the least?</strong> (shortest bar)</li></ul>",
+
+  "word-problems": "<h2>Word Problems</h2><p>A <strong>word problem</strong> is a math problem written in words instead of just numbers. You read it, find the math, and solve it.</p><h3>Steps to Solve</h3><ol><li><strong>Read</strong> the whole problem.</li><li><strong>Picture</strong> what is happening (or draw it!).</li><li><strong>Decide</strong>: am I adding (\"in all\", \"together\") or subtracting (\"left over\", \"how many more\")?</li><li><strong>Write</strong> the number sentence.</li><li><strong>Solve</strong> and write a sentence answer.</li></ol><h3>Example 1 — Addition</h3><p><em>Manu saw 5 plumeria flowers in her yard. Then she found 3 more at the beach. How many did she find in all?</em></p><p>5 + 3 = <strong>8</strong> flowers in all.</p><h3>Example 2 — Subtraction</h3><p><em>Kai had 10 shells. He gave 4 to his sister. How many does he have left?</em></p><p>10 − 4 = <strong>6</strong> shells left.</p>"
+};
+
+const WORKSHEETS = {
+  "numbers-counting": [
+    { q: "Count: 14, 15, 16, ___, 18, 19", answer: "17" },
+    { q: "What number comes right after 39?", answer: "40" },
+    { q: "What number comes right before 50?", answer: "49" },
+    { q: "Count by 1s: 78, 79, 80, ___, ___, 83", answer: "81, 82" },
+    { q: "Write the number that is 10 more than 23.", answer: "33" }
+  ],
+  "number-patterns": [
+    { q: "Skip count by 2s: 2, 4, 6, ___, ___, 12", answer: "8, 10" },
+    { q: "Skip count by 5s: 5, 10, 15, ___, 25", answer: "20" },
+    { q: "Skip count by 10s: 10, 20, ___, 40, ___", answer: "30, 50" },
+    { q: "What comes next? 30, 40, 50, ___", answer: "60" },
+    { q: "Find the missing: 14, 16, 18, ___, 22", answer: "20" }
+  ],
+  "comparing-numbers": [
+    { q: "Write >, <, or = between these: 8 ___ 5", answer: ">" },
+    { q: "Write >, <, or = between these: 12 ___ 21", answer: "<" },
+    { q: "Write >, <, or = between these: 37 ___ 37", answer: "=" },
+    { q: "Which is bigger: 46 or 64?", answer: "64" },
+    { q: "Write the numbers from smallest to biggest: 25, 52, 5", answer: "5, 25, 52" }
+  ],
+  "base-ten-blocks": [
+    { q: "How many is 2 rods + 5 unit cubes?", answer: "25" },
+    { q: "How many is 4 rods + 8 unit cubes?", answer: "48" },
+    { q: "How many is 7 rods + 0 unit cubes?", answer: "70" },
+    { q: "Draw with rods and cubes: how do you show 36?", answer: "3 rods + 6 cubes" },
+    { q: "How many is 1 rod + 9 unit cubes?", answer: "19" }
+  ],
+  "place-value": [
+    { q: "In 58, the 5 is in what place?", answer: "tens" },
+    { q: "In 73, what is the value of the 7?", answer: "70 (or '7 tens')" },
+    { q: "Write 4 tens + 6 ones as a number.", answer: "46" },
+    { q: "Write 80 as tens + ones.", answer: "8 tens + 0 ones" },
+    { q: "In 29, what is the value of the 9?", answer: "9 (or '9 ones')" }
+  ],
+  "addition": [
+    { q: "6 + 3 = ?", answer: "9" },
+    { q: "8 + 5 = ?", answer: "13" },
+    { q: "7 + 7 = ?", answer: "14" },
+    { q: "10 + 9 = ?", answer: "19" },
+    { q: "4 + 0 = ?", answer: "4" },
+    { q: "9 + 6 = ?", answer: "15" }
+  ],
+  "subtraction": [
+    { q: "9 − 4 = ?", answer: "5" },
+    { q: "15 − 7 = ?", answer: "8" },
+    { q: "12 − 12 = ?", answer: "0" },
+    { q: "20 − 5 = ?", answer: "15" },
+    { q: "11 − 3 = ?", answer: "8" },
+    { q: "18 − 9 = ?", answer: "9" }
+  ],
+  "fractions": [
+    { q: "If you cut a pizza into 2 equal parts, each part is called what?", answer: "one half" },
+    { q: "If you cut a sandwich into 4 equal parts, each part is called what?", answer: "one fourth (quarter)" },
+    { q: "How many halves make a whole?", answer: "2" },
+    { q: "How many fourths make a whole?", answer: "4" },
+    { q: "True or false: if pieces are different sizes, they are halves.", answer: "False — halves must be EQUAL parts" }
+  ],
+  "measurement": [
+    { q: "If pencil A is 7 inches and pencil B is 5 inches, which is longer?", answer: "Pencil A" },
+    { q: "What unit do we use to measure how long a book is? (inches or pounds?)", answer: "inches" },
+    { q: "If a worm is 4 cm and a leaf is 8 cm, which is shorter?", answer: "the worm" },
+    { q: "Measure a paperclip. (Answer will vary, but typically about __ in.)", answer: "about 1 inch" },
+    { q: "Order from shortest to longest: 6 in, 2 in, 10 in", answer: "2 in, 6 in, 10 in" }
+  ],
+  "counting-money": [
+    { q: "1 penny + 1 nickel = ___ ¢", answer: "6¢" },
+    { q: "2 dimes + 1 nickel = ___ ¢", answer: "25¢" },
+    { q: "1 quarter + 2 pennies = ___ ¢", answer: "27¢" },
+    { q: "1 dime + 3 nickels = ___ ¢", answer: "25¢" },
+    { q: "1 quarter + 1 dime + 1 nickel = ___ ¢", answer: "40¢" }
+  ],
+  "telling-time": [
+    { q: "The long hand is on 12 and the short hand is on 7. What time is it?", answer: "7:00 (seven o'clock)" },
+    { q: "The long hand is on 6 and the short hand is between 4 and 5. What time is it?", answer: "4:30 (half past four)" },
+    { q: "Write 2:00 in words.", answer: "two o'clock" },
+    { q: "Write 9:30 in words.", answer: "nine-thirty (or half past nine)" },
+    { q: "Which hand shows the hour — the short hand or the long hand?", answer: "short hand" }
+  ],
+  "geometry": [
+    { q: "How many sides does a triangle have?", answer: "3" },
+    { q: "How many sides does a hexagon have?", answer: "6" },
+    { q: "What 3D shape looks like a ball?", answer: "sphere" },
+    { q: "What 3D shape has 6 square faces?", answer: "cube" },
+    { q: "Name 2 things in your classroom that are circles.", answer: "Answers will vary (clock face, button, plate)" }
+  ],
+  "data-graphing": [
+    { q: "Tally marks: ||||̸ ||  — how many?", answer: "7" },
+    { q: "In a pictograph, 🐠🐠🐠🐠🐠 means how many fish?", answer: "5" },
+    { q: "If a bar graph shows: Apples 8, Bananas 3, Oranges 5 — which has the most?", answer: "Apples" },
+    { q: "Which has the least: Apples 8, Bananas 3, Oranges 5?", answer: "Bananas" },
+    { q: "How many more apples than bananas in the question above?", answer: "5 (8 − 3 = 5)" }
+  ],
+  "word-problems": [
+    { q: "Leilani picks 7 mangoes and her brother picks 4. How many in all?", answer: "11 mangoes" },
+    { q: "Kai had 12 seashells. He gave 5 to his friend. How many does he have left?", answer: "7 shells" },
+    { q: "There are 9 surfers in the water. 3 more paddle out. How many surfers are there now?", answer: "12 surfers" },
+    { q: "A plumeria tree has 15 flowers. The wind blew 6 off. How many are still on the tree?", answer: "9 flowers" },
+    { q: "Mom bought 6 musubi and Dad bought 8. How many musubi in all?", answer: "14 musubi" }
+  ]
+};
+
+const QUIZZES = {
+  "numbers-counting": [
+    { q: "What number comes after 89?", opts: ["88", "90", "99", "100"], ans: 1 },
+    { q: "What is 10 more than 45?", opts: ["46", "50", "55", "65"], ans: 2 },
+    { q: "Which is the smallest? ", opts: ["32", "23", "13", "31"], ans: 2 }
+  ],
+  "number-patterns": [
+    { q: "Skip count by 5s: 5, 10, ___, 20", opts: ["12", "15", "11", "18"], ans: 1 },
+    { q: "What comes next? 20, 30, 40, ___", opts: ["41", "45", "50", "60"], ans: 2 },
+    { q: "Skip count by 2s: 14, 16, ___, 20", opts: ["17", "18", "19", "21"], ans: 1 }
+  ],
+  "comparing-numbers": [
+    { q: "Which sign goes between 7 and 4?", opts: ["<", ">", "="], ans: 1 },
+    { q: "Which is true?", opts: ["18 = 19", "32 > 23", "5 > 8"], ans: 1 },
+    { q: "Which number is the largest?", opts: ["31", "13", "53", "35"], ans: 2 }
+  ],
+  "base-ten-blocks": [
+    { q: "3 rods + 7 unit cubes = ?", opts: ["37", "73", "30", "10"], ans: 0 },
+    { q: "How would you build 42?", opts: ["4 rods + 2 cubes", "2 rods + 4 cubes", "4 rods + 4 cubes"], ans: 0 },
+    { q: "5 rods + 0 cubes = ?", opts: ["5", "50", "55", "500"], ans: 1 }
+  ],
+  "place-value": [
+    { q: "In 86, the 8 means…", opts: ["8 ones", "8 tens", "8 hundreds"], ans: 1 },
+    { q: "5 tens + 3 ones = ?", opts: ["35", "53", "503"], ans: 1 },
+    { q: "In the number 27, the value of the 7 is…", opts: ["7", "70", "27"], ans: 0 }
+  ],
+  "addition": [
+    { q: "8 + 6 = ?", opts: ["12", "13", "14", "15"], ans: 2 },
+    { q: "5 + 5 = ?", opts: ["9", "10", "11", "55"], ans: 1 },
+    { q: "12 + 0 = ?", opts: ["0", "12", "21", "120"], ans: 1 }
+  ],
+  "subtraction": [
+    { q: "13 − 5 = ?", opts: ["6", "7", "8", "9"], ans: 2 },
+    { q: "10 − 10 = ?", opts: ["0", "1", "10", "20"], ans: 0 },
+    { q: "17 − 9 = ?", opts: ["7", "8", "9", "10"], ans: 1 }
+  ],
+  "fractions": [
+    { q: "If you split a cookie into 2 equal pieces, each piece is a…", opts: ["whole", "half", "fourth", "third"], ans: 1 },
+    { q: "Four equal parts of a whole are called…", opts: ["halves", "fourths", "thirds"], ans: 1 },
+    { q: "Two halves make…", opts: ["a half", "a fourth", "one whole"], ans: 2 }
+  ],
+  "measurement": [
+    { q: "We use what to measure how long a pencil is?", opts: ["a thermometer", "a ruler", "a clock"], ans: 1 },
+    { q: "A book is 8 inches. A crayon is 3 inches. Which is longer?", opts: ["The book", "The crayon", "Same length"], ans: 0 },
+    { q: "1 inch is _____ than 1 foot.", opts: ["longer", "shorter", "the same"], ans: 1 }
+  ],
+  "counting-money": [
+    { q: "How much is a dime worth?", opts: ["1¢", "5¢", "10¢", "25¢"], ans: 2 },
+    { q: "1 quarter + 2 nickels = ?", opts: ["27¢", "30¢", "35¢", "50¢"], ans: 2 },
+    { q: "Which coin is worth the most?", opts: ["penny", "nickel", "dime", "quarter"], ans: 3 }
+  ],
+  "telling-time": [
+    { q: "Short hand on 5, long hand on 12. The time is…", opts: ["12:00", "5:30", "5:00", "12:05"], ans: 2 },
+    { q: "Short hand between 8 and 9, long hand on 6. The time is…", opts: ["8:30", "9:30", "6:00", "8:06"], ans: 0 },
+    { q: "Which hand shows the minutes?", opts: ["short hand", "long hand", "neither"], ans: 1 }
+  ],
+  "geometry": [
+    { q: "A square has how many equal sides?", opts: ["3", "4", "5", "6"], ans: 1 },
+    { q: "Which is a 3D shape?", opts: ["circle", "triangle", "cube"], ans: 2 },
+    { q: "A shape with 3 sides is a…", opts: ["triangle", "square", "rectangle"], ans: 0 }
+  ],
+  "data-graphing": [
+    { q: "Tally marks ||||̸ |||| = ?", opts: ["5", "8", "9", "10"], ans: 2 },
+    { q: "In a bar graph, the tallest bar means…", opts: ["the least", "the same", "the most"], ans: 2 },
+    { q: "Each picture in a pictograph stands for…", opts: ["one thing", "many things", "nothing"], ans: 0 }
+  ],
+  "word-problems": [
+    { q: "Maile has 6 lei. Her sister gives her 4 more. How many lei in all?", opts: ["2", "10", "11", "24"], ans: 1 },
+    { q: "Keoni had 14 mangoes. He ate 6. How many are left?", opts: ["6", "8", "10", "20"], ans: 1 },
+    { q: "Words that mean 'add' include:", opts: ["take away", "in all / together", "less than"], ans: 1 }
+  ]
+};
+
+const HANDOUTS = {
+  "numbers-counting": { science: "Counting at the Beach", mission: "How many seashells can you count?", steps: ["Take a walk along the shore with a grown-up.", "Pick a small spot of sand the size of a beach towel.", "Count every shell you can see — touch each one once.", "If you find more than 20, ask your grown-up to help write the number.", "Try a different spot and count again. Which spot had more?"], deliverable: "Tell your teacher: 'I counted ___ shells in spot A and ___ shells in spot B.'", reflect: ["Was it harder to count when there were lots of shells?", "Did you ever lose track and have to start over?", "Why do scientists need to count carefully?"] },
+  "number-patterns": { science: "Skip Counting Honu (Sea Turtles)", mission: "Count turtle flippers by 4s.", steps: ["A honu (Hawaiian green sea turtle) has 4 flippers.", "If you see 1 turtle, that's 4 flippers. 2 turtles = 8 flippers. 3 turtles = ___?", "Continue the pattern: 4, 8, 12, ___, ___, ___.", "Draw 5 turtles. Count all their flippers by 4s.", "Now try counting toes: hands have 5 fingers, so skip-count people's fingers by 5s!"], deliverable: "Write the pattern of flipper counts for 1 through 6 turtles.", reflect: ["What does skip-counting do that regular counting doesn't?", "Why are doubles like 4+4 easier than 4+5?", "What animals could you skip-count by 2s? By 6s?"] },
+  "comparing-numbers": { science: "Tallest Plumeria Tree on the Block", mission: "Compare the heights of two trees.", steps: ["With a grown-up, find two trees near your home.", "Stand next to each tree and count how many of YOU it would take to reach the top.", "Write down both heights (e.g., Tree A = 4 me, Tree B = 6 me).", "Use the alligator: which tree is taller? Write it with > or <.", "Find a third tree and put all three in order from shortest to tallest."], deliverable: "Three tree heights ordered from shortest to tallest.", reflect: ["Was it easier to compare big numbers or small numbers?", "How can you tell which tree is taller without measuring?", "Why do scientists order things by size?"] },
+  "base-ten-blocks": { science: "Counting Coconuts with Tens and Ones", mission: "Show a coconut count using rods and cubes.", steps: ["Imagine a farmer harvested some coconuts.", "Bundle every 10 coconuts together with a rope — each bundle is one rod (10).", "Loose coconuts are unit cubes (1 each).", "If the farmer has 4 bundles + 7 loose coconuts, how many in all?", "Now try: 2 bundles + 3 loose = ?  5 bundles + 0 loose = ?"], deliverable: "Three coconut totals you built with rods + cubes.", reflect: ["Why do farmers bundle things in groups of 10?", "Could you bundle in 5s instead? Would it be easier?", "What other things come in groups of 10?"] },
+  "place-value": { science: "Reading Lei Counts at the Hālau", mission: "Read 2-digit lei counts in tens and ones.", steps: ["A hālau (hula school) made some lei.", "If the sign says '47 lei made,' which digit means tens?", "The 4 means 4 tens = 40. The 7 means 7 ones = 7.", "Draw 4 rods + 7 cubes to show 47.", "Now try: how many lei are 6 tens + 2 ones? 5 tens + 9 ones?"], deliverable: "Build 3 different lei counts using tens and ones.", reflect: ["Why is the position of a digit important?", "Could 47 ever mean 7 tens + 4 ones? Why or why not?", "Where else do you see two-digit numbers in real life?"] },
+  "addition": { science: "Mango Math at the Farmer's Market", mission: "Add baskets of mangoes.", steps: ["Auntie has 8 mangoes in one basket and 5 in another.", "How many mangoes are there in all? Use the 'make 10' trick: 8 + 2 = 10, leftover 3, total = 13.", "Try: 7 + 6 with the 'make 10' trick.", "Now: 9 + 4 with the trick.", "Draw two baskets and put dots for mangoes. Count them all to check your work."], deliverable: "Three addition problems solved with the make-10 trick.", reflect: ["Why does breaking apart a number help when adding?", "Are doubles (like 7+7) easier than non-doubles? Why?", "What other foods at the market come in pairs or pairs of 10?"] },
+  "subtraction": { science: "Plumeria Petal Take-Away", mission: "Use subtraction when flowers drop petals.", steps: ["A plumeria flower has 5 petals. Pick up one off the ground.", "If a tree has 12 flowers and 5 fall off, how many are left?", "Count back: 12, 11, 10, 9, 8, 7 → 7 flowers left.", "Try: 15 mangoes, 8 eaten. How many left?", "Try one more: 20 shells, 6 given to a friend. How many left?"], deliverable: "Three subtraction problems with sentence answers.", reflect: ["What words in a word problem mean 'take away'?", "Is counting back faster or slower than counting up?", "When would scientists need to subtract?"] },
+  "fractions": { science: "Sharing a Hawaiian Pizza Fairly", mission: "Split food into equal parts.", steps: ["You and 1 friend will share a pizza. Cut it into 2 equal halves.", "Now 4 people want to share. Cut it into 4 equal fourths.", "If only 2 people show up and the pizza is already cut into 4s, how many fourths does each person get?", "Try with a real cookie or sandwich at home (with a grown-up's help).", "Try drawing: split a rectangle into halves and another into fourths."], deliverable: "A drawing showing halves and fourths of a whole.", reflect: ["What does 'equal parts' mean? Why does it matter?", "Why is one fourth smaller than one half?", "What would 8 equal parts of a pizza be called? (a hint: eighths)"] },
+  "measurement": { science: "Measuring Lizards & Leaves", mission: "Measure objects with a ruler.", steps: ["With a grown-up, find 5 small objects outside (leaf, rock, stick).", "Use a ruler to measure each one in inches.", "Write down the length of each one.", "Order them from shortest to longest.", "Find one more object and guess its length first, then measure to check."], deliverable: "A list of 5 object lengths, ordered shortest to longest.", reflect: ["How close was your guess to the real length?", "Why is it important to start the ruler at 0?", "What do scientists measure in the real world?"] },
+  "counting-money": { science: "Shave Ice Money", mission: "Count out coins to buy a shave ice.", steps: ["A small shave ice costs 75¢ at the cart.", "What combinations of coins make 75¢? Try: 3 quarters.", "Can you make 75¢ another way? Try: 2 quarters + 2 dimes + 1 nickel.", "What if you have 1 quarter + 4 dimes + 2 nickels? Add it up.", "Can you make 75¢ using only nickels? How many?"], deliverable: "Three different coin combinations that make 75¢.", reflect: ["Which combination uses the fewest coins?", "Why are quarters faster to count with than pennies?", "Where else do you use money math at the beach or store?"] },
+  "telling-time": { science: "A Day at the Beach Schedule", mission: "Read clocks to follow your beach day.", steps: ["Your beach day starts at <strong>9:00</strong>. Draw a clock showing 9:00.", "Lunch is at <strong>12:30</strong>. Where does the long hand point?", "Snack break is at <strong>2:00</strong>. Draw it.", "Time to go home is <strong>4:30</strong>. Draw it.", "How many HOURS from 9:00 to 12:00? (count: 10, 11, 12 → 3 hours)"], deliverable: "Four clock drawings: 9:00, 12:30, 2:00, 4:30.", reflect: ["What does the long hand do as time passes?", "How is a digital clock different from an analog clock?", "Why do we need clocks at all?"] },
+  "geometry": { science: "Shape Hunt — Hawaiian Style", mission: "Find shapes in everyday Hawaiian life.", steps: ["Walk around your home or yard with a grown-up.", "Find 1 circle (clock? plate? coconut top?).", "Find 1 triangle (a roof? a sail? a slice of pizza?).", "Find 1 rectangle (door? book? phone?).", "Find 1 sphere or cube (ball? dice? coconut?). Draw or take a photo of each."], deliverable: "5 photos or drawings of shapes you found at home.", reflect: ["Were 2D shapes (flat) or 3D shapes easier to find?", "Why are circles so common in nature?", "If you could only have one shape in the world, which would you pick? Why?"] },
+  "data-graphing": { science: "Class Favorite Hawaiian Fruit", mission: "Make a picture graph with your class.", steps: ["Ask 10 classmates: 'What is your favorite — mango, pineapple, or papaya?'", "Make tally marks for each answer.", "Turn the tallies into a picture graph: draw 1 fruit picture for each vote.", "Which fruit got the most votes?", "Which fruit got the least?"], deliverable: "A picture graph with 10 votes and the winner circled.", reflect: ["What does the longest row in your graph mean?", "Were you surprised by the results?", "How could you re-do the graph for the whole school instead of just 10 people?"] },
+  "word-problems": { science: "Lūʻau Math", mission: "Solve story problems from a real Hawaiian lūʻau.", steps: ["Auntie cooks 12 plates of lau lau for the lūʻau. Uncle eats 3. How many are left?", "Two cousins each catch 5 fish. How many in all?", "There are 20 chairs and 14 are already taken. How many empty chairs?", "A musician plays 8 ukulele songs in the first set and 7 in the second. How many in all?", "Make up your own lūʻau word problem and trade with a friend!"], deliverable: "Answers to all 4 problems + one problem you wrote yourself.", reflect: ["Which problems made you ADD? Which made you SUBTRACT?", "What words helped you decide?", "Why is reading carefully important in word problems?"] }
+};
+
+let completedUnits = {};
+let currentUnit = null;
+
+function resourceCardHTML(unit) {
+  const ixlBtn = unit.ixlUrl ? `<a class="btn-ixl" href="${unit.ixlUrl}" target="_blank">📘 IXL Practice</a>` : '';
+  const ytBtn = `<a class="btn-yt" href="https://www.youtube.com/results?search_query=${encodeURIComponent(unit.ytSearch)}" target="_blank">▶️ YouTube</a>`;
+  return `<div class="resource-card"><h3>📚 Practice & Watch</h3><div class="resource-btns">${ixlBtn}${ytBtn}</div></div>`;
+}
+
+function renderHome() {
+  const grid = document.getElementById('units-grid');
+  grid.innerHTML = '';
+  UNITS.forEach(unit => {
+    const card = document.createElement('div');
+    card.className = 'unit-card';
+    card.onclick = () => showLesson(unit.id);
+    card.innerHTML = `
+      <div class="unit-card-header">
+        <div class="unit-card-icon">${unit.icon}</div>
+        <div class="unit-card-meta">
+          <div class="unit-card-title">${unit.title}${completedUnits[unit.id]?' ✅':''}</div>
+          <div class="unit-card-cc">${unit.cc}</div>
+        </div>
+      </div>
+      <div class="unit-card-desc">${unit.desc}</div>
+      <div class="unit-card-pills">
+        <div class="pill">📖 Lesson</div>
+        ${unit.ixlUrl?'<div class="pill">📘 IXL</div>':''}
+        <div class="pill">🌺 Real-World</div>
+        <div class="pill">📋 Worksheet</div>
+        <div class="pill">▶️ YouTube</div>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+function renderSidebar() {
+  const sidebar = document.getElementById('sidebar-content');
+  sidebar.innerHTML = '';
+  UNITS.forEach((unit, idx) => {
+    const item = document.createElement('div');
+    item.className = 'sidebar-item' + (currentUnit === unit.id ? ' active' : '');
+    item.textContent = `${idx + 1}. ${unit.title}${completedUnits[unit.id]?' ✅':''}`;
+    item.onclick = () => showLesson(unit.id);
+    sidebar.appendChild(item);
+  });
+}
+
+function setTopbar() {
+  document.getElementById('topbar-title').textContent = currentUnit ? UNITS.find(u => u.id === currentUnit).title : 'Discovering the World with Math';
+}
+
+function updateProgress() {
+  const n = Object.keys(completedUnits).length;
+  document.getElementById('progress-text').textContent = `${n}/${UNITS.length}`;
+}
+
+function showHome() {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('home-screen').classList.add('active');
+  currentUnit = null;
+  renderHome();
+  renderSidebar();
+  setTopbar();
+  updateProgress();
+}
+
+function showLesson(unitId) {
+  currentUnit = unitId;
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('lesson-screen').classList.add('active');
+  const unit = UNITS.find(u => u.id === unitId);
+  document.getElementById('lesson-content').innerHTML = LESSONS[unitId] + resourceCardHTML(unit);
+  renderSidebar();
+  setTopbar();
+}
+
+function showWorksheet() {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('worksheet-screen').classList.add('active');
+  const ws = WORKSHEETS[currentUnit];
+  let html = '';
+  ws.forEach((p, idx) => {
+    html += `<div class="problem"><h4>Problem ${idx + 1}</h4><p>${p.q}</p><textarea id="ans-${idx}" placeholder="Your answer..."></textarea></div>`;
+  });
+  document.getElementById('worksheet-content').innerHTML = html;
+}
+
+function checkWorksheet() {
+  const ws = WORKSHEETS[currentUnit];
+  let html = '';
+  ws.forEach((p, idx) => {
+    const userAns = document.getElementById(`ans-${idx}`).value;
+    html += `<div class="problem"><h4>Problem ${idx + 1}</h4><p>${p.q}</p><div class="answer-key"><strong>Answer:</strong> ${p.answer}</div><p><strong>Your answer:</strong> ${userAns || '(no answer)'}</p></div>`;
+  });
+  document.getElementById('worksheet-content').innerHTML = html;
+}
+
+function showHandout() {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('handout-screen').classList.add('active');
+  const h = HANDOUTS[currentUnit];
+  let html = `<div class="handout-card">
+    <h3>${h.science}</h3>
+    <div class="handout-science">A hands-on activity to use today's math at home or in your neighborhood.</div>
+    <div class="handout-mission">🎯 <strong>Mission:</strong> ${h.mission}</div>
+    <strong style="color:#1B3A8A;">Steps:</strong>
+    <ol class="handout-steps">${h.steps.map(s => `<li>${s}</li>`).join('')}</ol>
+    <div class="handout-deliverable"><strong>📦 What to bring back to class:</strong>${h.deliverable}</div>
+    <div class="handout-reflect"><strong>🤔 Reflect:</strong><ol>${h.reflect.map(r => `<li>${r}</li>`).join('')}</ol></div>
+  </div>`;
+  document.getElementById('handout-content').innerHTML = html;
+}
+
+function showQuiz() {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('quiz-screen').classList.add('active');
+  const quiz = QUIZZES[currentUnit];
+  let html = `
+    <div style="background:#f0f4ff;padding:14px;border-radius:8px;margin-bottom:15px;border-left:4px solid #1B3A8A;">
+      <label style="display:block;font-weight:600;color:#1B3A8A;margin-bottom:6px;">Student Name:</label>
+      <input type="text" id="student-name" placeholder="Type your full name"
+        style="width:100%;padding:8px;border:1px solid #ccc;border-radius:4px;font-size:14px;" />
+    </div>
+  `;
+  quiz.forEach((q, idx) => {
+    html += `<div class="quiz-question"><h4>Question ${idx + 1}</h4><p>${q.q}</p>`;
+    q.opts.forEach((opt, optIdx) => {
+      html += `<label><input type="radio" name="q${idx}" value="${optIdx}"> ${opt}</label>`;
+    });
+    html += `</div>`;
+  });
+  document.getElementById('quiz-content').innerHTML = html;
+}
+
+// Quiz results stored at the latest submission so the email button can use them.
+let lastQuizResults = null;
+
+function submitQuiz() {
+  const quiz = QUIZZES[currentUnit];
+  const studentName = (document.getElementById('student-name')?.value || '').trim();
+  let score = 0;
+  const breakdown = [];
+  quiz.forEach((q, idx) => {
+    const selected = document.querySelector(`input[name="q${idx}"]:checked`);
+    const selectedIdx = selected ? parseInt(selected.value) : -1;
+    const isCorrect = selectedIdx === q.ans;
+    if (isCorrect) score++;
+    breakdown.push({
+      n: idx + 1,
+      question: q.q,
+      studentAnswer: selectedIdx >= 0 ? q.opts[selectedIdx] : '(no answer)',
+      correctAnswer: q.opts[q.ans],
+      correct: isCorrect
+    });
+  });
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('certificate-screen').classList.add('active');
+  const pct = Math.round((score / quiz.length) * 100);
+
+  // Find unit title for display
+  const unitObj = UNITS.find(u => u.id === currentUnit);
+  const unitTitle = unitObj ? unitObj.title : currentUnit;
+
+  lastQuizResults = { studentName, unitTitle, score, total: quiz.length, pct, breakdown };
+
+  const nameLine = studentName
+    ? `<p><strong>Student:</strong> ${studentName}</p>`
+    : `<p style="color:#b91c1c;"><em>Tip: type your name on the quiz screen before submitting so your teacher knows who you are.</em></p>`;
+
+  document.getElementById('cert-content').innerHTML = `
+    <div class="result-card">
+      ${nameLine}
+      <p><strong>Unit:</strong> ${unitTitle}</p>
+      <h3>Score: ${score} out of ${quiz.length} (${pct}%)</h3>
+      <p>${pct === 100 ? "Perfect! 🌟" : pct >= 67 ? "Nice work! Keep practicing." : "Good try! Review the lesson and try again."}</p>
+      <div style="margin-top:18px;">
+        <button class="btn" onclick="emailResults()" style="background:#1B3A8A;color:white;padding:10px 18px;font-size:14px;border:none;border-radius:6px;cursor:pointer;">
+          📧 Send Results to Mr. Macadangdang
+        </button>
+      </div>
+      <p style="margin-top:10px;font-size:12px;color:#666;">
+        Tapping the button opens your email app with the score and answers filled in. Just press Send.
+      </p>
+    </div>
+  `;
+  if (pct >= 67) completedUnits[currentUnit] = true;
+  updateProgress();
+}
+
+function emailResults() {
+  if (!lastQuizResults) return;
+  const r = lastQuizResults;
+  const lines = [];
+  lines.push(`Aloha Mr. Macadangdang,`);
+  lines.push(``);
+  lines.push(`A 1st-grade math quiz was just submitted.`);
+  lines.push(``);
+  lines.push(`Student: ${r.studentName || '(name not provided)'}`);
+  lines.push(`Unit: ${r.unitTitle}`);
+  lines.push(`Score: ${r.score} out of ${r.total} (${r.pct}%)`);
+  lines.push(``);
+  lines.push(`--- Detailed Answers ---`);
+  r.breakdown.forEach(b => {
+    lines.push(``);
+    lines.push(`Q${b.n}. ${b.question}`);
+    lines.push(`   Student's answer: ${b.studentAnswer}`);
+    lines.push(`   Correct answer:   ${b.correctAnswer}`);
+    lines.push(`   ${b.correct ? '✓ Correct' : '✗ Incorrect'}`);
+  });
+  lines.push(``);
+  lines.push(`Mahalo,`);
+  lines.push(`Saint Theresa School — Grade 1 Math`);
+
+  const subject = `Grade 1 Math Quiz Result — ${r.studentName || 'Student'} — ${r.unitTitle} — ${r.pct}%`;
+  const body = lines.join('\n');
+  const to = 'mmacadangdang@rcchawaii.org';
+
+  // Open Gmail's compose window directly (uses whichever Gmail account is logged in,
+  // typically the student's @stshi.org account). Opens in a new tab so they don't
+  // lose their place on the math page.
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&tf=1`
+    + `&to=${encodeURIComponent(to)}`
+    + `&su=${encodeURIComponent(subject)}`
+    + `&body=${encodeURIComponent(body)}`;
+  window.open(gmailUrl, '_blank');
+}
+
+// Initial render
+showHome();
+  </script>
+</body>
+</html>

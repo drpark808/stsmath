@@ -14,6 +14,8 @@
     .sidebar-item:hover { background: #34d399; }
     .sidebar-item.active { background: #34d399; }
     .main { flex: 1; display: flex; flex-direction: column; }
+    .all-math-btn { background: #FFD100; color: #1a2a4a; border: none; cursor: pointer; font-size: 13px; font-weight: 700; padding: 8px 14px; border-radius: 6px; margin-right: 10px; text-decoration: none; display: inline-block; transition: all 0.18s; }
+    .all-math-btn:hover { background: #ffc400; transform: translateX(-2px); }
     .home-btn { background: rgba(0,0,0,0.2); border: none; color: white; cursor: pointer; font-size: 14px; font-weight: 600; padding: 8px 14px; border-radius: 6px; margin-right: 16px; }
     .home-btn:hover { background: rgba(0,0,0,0.35); }
     .topbar { border-bottom: 4px solid #FFD100;  background: #34d399; color: white; padding: 15px 30px; font-size: 18px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
@@ -169,12 +171,12 @@
       <h2 style="margin:0 0 4px 0;">Saint Theresa School</h2><p style="margin:0 0 16px 0;color:#888;font-size:14px;">8th Grade Math Topics</p>
       <div id="sidebar-content"></div>
       <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #444; font-size: 12px; color: #999;">
-        Progress: <span id="progress-text">0/15</span>
+        Progress: <span id="progress-text">0/17</span>
       </div>
     </div>
     <div class="main">
       <div class="topbar">
-        <button class="home-btn" onclick="showHome()">🏠 HOME</button>
+        <a href="STS Math Index.html" class="all-math-btn" title="Back to STS home">&larr; All Math</a><button class="home-btn" onclick="showHome()">🏠 HOME</button>
         <span style="font-size:12px;font-weight:normal;opacity:0.85;margin-right:10px;">Saint Theresa School &nbsp;&nbsp;</span><span id="topbar-title">Engineering the World with Math</span>
         <div class="topbar-right">
           <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj4KICA8ZGVmcz4KICAgIDxjbGlwUGF0aCBpZD0iaW5uZXIiPgogICAgICA8Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9Ijc4Ii8+CiAgICA8L2NsaXBQYXRoPgogICAgPHBhdGggaWQ9InRvcC1hcmMiIGQ9Ik0gMTgsMTAwIGE4Miw4MiAwIDAsMSAxNjQsMCIgZmlsbD0ibm9uZSIvPgogICAgPHBhdGggaWQ9ImJvdC1hcmMiIGQ9Ik0gMjIsMTEwIGE4MCw4MCAwIDAsMCAxNTYsMCIgZmlsbD0ibm9uZSIvPgogIDwvZGVmcz4KICA8IS0tIE91dGVyIGdvbGQgcmluZyAtLT4KICA8Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9Ijk5IiBmaWxsPSIjRkZEMTAwIiBzdHJva2U9IiMxQjNBOEEiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwhLS0gQmx1ZSB0ZXh0IGJhbmQgLS0+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI5OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUIzQThBIiBzdHJva2Utd2lkdGg9IjIyIi8+CiAgPCEtLSBHb2xkIGlubmVyIGFyZWEgLS0+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI4OCIgZmlsbD0iI0ZGRDEwMCIvPgogIDwhLS0gQmx1ZSBjcm9zcyBhcm1zIGNsaXBwZWQgdG8gY2lyY2xlIC0tPgogIDxnIGNsaXAtcGF0aD0idXJsKCNpbm5lcikiPgogICAgPHJlY3QgeD0iODYiIHk9IjIyIiB3aWR0aD0iMjgiIGhlaWdodD0iMTU2IiBmaWxsPSIjMUIzQThBIi8+CiAgICA8cmVjdCB4PSIyMiIgeT0iODYiIHdpZHRoPSIxNTYiIGhlaWdodD0iMjgiIGZpbGw9IiMxQjNBOEEiLz4KICAgIDwhLS0gU2hpZWxkIG91dGxpbmUgaW4gY2VudGVyIC0tPgogICAgPHBhdGggZD0iTTEwMCw2OCBMMTIwLDc1IEwxMjAsMTAwIFExMjAsMTE4IDEwMCwxMjYgUTgwLDExOCA4MCwxMDAgTDgwLDc1IFoiIGZpbGw9IiNGRkQxMDAiIHN0cm9rZT0iIzFCM0E4QSIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgICA8IS0tIEZsb3dlci9yb3NlIGluIHNoaWVsZCAtLT4KICAgIDxjaXJjbGUgY3g9IjEwMCIgY3k9Ijk3IiByPSI4IiBmaWxsPSIjMUIzQThBIi8+CiAgICA8Y2lyY2xlIGN4PSIxMDAiIGN5PSI4NyIgcj0iNSIgZmlsbD0iIzFCM0E4QSIvPgogICAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTA3IiByPSI1IiBmaWxsPSIjMUIzQThBIi8+CiAgICA8Y2lyY2xlIGN4PSI5MSIgY3k9Ijk3IiByPSI1IiBmaWxsPSIjMUIzQThBIi8+CiAgICA8Y2lyY2xlIGN4PSIxMDkiIGN5PSI5NyIgcj0iNSIgZmlsbD0iIzFCM0E4QSIvPgogIDwvZz4KICA8IS0tIFF1YWRyYW50IHN5bWJvbHMgKG91dHNpZGUgY3Jvc3MsIGluc2lkZSBvdXRlciByaW5nKSAtLT4KICA8IS0tIFRvcC1sZWZ0OiBCb29rIC0tPgogIDx0ZXh0IHg9IjU4IiB5PSI3MiIgZm9udC1zaXplPSIxOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzFCM0E4QSIgZm9udC1mYW1pbHk9InNlcmlmIj7wn5OWPC90ZXh0PgogIDwhLS0gVG9wLXJpZ2h0OiBGbGV1ci1kZS1saXMgLS0+CiAgPHRleHQgeD0iMTQyIiB5PSI3MiIgZm9udC1zaXplPSIxNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzFCM0E4QSIgZm9udC1mYW1pbHk9InNlcmlmIj7impw8L3RleHQ+CiAgPCEtLSBCb3R0b20tbGVmdDogTGluZXMgKGhhdGNoKSAtLT4KICA8bGluZSB4MT0iMzIiIHkxPSIxMTgiIHgyPSI1MCIgeTI9IjEzMCIgc3Ryb2tlPSIjMUIzQThBIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8bGluZSB4MT0iMzYiIHkxPSIxMTQiIHgyPSI1NCIgeTI9IjEyNiIgc3Ryb2tlPSIjMUIzQThBIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8bGluZSB4MT0iNDAiIHkxPSIxMTAiIHgyPSI1OCIgeTI9IjEyMiIgc3Ryb2tlPSIjMUIzQThBIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8IS0tIEJvdHRvbS1yaWdodDogUGxhbnQvY3Jvc3MgLS0+CiAgPHRleHQgeD0iMTQyIiB5PSIxMzYiIGZvbnQtc2l6ZT0iMTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMxQjNBOEEiIGZvbnQtZmFtaWx5PSJzZXJpZiI+4pygPC90ZXh0PgogIDwhLS0gQ2lyY3VsYXIgdGV4dDogU0FJTlQgVEhFUkVTQSBTQ0hPT0wgLS0+CiAgPHRleHQgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmaWxsPSIjRkZEMTAwIiBsZXR0ZXItc3BhY2luZz0iMiI+CiAgICA8dGV4dFBhdGggaHJlZj0iI3RvcC1hcmMiIHN0YXJ0T2Zmc2V0PSI4JSI+U0FJTlQgVEhFUkVTQSBTQ0hPT0w8L3RleHRQYXRoPgogIDwvdGV4dD4KICA8IS0tIEJvdHRvbSB0ZXh0OiAxOTMxIC0tPgogIDx0ZXh0IGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSJib2xkIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZmlsbD0iI0ZGRDEwMCIgbGV0dGVyLXNwYWNpbmc9IjMiPgogICAgPHRleHRQYXRoIGhyZWY9IiNib3QtYXJjIiBzdGFydE9mZnNldD0iMzUlIj4xOTMxPC90ZXh0UGF0aD4KICA8L3RleHQ+Cjwvc3ZnPg==" style="height:44px;width:44px;border-radius:50%;object-fit:contain;background:#FFD100;" alt="Saint Theresa School Seal"/>
@@ -190,6 +192,7 @@
           <div class="nav-buttons">
             <button class="btn back-btn" onclick="showHome()">← Back</button>
             <button class="btn" onclick="showHandout()">🔬 Science Connection</button>
+            <button class="btn" id="realworld-btn" onclick="showRealWorld()">🎨 Real-World Project</button>
             <button class="btn" onclick="showWorksheet()">Worksheet →</button>
           </div>
         </div>
@@ -207,6 +210,15 @@
           <button class="btn back-btn" onclick="showLesson(currentUnit)">← Back to Lesson</button>
           <h2 style="margin: 20px 0;">🔬 Science Connection</h2>
           <div id="handout-content"></div>
+          <div class="nav-buttons">
+            <button class="btn back-btn" onclick="showLesson(currentUnit)">← Back to Lesson</button>
+            <button class="btn" onclick="showWorksheet()">Worksheet →</button>
+          </div>
+        </div>
+        <div id="realworld-screen" class="screen">
+          <button class="btn back-btn" onclick="showLesson(currentUnit)">← Back to Lesson</button>
+          <h2 style="margin: 20px 0;">🎨 Real-World Project</h2>
+          <div id="realworld-content"></div>
           <div class="nav-buttons">
             <button class="btn back-btn" onclick="showLesson(currentUnit)">← Back to Lesson</button>
             <button class="btn" onclick="showWorksheet()">Worksheet →</button>
@@ -245,6 +257,7 @@ const UNITS = [
   { id:'real-numbers', title:'Real Numbers', icon:'🔢', cc:'8.NS.1-2', desc:'Distinguish rational from irrational numbers and approximate square roots.', kaUrl:'https://www.khanacademy.org/math/cc-eighth-grade-math/cc-8th-numbers-operations', ixlUrl:'https://www.ixl.com/math/grade-8/classify-numbers', ytSearch:'khan academy 8th grade rational irrational numbers square roots' },
   { id:'exponents', title:'Exponents', icon:'✴️', cc:'8.EE.1-2', desc:'Apply laws of exponents and evaluate expressions with integer exponents.', kaUrl:'https://www.khanacademy.org/math/cc-eighth-grade-math/cc-8th-numbers-operations', ixlUrl:'https://www.ixl.com/math/grade-8/multiplication-with-exponents', ytSearch:'khan academy 8th grade laws of exponents' },
   { id:'scientific-notation', title:'Scientific Notation', icon:'🔬', cc:'8.EE.3-4', desc:'Write very large and small numbers in scientific notation and compute with them.', kaUrl:'https://www.khanacademy.org/math/cc-eighth-grade-math/cc-8th-numbers-operations', ixlUrl:'https://www.ixl.com/math/grade-8/convert-between-standard-and-scientific-notation', ytSearch:'khan academy 8th grade scientific notation' },
+  { id:'percent-error', title:'Percent Error', icon:'⚠️', cc:'8.NS + Science', desc:'In real labs, scientists report percent error alongside their measurements. Use percent error |measured − actual| ÷ actual × 100% with rational, decimal, and scientific-notation values, and connect it to significant figures and accuracy in experimental design.', kaUrl:'https://www.khanacademy.org/math/cc-eighth-grade-math/cc-8th-numbers-operations', ixlUrl:'https://www.ixl.com/math/grade-8/percent-of-change', ytSearch:'percent error formula 8th grade science significant figures' },
   { id:'unit-conversions', title:'Unit Conversions (KHDUdcm)', icon:'📏', cc:'8.EE + Physical Science', desc:'Convert between metric units using the KHDUdcm staircase — Kilo, Hecto, Deca, Unit, deci, centi, milli.', kaUrl:'https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-factors-and-multiples', ixlUrl:'https://www.ixl.com/math/grade-8/convert-between-metric-units', ytSearch:'metric unit conversions KHDUdcm staircase kilo hecto deca unit deci centi milli' },
   { id:'slope', title:'Slope & Rate of Change', icon:'📈', cc:'8.EE.5-6', desc:'Calculate slope from graphs, tables, and equations; interpret rate of change.', kaUrl:'https://www.khanacademy.org/math/cc-eighth-grade-math/cc-8th-linear-equations-functions', ixlUrl:'https://www.ixl.com/math/grade-8/find-the-slope-of-a-graph', ytSearch:'khan academy 8th grade slope rate of change', phetUrl:'https://phet.colorado.edu/en/simulations/graphing-slope-intercept' },
   { id:'linear-equations', title:'Linear Equations', icon:'⚖️', cc:'8.EE.7', desc:'Solve linear equations with variables on both sides and special solutions.', kaUrl:'https://www.khanacademy.org/math/cc-eighth-grade-math/cc-8th-linear-equations-functions', ixlUrl:'https://www.ixl.com/math/grade-8/solve-linear-equations', ytSearch:'khan academy 8th grade linear equations', phetUrl:'https://phet.colorado.edu/en/simulations/equality-explorer-two-variables' },
@@ -262,14 +275,33 @@ const UNITS = [
   { id:'waves', title:'Waves — Frequency & Wavelength', icon:'〰️', cc:'8.EE + Physical Science', desc:'Sound and light are waves described by v = fλ. Use this equation to solve for wave speed, frequency, or wavelength, and explore the electromagnetic spectrum using scientific notation.', kaUrl:'https://www.khanacademy.org/science/physics/mechanical-waves-and-sound', ixlUrl:'https://www.ixl.com/math/grade-8/scientific-notation', ytSearch:'wave speed frequency wavelength equation 8th grade physical science v=flambda', phetUrl:'https://phet.colorado.edu/en/simulations/wave-on-a-string' },
   { id:'electricity', title:'Electricity & Circuits', icon:'⚡', cc:'8.EE + Physical Science', desc:"Ohm's Law (V = IR) and power (P = IV) are linear equations in physics form. Solve for voltage, current, resistance, and power. Build series and parallel circuit calculators.", kaUrl:'https://www.khanacademy.org/science/ap-physics-1/ap-circuits-topic', ixlUrl:'https://www.ixl.com/math/grade-8/solve-linear-equations', ytSearch:"ohm's law V=IR electricity circuits 8th grade algebra physical science", phetUrl:'https://phet.colorado.edu/en/simulations/circuit-construction-kit-dc' },
   { id:'optics', title:"Optics & Snell's Law", icon:'🔭', cc:"8.G + Physical Science Trig Preview", desc:"Light bends when it crosses from one material to another. Snell's Law (n₁sinθ₁ = n₂sinθ₂) uses trigonometry you've already learned — apply SOH-CAH-TOA to optics and discover how lenses work.", kaUrl:'https://www.khanacademy.org/science/ap-physics-1/geometric-optics', ixlUrl:'https://www.ixl.com/math/grade-8/trigonometric-ratios', ytSearch:"snell's law refraction optics trigonometry 8th grade physical science", phetUrl:'https://phet.colorado.edu/en/simulations/bending-light' },
-  { id:'keplers-laws', title:"Kepler's Laws & Orbital Mechanics", icon:'🪐', cc:'8.EE + Physical Science', desc:"Kepler's Third Law states T² ∝ r³ — orbital period squared is proportional to orbital radius cubed. Use proportional reasoning and exponent rules with real planetary data to predict orbital periods.", kaUrl:'https://www.khanacademy.org/science/physics/centripetal-force-and-gravitation', ixlUrl:'https://www.ixl.com/math/grade-8/cube-roots', ytSearch:"kepler's third law T squared r cubed proportional reasoning 8th grade physics", phetUrl:'https://phet.colorado.edu/en/simulations/gravity-and-orbits' }
+  { id:'keplers-laws', title:"Kepler's Laws & Orbital Mechanics", icon:'🪐', cc:'8.EE + Physical Science', desc:"Kepler's Third Law states T² ∝ r³ — orbital period squared is proportional to orbital radius cubed. Use proportional reasoning and exponent rules with real planetary data to predict orbital periods.", kaUrl:'https://www.khanacademy.org/science/physics/centripetal-force-and-gravitation', ixlUrl:'https://www.ixl.com/math/grade-8/cube-roots', ytSearch:"kepler's third law T squared r cubed proportional reasoning 8th grade physics", phetUrl:'https://phet.colorado.edu/en/simulations/gravity-and-orbits' },
+  {
+    "id": "cube-roots",
+    "title": "Cube Roots",
+    "icon": "∛",
+    "cc": "8.EE.2",
+    "desc": "Use cube root symbols to represent solutions to equations of the form x³ = p; evaluate cube roots of small perfect cubes.",
+    "ixlUrl": "https://www.ixl.com/math/grade-8/cube-roots-of-perfect-cubes",
+    "ytSearch": "khan academy 8th grade cube roots"
+  },
+  {
+    "id": "congruence-similarity",
+    "title": "Congruence & Similarity",
+    "icon": "🔺",
+    "cc": "8.G.2 & 8.G.4",
+    "desc": "Verify that two figures are congruent or similar by describing a sequence of rigid motions (or dilations) that maps one onto the other.",
+    "ixlUrl": "https://www.ixl.com/math/grade-8/identify-similar-triangles",
+    "ytSearch": "khan academy 8th grade congruence similarity transformations"
+  }
 ];
 
 const LESSONS = {
   'real-numbers': `<h2>Real Numbers</h2><p><strong>Rational numbers</strong> can be written as fractions. <strong>Irrational numbers</strong> cannot.</p><h3>Rational Numbers</h3><ul><li>Integers: ..., -2, -1, 0, 1, 2, ...</li><li>Fractions: 1/2, 3/4, −2/3</li><li>Terminating decimals: 0.5, 0.125</li><li>Repeating decimals: 0.333..., 0.666...</li></ul><h3>Irrational Numbers</h3><ul><li>Non-repeating, non-terminating decimals</li><li>π ≈ 3.14159265...</li><li>e ≈ 2.71828...</li><li>√2 ≈ 1.414...</li></ul><h3>Square Roots</h3><p>√9 = 3 (perfect square). √10 ≈ 3.162 (approximation)</p><h3>Real Numbers</h3><p>Set of all rational and irrational numbers. Fills entire number line.</p>`,
   'exponents': `<h2>Exponents & Laws of Exponents</h2><p>An exponent shows repeated multiplication: 2³ = 2 × 2 × 2 = 8</p><h3>Laws of Exponents</h3><ul><li><strong>Product rule:</strong> aᵐ × aⁿ = aᵐ⁺ⁿ</li><li><strong>Quotient rule:</strong> aᵐ ÷ aⁿ = aᵐ⁻ⁿ</li><li><strong>Power rule:</strong> (aᵐ)ⁿ = aᵐⁿ</li><li><strong>Product to power:</strong> (ab)ⁿ = aⁿbⁿ</li></ul><h3>Negative & Zero Exponents</h3><ul><li>a⁰ = 1 (any non-zero number)</li><li>a⁻ⁿ = 1/aⁿ (reciprocal)</li><li>2⁻² = 1/4</li></ul><h3>Examples</h3><p>2² × 2³ = 2⁵ = 32</p><p>3⁵ ÷ 3² = 3³ = 27</p><p>(2²)³ = 2⁶ = 64</p>`,
   'scientific-notation': `<h2>Scientific Notation</h2><p><strong>Scientific notation</strong> writes numbers as a × 10ⁿ where 1 ≤ a < 10</p><h3>Converting to Scientific Notation</h3><p>4,500,000 = 4.5 × 10⁶ (moved decimal 6 places left)</p><p>0.000075 = 7.5 × 10⁻⁵ (moved decimal 5 places right)</p><h3>Converting from Scientific Notation</h3><p>3.2 × 10⁴ = 32,000</p><p>8.1 × 10⁻³ = 0.0081</p><h3>Computing with Scientific Notation</h3><p>(2 × 10⁵) × (3 × 10²) = 6 × 10⁷</p><p>(8 × 10⁶) ÷ (2 × 10³) = 4 × 10³</p><h3>Applications</h3><p>Very large: distances in space. Very small: atomic sizes.</p>`,
-  'unit-conversions': `<h2>Unit Conversions — KHDUdcm</h2><p>The metric system is built on powers of 10, which makes converting between units a matter of moving a decimal point. The <strong>KHDUdcm staircase</strong> shows all the prefixes in order:</p><table style="border-collapse:collapse;width:100%;font-size:0.93em;margin:10px 0;"><tr style="background:#1F3864;color:#fff;"><th style="padding:7px 10px;">K</th><th style="padding:7px 10px;">H</th><th style="padding:7px 10px;">D</th><th style="padding:7px 10px;">U</th><th style="padding:7px 10px;">d</th><th style="padding:7px 10px;">c</th><th style="padding:7px 10px;">m</th></tr><tr style="text-align:center;background:#f2f2f2;"><td style="padding:6px 10px;">Kilo</td><td style="padding:6px 10px;">Hecto</td><td style="padding:6px 10px;">Deca</td><td style="padding:6px 10px;font-weight:bold;">Unit</td><td style="padding:6px 10px;">deci</td><td style="padding:6px 10px;">centi</td><td style="padding:6px 10px;">milli</td></tr><tr style="text-align:center;"><td style="padding:6px 10px;">×1000</td><td style="padding:6px 10px;">×100</td><td style="padding:6px 10px;">×10</td><td style="padding:6px 10px;font-weight:bold;">×1</td><td style="padding:6px 10px;">×0.1</td><td style="padding:6px 10px;">×0.01</td><td style="padding:6px 10px;">×0.001</td></tr><tr style="text-align:center;background:#f2f2f2;"><td style="padding:6px 10px;">10³</td><td style="padding:6px 10px;">10²</td><td style="padding:6px 10px;">10¹</td><td style="padding:6px 10px;font-weight:bold;">10⁰</td><td style="padding:6px 10px;">10⁻¹</td><td style="padding:6px 10px;">10⁻²</td><td style="padding:6px 10px;">10⁻³</td></tr></table><p>The <strong>Unit</strong> column is your base unit — meter (m), gram (g), liter (L), or second (s).</p><p>Memory: <em>"<strong>K</strong>ing <strong>H</strong>enry <strong>D</strong>oesn't <strong>U</strong>sually <strong>d</strong>rink <strong>c</strong>hocolate <strong>m</strong>ilk"</em></p><h3>The One Rule: Count Steps, Move Decimal</h3><ul><li>Moving <strong>right</strong> on the chart (larger to smaller unit) → multiply by 10 per step → decimal moves <strong>right</strong></li><li>Moving <strong>left</strong> on the chart (smaller to larger unit) → divide by 10 per step → decimal moves <strong>left</strong></li></ul><h3>Examples — Length (base unit = meter)</h3><ul><li><strong>3.5 km → m:</strong> K to U = 3 steps right → 3.5 × 1000 = <strong>3500 m</strong></li><li><strong>250 cm → m:</strong> c to U = 2 steps left → 250 ÷ 100 = <strong>2.5 m</strong></li><li><strong>45 mm → cm:</strong> m to c = 1 step left → 45 ÷ 10 = <strong>4.5 cm</strong></li><li><strong>0.8 km → cm:</strong> K to c = 5 steps right → 0.8 × 100,000 = <strong>80,000 cm</strong></li></ul><h3>Examples — Mass (base unit = gram)</h3><ul><li><strong>2.8 kg → g:</strong> K to U = 3 steps right → 2800 g</li><li><strong>500 mg → g:</strong> m to U = 3 steps left → 0.5 g</li><li><strong>1.2 kg → mg:</strong> K to m = 6 steps right → 1,200,000 mg</li></ul><h3>Connection to Scientific Notation</h3><p>Each step on the KHDUdcm chart is one power of 10 — the same relationship you used in scientific notation. Converting 3.5 km to meters is the same as multiplying 3.5 × 10³ = 3500. The skills stack directly.</p><h3>Converting Between Systems (US ↔ Metric)</h3><p>Some useful benchmarks to memorize:</p><ul><li>1 inch = 2.54 cm</li><li>1 mile ≈ 1.609 km</li><li>1 pound ≈ 0.454 kg</li><li>1 gallon ≈ 3.785 L</li></ul>`,
+  'percent-error': `<h2>Percent Error &mdash; Reporting Real-World Measurements</h2><p>In real science, every measurement comes with a number that says how trustworthy it is. The simplest such number is <strong>percent error</strong> &mdash; the ratio of |measured &minus; actual| to actual, expressed as a percent. By 8th grade you have all the tools to compute it for any measurement, including ones in scientific notation, with rational and irrational values, and across multiple units. This is the math that connects your lab notebook to the way professional scientists report their data.</p><h3>The Formula</h3><p style="text-align:center;padding:10px;background:#f0f4ff;border-radius:8px;font-size:1.05em;"><strong>Percent Error = |measured &minus; actual| &divide; actual &times; 100%</strong></p><h3>Why the Absolute Value?</h3><p>An error is bad whether you went too high or too low &mdash; we just want to know how far off. Without the absolute value bars, two students with errors of +5% and &minus;5% would &ldquo;average&rdquo; to zero error, which would falsely suggest perfect accuracy. The absolute value forces every error to count.</p><h3>Worked Example 1 &mdash; Speed of Light</h3><p>The accepted speed of light is c = 3.00 &times; 10&sup8; m/s. A clever 8th-grade experiment using mirrors and a high-speed camera measures c = 2.94 &times; 10&sup8; m/s. Percent error?</p><p style="font-family:monospace;background:#f9fafb;padding:10px;border-left:3px solid #2563eb;">|2.94 &times; 10&sup8; &minus; 3.00 &times; 10&sup8;| &divide; (3.00 &times; 10&sup8;) &times; 100%<br>= 0.06 &times; 10&sup8; &divide; (3.00 &times; 10&sup8;) &times; 100%<br>= 0.06 &divide; 3.00 &times; 100%<br>= <strong>2.0%</strong></p><p>Notice the 10&sup8; cancels &mdash; one of the powers of percent error: the units and powers of ten always divide out, so you end up with a clean number.</p><h3>Worked Example 2 &mdash; Avogadro&apos;s Number</h3><p>The accepted Avogadro&apos;s number is 6.022 &times; 10&sup2;&sup3;. A historical Millikan-style oil drop estimate gave 6.65 &times; 10&sup2;&sup3;. Percent error?</p><p style="font-family:monospace;background:#f9fafb;padding:10px;border-left:3px solid #2563eb;">|6.65 &minus; 6.022| &divide; 6.022 &times; 100%<br>= 0.628 &divide; 6.022 &times; 100% &asymp; <strong>10.4%</strong></p><h3>Worked Example 3 &mdash; Pythagorean Construction</h3><p>You measure a triangle with legs 3.0 cm and 4.0 cm. The hypotenuse should be exactly 5.00 cm by the Pythagorean theorem. You measure it as 5.2 cm.</p><p style="font-family:monospace;background:#f9fafb;padding:10px;border-left:3px solid #2563eb;">|5.2 &minus; 5.0| &divide; 5.0 &times; 100% = 0.2 &divide; 5.0 &times; 100% = <strong>4.0%</strong></p><h3>Worked Example 4 &mdash; Density of an Unknown</h3><p>A student measures the mass of a metal cube as 27.5 g and the volume as 10.0 mL, computing density = 2.75 g/mL. The accepted density of aluminum is 2.70 g/mL. Percent error?</p><p style="font-family:monospace;background:#f9fafb;padding:10px;border-left:3px solid #2563eb;">|2.75 &minus; 2.70| &divide; 2.70 &times; 100% &asymp; <strong>1.85%</strong></p><p>That is well within experimental tolerance &mdash; the cube is almost certainly aluminum.</p><h3>Significant Figures and Percent Error</h3><p>The number of <strong>significant figures</strong> in your answer should match the precision of the data. A measurement of 5.0 cm (2 sig figs) and an actual value of 5.00 cm (3 sig figs) means your error is limited by the less precise number. Reporting 4.000% would be false precision &mdash; report it as 4.0% (2 sig figs).</p><h3>Connection to Percent Change</h3><p>You learned percent change in 7th grade as |new &minus; old| &divide; old &times; 100%. Percent error is identical in form &mdash; just relabel <em>old</em> as <em>actual</em> and <em>new</em> as <em>measured</em>. The math is one and the same.</p><h3>Application &mdash; Engineering Tolerances</h3><p>Engineers specify a manufacturing <em>tolerance</em> &mdash; the maximum acceptable percent error in a part. A bolt for an aerospace fastener might have tolerance &plusmn;0.1%; a piece of structural steel might allow &plusmn;5%. Percent error tells the inspector whether a part is within tolerance.</p><h3>When Percent Error Doesn&apos;t Apply</h3><ul><li>If the actual value is <strong>zero</strong> (you cannot divide by zero) &mdash; report absolute error in the original units instead.</li><li>If you do not know the &ldquo;actual&rdquo; value &mdash; quote a range or a mean &plusmn; standard deviation instead.</li><li>If you are comparing two equally-good measurements &mdash; use <em>percent difference</em>: |a &minus; b| &divide; ((a + b) &divide; 2) &times; 100%.</li></ul><h3>Tolerance Table for Different Fields</h3><table style="border-collapse:collapse;width:100%;font-size:0.95em;margin:10px 0;"><tr style="background:#1F3864;color:#fff;"><th style="padding:7px 10px;">Application</th><th style="padding:7px 10px;">Typical Acceptable %Error</th></tr><tr style="background:#f2f2f2;"><td style="padding:6px 10px;">Aerospace fastener</td><td style="padding:6px 10px;">&plusmn;0.01%</td></tr><tr><td style="padding:6px 10px;">Pharmaceutical dose</td><td style="padding:6px 10px;">&plusmn;1%</td></tr><tr style="background:#f2f2f2;"><td style="padding:6px 10px;">Construction beam</td><td style="padding:6px 10px;">&plusmn;3&ndash;5%</td></tr><tr><td style="padding:6px 10px;">High-school physics lab</td><td style="padding:6px 10px;">&plusmn;5%</td></tr><tr style="background:#f2f2f2;"><td style="padding:6px 10px;">Middle-school estimate</td><td style="padding:6px 10px;">&plusmn;10%</td></tr></table>`,
+  'unit-conversions': `<h2>Unit Conversions — KHDUdcm</h2><p>The metric system is built on powers of 10, which makes converting between units a matter of moving a decimal point. The <strong>KHDUdcm staircase</strong> shows all the prefixes in order:</p><table style="border-collapse:collapse;width:100%;font-size:0.93em;margin:10px 0;"><tr style="background:#1F3864;color:#fff;"><th style="padding:7px 10px;">K</th><th style="padding:7px 10px;">H</th><th style="padding:7px 10px;">D</th><th style="padding:7px 10px;">U</th><th style="padding:7px 10px;">d</th><th style="padding:7px 10px;">c</th><th style="padding:7px 10px;">m</th></tr><tr style="text-align:center;background:#f2f2f2;"><td style="padding:6px 10px;">Kilo</td><td style="padding:6px 10px;">Hecto</td><td style="padding:6px 10px;">Deca</td><td style="padding:6px 10px;font-weight:bold;">Unit</td><td style="padding:6px 10px;">deci</td><td style="padding:6px 10px;">centi</td><td style="padding:6px 10px;">milli</td></tr><tr style="text-align:center;"><td style="padding:6px 10px;">×1000</td><td style="padding:6px 10px;">×100</td><td style="padding:6px 10px;">×10</td><td style="padding:6px 10px;font-weight:bold;">×1</td><td style="padding:6px 10px;">×0.1</td><td style="padding:6px 10px;">×0.01</td><td style="padding:6px 10px;">×0.001</td></tr><tr style="text-align:center;background:#f2f2f2;"><td style="padding:6px 10px;">10³</td><td style="padding:6px 10px;">10²</td><td style="padding:6px 10px;">10¹</td><td style="padding:6px 10px;font-weight:bold;">10⁰</td><td style="padding:6px 10px;">10⁻¹</td><td style="padding:6px 10px;">10⁻²</td><td style="padding:6px 10px;">10⁻³</td></tr></table><p>The <strong>Unit</strong> column is your base unit — meter (m), gram (g), liter (L), or second (s).</p><p>Memory: <em>"<strong>K</strong>ing <strong>H</strong>enry <strong>D</strong>oesn't <strong>U</strong>sually <strong>d</strong>rink <strong>c</strong>hocolate <strong>m</strong>ilk"</em></p><h3>The One Rule: Count Steps, Move Decimal</h3><ul><li>Moving <strong>right</strong> on the chart (larger to smaller unit) → multiply by 10 per step → decimal moves <strong>right</strong></li><li>Moving <strong>left</strong> on the chart (smaller to larger unit) → divide by 10 per step → decimal moves <strong>left</strong></li></ul><h3>Examples — Length (base unit = meter)</h3><ul><li><strong>3.5 km → m:</strong> K to U = 3 steps right → 3.5 × 1000 = <strong>3500 m</strong></li><li><strong>250 cm → m:</strong> c to U = 2 steps left → 250 ÷ 100 = <strong>2.5 m</strong></li><li><strong>45 mm → cm:</strong> m to c = 1 step left → 45 ÷ 10 = <strong>4.5 cm</strong></li><li><strong>0.8 km → cm:</strong> K to c = 5 steps right → 0.8 × 100,000 = <strong>80,000 cm</strong></li></ul><h3>Examples — Mass (base unit = gram)</h3><ul><li><strong>2.8 kg → g:</strong> K to U = 3 steps right → 2800 g</li><li><strong>500 mg → g:</strong> m to U = 3 steps left → 0.5 g</li><li><strong>1.2 kg → mg:</strong> K to m = 6 steps right → 1,200,000 mg</li></ul><h3>Connection to Scientific Notation</h3><p>Each step on the KHDUdcm chart is one power of 10 — the same relationship you used in scientific notation. Converting 3.5 km to meters is the same as multiplying 3.5 × 10³ = 3500. The skills stack directly.</p><h3>Converting Between Systems (US ↔ Metric)</h3><p>Some useful benchmarks to memorize:</p><ul><li>1 inch = 2.54 cm</li><li>1 mile ≈ 1.609 km</li><li>1 pound ≈ 0.454 kg</li><li>1 gallon ≈ 3.785 L</li></ul><h3>The Factor-Label Method (Dimensional Analysis)</h3><p>The KHDUdcm staircase is fast for metric conversions, but science classes use a more powerful tool that also works for <em>any</em> conversion — metric to imperial, rates to rates, even chained conversions in chemistry. It is called the <strong>factor-label method</strong> (also called <em>dimensional analysis</em>).</p><h4>The big idea</h4><p>Multiply by fractions equal to <strong>1</strong> — built from a unit equality — so units <strong>cancel</strong> on the way to the answer. Anything you multiply by 1 stays the same value, so the math is always honest.</p><p style="text-align:center;padding:8px;background:#f0f4ff;border-radius:6px;"><strong>1 km = 1000 m</strong> &nbsp; → &nbsp; <strong>1 = 1000 m / 1 km</strong> &nbsp; or &nbsp; <strong>1 = 1 km / 1000 m</strong></p><h4>Step-by-step recipe</h4><ol><li>Write the starting value with its unit.</li><li>Multiply by a "1" fraction whose <em>top</em> has the unit you want, <em>bottom</em> has the unit you want to get rid of.</li><li>Cancel the matching units (cross them out diagonally).</li><li>Multiply the numbers; carry the surviving unit.</li></ol><h4>Worked example — single step</h4><p>Convert <strong>2.5 km</strong> to meters:</p><p style="font-family:monospace;background:#f9fafb;padding:10px;border-left:3px solid #2563eb;">2.5 km × (1000 m / 1 km) = 2500 m</p><p>"km" cancels (one on top, one on bottom). The "m" survives. Numbers: 2.5 × 1000 = 2500.</p><h4>Worked example — chained (rate)</h4><p>Convert <strong>72 km/h</strong> to m/s. Use TWO unit equalities at once:</p><p style="font-family:monospace;background:#f9fafb;padding:10px;border-left:3px solid #2563eb;">72 km/h × (1000 m / 1 km) × (1 h / 3600 s) = 72 × 1000 / 3600 m/s = 20 m/s</p><p>"km" cancels and "h" cancels — leaving m/s. This is exactly the same answer as ÷ 3.6, but the work shows <em>why</em>.</p><h4>Worked example — three-step (medicine)</h4><p>A child weighs <strong>30 kg</strong> and the prescription is <strong>5 mg per kg</strong>. How many <strong>grams</strong> total?</p><p style="font-family:monospace;background:#f9fafb;padding:10px;border-left:3px solid #2563eb;">30 kg × (5 mg / 1 kg) × (1 g / 1000 mg) = 150/1000 g = 0.15 g</p><p>"kg" cancels with "kg", "mg" cancels with "mg". "g" survives.</p><h4>Why this is useful in science</h4><ul><li>It works for <strong>any</strong> conversion — not just powers of ten.</li><li>It catches errors: if your units do not cancel, you set up the fraction upside-down.</li><li>It is the same method used in chemistry (mole conversions), physics (unit checks), and medicine (dose calculations).</li><li>It pairs with KHDUdcm: use the staircase for quick metric jumps, factor-label for everything else.</li></ul>`,
   'slope': `<h2>Slope & Rate of Change</h2><p><strong>Slope</strong> measures steepness of a line.</p><h3>Slope Formula</h3><p>m = (y₂ - y₁) / (x₂ - x₁)</p><h3>Finding Slope from Points</h3><p>Points (2, 3) and (5, 9)</p><p>m = (9 - 3) / (5 - 2) = 6 / 3 = 2</p><h3>Interpreting Slope</h3><ul><li>Positive slope: line goes up</li><li>Negative slope: line goes down</li><li>Zero slope: horizontal line</li><li>Undefined slope: vertical line</li></ul><h3>Rate of Change</h3><p>Slope represents rate: 2 means y increases 2 units per 1 unit increase in x</p><h3>Real-World Uses</h3><p>Speed (miles per hour), cost per item, temperature change.</p>`,
   'linear-equations': `<h2>Linear Equations</h2><p>Equations that form straight lines when graphed.</p><h3>Standard Form</h3><p>Ax + By = C</p><h3>Slope-Intercept Form</h3><p>y = mx + b where m is slope, b is y-intercept</p><h3>Solving Equations</h3><p>2x + 5 = 13</p><ol><li>Subtract 5: 2x = 8</li><li>Divide by 2: x = 4</li></ol><h3>Special Cases</h3><p>No solution: 2x + 1 = 2x + 3 (never true)</p><p>Infinite solutions: 2x + 1 = 2x + 1 (always true)</p><h3>Applications</h3><p>Cost equations, distance problems, financial planning.</p>`,
   'systems': `<h2>Systems of Equations</h2><p>Two or more equations solved together. Solutions satisfy all equations.</p><h3>Graphing Method</h3><p>Graph both lines. Solution is intersection point.</p><h3>Substitution Method</h3><p>y = 2x and x + y = 6</p><ol><li>Substitute: x + 2x = 6 → 3x = 6</li><li>Solve: x = 2, then y = 4</li></ol><h3>Elimination Method</h3><p>2x + y = 5 and x - y = 1</p><ol><li>Add equations: 3x = 6</li><li>Solve: x = 2, then y = 1</li></ol><h3>Solution Types</h3><ul><li>One solution: lines intersect</li><li>No solution: parallel lines</li><li>Infinite solutions: same line</li></ul>`,
@@ -286,7 +318,9 @@ const LESSONS = {
   'waves': `<h2>Waves — Frequency & Wavelength</h2><p>Waves carry energy through space and matter without transporting matter itself. Sound, light, radio signals, and seismic waves are all waves. Every wave has three key properties: <strong>speed (v)</strong>, <strong>frequency (f)</strong>, and <strong>wavelength (λ)</strong> — and they are connected by a single elegant equation.</p><h3>The Wave Equation</h3><p style="text-align:center;padding:10px;background:#f0f4ff;border-radius:6px;font-size:1.15em;"><strong>v = f × λ</strong></p><ul><li><strong>v</strong> = wave speed (m/s)</li><li><strong>f</strong> = frequency (Hz — cycles per second)</li><li><strong>λ</strong> (lambda) = wavelength (m — length of one complete wave cycle)</li></ul><h3>Solving for Each Variable</h3><ul><li>Speed: v = f × λ</li><li>Frequency: f = v ÷ λ</li><li>Wavelength: λ = v ÷ f</li></ul><p>This is the same algebraic structure as d = v × t — rearranging a linear equation for each variable.</p><h3>Inverse Relationship</h3><p>At constant speed: higher frequency → shorter wavelength. Lower frequency → longer wavelength. This is an <strong>inverse relationship</strong> (f × λ = constant).</p><h3>Sound Waves</h3><p>Speed of sound ≈ 343 m/s in air (at 20°C). Middle A on a piano: f = 440 Hz. Wavelength = 343 ÷ 440 ≈ 0.78 m.</p><h3>The Electromagnetic Spectrum</h3><p>All EM waves travel at the speed of light: <strong>c = 3 × 10⁸ m/s</strong>. Frequency and wavelength vary enormously across the spectrum:</p><table style="border-collapse:collapse;width:100%;font-size:0.9em;margin:8px 0;"><tr style="background:#1F3864;color:#fff;"><th style="padding:5px 8px;">Type</th><th style="padding:5px 8px;">Frequency (Hz)</th><th style="padding:5px 8px;">Wavelength (m)</th><th style="padding:5px 8px;">Use</th></tr><tr style="background:#f2f2f2;"><td style="padding:5px 8px;">Radio</td><td style="padding:5px 8px;">10⁶–10⁹</td><td style="padding:5px 8px;">1–300 m</td><td style="padding:5px 8px;">Broadcasts</td></tr><tr><td style="padding:5px 8px;">Microwave</td><td style="padding:5px 8px;">10⁹–10¹²</td><td style="padding:5px 8px;">1 mm – 1 m</td><td style="padding:5px 8px;">Cooking, radar</td></tr><tr style="background:#f2f2f2;"><td style="padding:5px 8px;">Visible light</td><td style="padding:5px 8px;">4–7 × 10¹⁴</td><td style="padding:5px 8px;">400–700 nm</td><td style="padding:5px 8px;">Vision</td></tr><tr><td style="padding:5px 8px;">X-ray</td><td style="padding:5px 8px;">10¹⁷–10²⁰</td><td style="padding:5px 8px;">10⁻¹¹–10⁻⁸ m</td><td style="padding:5px 8px;">Medical imaging</td></tr></table><h3>Connection to Scientific Notation</h3><p>The enormous range of wave frequencies and wavelengths in the EM spectrum is exactly why scientific notation is essential. Visible light wavelengths (~700 × 10⁻⁹ m = 7 × 10⁻⁷ m) and radio waves (~1 m) differ by a factor of 10⁶ — you need negative exponents to express the small end.</p>`,
   'electricity': `<h2>Electricity & Circuits</h2><p>Electric circuits carry current through wires to power devices. Three fundamental quantities describe every circuit:</p><ul><li><strong>Voltage (V)</strong> — electric "pressure" driving current, measured in volts (V)</li><li><strong>Current (I)</strong> — flow of electric charge, measured in amperes (A)</li><li><strong>Resistance (R)</strong> — opposition to current flow, measured in ohms (Ω)</li></ul><h3>Ohm's Law</h3><p style="text-align:center;padding:10px;background:#f0f4ff;border-radius:6px;font-size:1.15em;"><strong>V = I × R</strong></p><p>This is a linear equation. Solve for any variable:</p><ul><li>V = I × R (voltage)</li><li>I = V ÷ R (current)</li><li>R = V ÷ I (resistance)</li></ul><p><strong>Example:</strong> A flashlight bulb has resistance 30 Ω connected to a 6V battery. Current = 6 ÷ 30 = <strong>0.2 A</strong></p><h3>Power</h3><p style="text-align:center;padding:8px;background:#f0f4ff;border-radius:6px;"><strong>P = I × V</strong> (watts = amps × volts)</p><p>Combine with Ohm's Law: P = I²R or P = V²/R</p><p>A phone charger: 5V, 2A. Power = 5 × 2 = <strong>10 watts</strong></p><h3>Series Circuits</h3><p>Components in a single loop. Same current flows through all. Resistances <strong>add</strong>:</p><p>R_total = R₁ + R₂ + R₃</p><p>Two resistors, 10 Ω and 20 Ω in series: R_total = 30 Ω</p><h3>Parallel Circuits</h3><p>Components on separate branches. Same voltage across all. Resistances combine by reciprocal addition:</p><p>1/R_total = 1/R₁ + 1/R₂</p><p>10 Ω and 20 Ω in parallel: 1/R = 1/10 + 1/20 = 3/20, so R = 20/3 ≈ 6.67 Ω</p><p>Parallel resistance is always less than the smallest individual resistor.</p><h3>Why Household Circuits Are Parallel</h3><p>In a series circuit, if one bulb burns out, the whole string goes dark (same current must flow through everything). In parallel, each device has its own branch — one failing doesn't affect others. Home wiring is parallel, which is also why adding more devices increases total current drawn from the supply.</p>`,
   'optics': `<h2>Optics & Snell's Law</h2><p>Light travels at different speeds in different materials. When light crosses the boundary between two materials at an angle, it bends — this is called <strong>refraction</strong>. Snell's Law describes exactly how much it bends, using the same trigonometric ratios you learned in the Pythagorean theorem unit.</p><h3>Angles in Optics</h3><p>All angles in optics are measured from the <strong>normal</strong> — an imaginary line perpendicular to the surface at the point where the light ray strikes. Even if the surface is curved, the normal points straight out from it.</p><h3>Index of Refraction</h3><p>The <strong>index of refraction (n)</strong> describes how much a material slows light down:</p><p style="text-align:center;padding:8px;background:#f0f4ff;border-radius:6px;"><strong>n = speed of light in vacuum ÷ speed of light in material = c / v</strong></p><table style="border-collapse:collapse;width:100%;font-size:0.93em;margin:8px 0;"><tr style="background:#1F3864;color:#fff;"><th style="padding:6px 10px;">Material</th><th style="padding:6px 10px;">n (index)</th><th style="padding:6px 10px;">Effect</th></tr><tr style="background:#f2f2f2;"><td style="padding:6px 10px;">Vacuum</td><td style="padding:6px 10px;">1.000</td><td style="padding:6px 10px;">Fastest possible</td></tr><tr><td style="padding:6px 10px;">Air</td><td style="padding:6px 10px;">1.003</td><td style="padding:6px 10px;">Almost same as vacuum</td></tr><tr style="background:#f2f2f2;"><td style="padding:6px 10px;">Water</td><td style="padding:6px 10px;">1.33</td><td style="padding:6px 10px;">Light slows to 75% speed</td></tr><tr><td style="padding:6px 10px;">Glass</td><td style="padding:6px 10px;">1.50</td><td style="padding:6px 10px;">Light slows to 67% speed</td></tr><tr style="background:#f2f2f2;"><td style="padding:6px 10px;">Diamond</td><td style="padding:6px 10px;">2.42</td><td style="padding:6px 10px;">Light slows to 41% speed — causes sparkle</td></tr></table><h3>Snell's Law</h3><p style="text-align:center;padding:10px;background:#f0f4ff;border-radius:6px;font-size:1.1em;"><strong>n₁ × sin(θ₁) = n₂ × sin(θ₂)</strong></p><p>Where θ₁ is the angle of the incoming ray (in material 1) and θ₂ is the angle of the refracted ray (in material 2).</p><p><strong>Example:</strong> A light ray in air (n=1.00) hits water (n=1.33) at θ₁ = 30°. Find θ₂:</p><ol><li>1.00 × sin(30°) = 1.33 × sin(θ₂)</li><li>0.500 = 1.33 × sin(θ₂)</li><li>sin(θ₂) = 0.500 ÷ 1.33 = 0.376</li><li>θ₂ = sin⁻¹(0.376) ≈ <strong>22.1°</strong></li></ol><p>The light bent toward the normal as it entered the denser medium — this always happens when going from low n to high n.</p><h3>Total Internal Reflection</h3><p>When light travels from a denser medium (high n) to a less dense medium (low n), at steep enough angles it can't exit at all — all light reflects back inside. This is how fiber optic cables carry internet data: light bounces along the inside of a glass fiber, never escaping.</p><h3>Connection to SOH-CAH-TOA</h3><p>Snell's Law uses sin — the same trig function from your Pythagorean theorem unit. The angles θ₁ and θ₂ are not angles in a right triangle in the usual sense, but you still use sin to connect them to the physics. This is trigonometry applied to waves.</p>`,
-  'keplers-laws': `<h2>Kepler's Laws & Orbital Mechanics</h2><p>In the early 1600s, Johannes Kepler discovered that planets don't orbit in circles — they orbit in ellipses, and their motion follows three precise mathematical laws. These laws are the foundation of all spacecraft navigation today.</p><h3>Kepler's First Law</h3><p>Every planet orbits the Sun in an <strong>ellipse</strong>, with the Sun at one focus (not the center). For most planets, the ellipse is nearly circular.</p><h3>Kepler's Second Law</h3><p>A planet sweeps out <strong>equal areas in equal times</strong>. When closer to the Sun, it moves faster. When farther, it moves slower. This is conservation of angular momentum in action.</p><h3>Kepler's Third Law — The Math</h3><p style="text-align:center;padding:10px;background:#f0f4ff;border-radius:6px;font-size:1.1em;"><strong>T² ∝ r³ &nbsp;&nbsp; or &nbsp;&nbsp; T² / r³ = constant</strong></p><ul><li><strong>T</strong> = orbital period (time for one orbit)</li><li><strong>r</strong> = average orbital radius (semi-major axis)</li></ul><p>If we use Earth's orbit as the reference (T = 1 year, r = 1 AU), then for any other planet:</p><p style="text-align:center;padding:8px;background:#f0f4ff;border-radius:6px;"><strong>T² = r³</strong> &nbsp;&nbsp;(in AU and years)</p><h3>Example: Mars</h3><p>Mars is at r = 1.52 AU from the Sun. What is its orbital period?</p><ol><li>T² = r³ = (1.52)³ = 3.51</li><li>T = √3.51 ≈ <strong>1.87 years</strong> (actual: 1.88 years ✓)</li></ol><h3>Example: Unknown Planet</h3><p>A planet has orbital period T = 8 years. What is its orbital radius?</p><ol><li>T² = r³ → 8² = r³ → 64 = r³</li><li>r = ∛64 = <strong>4 AU</strong></li></ol><h3>Solar System Data</h3><table style="border-collapse:collapse;width:100%;font-size:0.9em;margin:8px 0;"><tr style="background:#1F3864;color:#fff;"><th style="padding:5px 8px;">Planet</th><th style="padding:5px 8px;">r (AU)</th><th style="padding:5px 8px;">T (years)</th><th style="padding:5px 8px;">r³</th><th style="padding:5px 8px;">T²</th></tr><tr style="background:#f2f2f2;"><td style="padding:5px 8px;">Mercury</td><td style="padding:5px 8px;">0.387</td><td style="padding:5px 8px;">0.241</td><td style="padding:5px 8px;">0.058</td><td style="padding:5px 8px;">0.058</td></tr><tr><td style="padding:5px 8px;">Venus</td><td style="padding:5px 8px;">0.723</td><td style="padding:5px 8px;">0.615</td><td style="padding:5px 8px;">0.378</td><td style="padding:5px 8px;">0.378</td></tr><tr style="background:#f2f2f2;"><td style="padding:5px 8px;">Earth</td><td style="padding:5px 8px;">1.000</td><td style="padding:5px 8px;">1.000</td><td style="padding:5px 8px;">1.000</td><td style="padding:5px 8px;">1.000</td></tr><tr><td style="padding:5px 8px;">Mars</td><td style="padding:5px 8px;">1.524</td><td style="padding:5px 8px;">1.881</td><td style="padding:5px 8px;">3.540</td><td style="padding:5px 8px;">3.538</td></tr><tr style="background:#f2f2f2;"><td style="padding:5px 8px;">Jupiter</td><td style="padding:5px 8px;">5.203</td><td style="padding:5px 8px;">11.86</td><td style="padding:5px 8px;">140.8</td><td style="padding:5px 8px;">140.7</td></tr><tr><td style="padding:5px 8px;">Saturn</td><td style="padding:5px 8px;">9.539</td><td style="padding:5px 8px;">29.46</td><td style="padding:5px 8px;">867</td><td style="padding:5px 8px;">868</td></tr></table><p>Notice T² ≈ r³ for every planet — Kepler's Third Law holds with stunning precision across the entire solar system.</p><h3>Connecting to 8th Grade Math</h3><p>This equation T² = r³ involves both square roots and cube roots — skills you've practiced with real numbers and the Pythagorean theorem. It is also a proportional relationship: doubling r by a factor of 2 multiplies T by a factor of 2^(3/2) ≈ 2.83.</p>`
+  'keplers-laws': `<h2>Kepler's Laws & Orbital Mechanics</h2><p>In the early 1600s, Johannes Kepler discovered that planets don't orbit in circles — they orbit in ellipses, and their motion follows three precise mathematical laws. These laws are the foundation of all spacecraft navigation today.</p><h3>Kepler's First Law</h3><p>Every planet orbits the Sun in an <strong>ellipse</strong>, with the Sun at one focus (not the center). For most planets, the ellipse is nearly circular.</p><h3>Kepler's Second Law</h3><p>A planet sweeps out <strong>equal areas in equal times</strong>. When closer to the Sun, it moves faster. When farther, it moves slower. This is conservation of angular momentum in action.</p><h3>Kepler's Third Law — The Math</h3><p style="text-align:center;padding:10px;background:#f0f4ff;border-radius:6px;font-size:1.1em;"><strong>T² ∝ r³ &nbsp;&nbsp; or &nbsp;&nbsp; T² / r³ = constant</strong></p><ul><li><strong>T</strong> = orbital period (time for one orbit)</li><li><strong>r</strong> = average orbital radius (semi-major axis)</li></ul><p>If we use Earth's orbit as the reference (T = 1 year, r = 1 AU), then for any other planet:</p><p style="text-align:center;padding:8px;background:#f0f4ff;border-radius:6px;"><strong>T² = r³</strong> &nbsp;&nbsp;(in AU and years)</p><h3>Example: Mars</h3><p>Mars is at r = 1.52 AU from the Sun. What is its orbital period?</p><ol><li>T² = r³ = (1.52)³ = 3.51</li><li>T = √3.51 ≈ <strong>1.87 years</strong> (actual: 1.88 years ✓)</li></ol><h3>Example: Unknown Planet</h3><p>A planet has orbital period T = 8 years. What is its orbital radius?</p><ol><li>T² = r³ → 8² = r³ → 64 = r³</li><li>r = ∛64 = <strong>4 AU</strong></li></ol><h3>Solar System Data</h3><table style="border-collapse:collapse;width:100%;font-size:0.9em;margin:8px 0;"><tr style="background:#1F3864;color:#fff;"><th style="padding:5px 8px;">Planet</th><th style="padding:5px 8px;">r (AU)</th><th style="padding:5px 8px;">T (years)</th><th style="padding:5px 8px;">r³</th><th style="padding:5px 8px;">T²</th></tr><tr style="background:#f2f2f2;"><td style="padding:5px 8px;">Mercury</td><td style="padding:5px 8px;">0.387</td><td style="padding:5px 8px;">0.241</td><td style="padding:5px 8px;">0.058</td><td style="padding:5px 8px;">0.058</td></tr><tr><td style="padding:5px 8px;">Venus</td><td style="padding:5px 8px;">0.723</td><td style="padding:5px 8px;">0.615</td><td style="padding:5px 8px;">0.378</td><td style="padding:5px 8px;">0.378</td></tr><tr style="background:#f2f2f2;"><td style="padding:5px 8px;">Earth</td><td style="padding:5px 8px;">1.000</td><td style="padding:5px 8px;">1.000</td><td style="padding:5px 8px;">1.000</td><td style="padding:5px 8px;">1.000</td></tr><tr><td style="padding:5px 8px;">Mars</td><td style="padding:5px 8px;">1.524</td><td style="padding:5px 8px;">1.881</td><td style="padding:5px 8px;">3.540</td><td style="padding:5px 8px;">3.538</td></tr><tr style="background:#f2f2f2;"><td style="padding:5px 8px;">Jupiter</td><td style="padding:5px 8px;">5.203</td><td style="padding:5px 8px;">11.86</td><td style="padding:5px 8px;">140.8</td><td style="padding:5px 8px;">140.7</td></tr><tr><td style="padding:5px 8px;">Saturn</td><td style="padding:5px 8px;">9.539</td><td style="padding:5px 8px;">29.46</td><td style="padding:5px 8px;">867</td><td style="padding:5px 8px;">868</td></tr></table><p>Notice T² ≈ r³ for every planet — Kepler's Third Law holds with stunning precision across the entire solar system.</p><h3>Connecting to 8th Grade Math</h3><p>This equation T² = r³ involves both square roots and cube roots — skills you've practiced with real numbers and the Pythagorean theorem. It is also a proportional relationship: doubling r by a factor of 2 multiplies T by a factor of 2^(3/2) ≈ 2.83.</p>`,
+  "cube-roots": "<h2>Cube Roots</h2>\n<p>The <strong>cube root</strong> of a number n is the value that, when multiplied by itself three times, gives n. We write it as <strong>∛n</strong> or n^(1/3).</p>\n<h3>Connection to Cubes</h3>\n<ul>\n<li>3³ = 27, so <strong>∛27 = 3</strong>.</li>\n<li>4³ = 64, so <strong>∛64 = 4</strong>.</li>\n<li>5³ = 125, so <strong>∛125 = 5</strong>.</li>\n</ul>\n<h3>Common Perfect Cubes</h3>\n<p>1³ = 1, 2³ = 8, 3³ = 27, 4³ = 64, 5³ = 125, 6³ = 216, 7³ = 343, 8³ = 512, 9³ = 729, 10³ = 1,000.</p>\n<h3>Negative Cube Roots</h3>\n<p>Unlike square roots, cube roots <strong>can</strong> be negative: ∛(−27) = −3, because (−3)³ = −27.</p>\n<h3>Solving x³ = p</h3>\n<p>Take the cube root of both sides. If x³ = 64, then x = ∛64 = <strong>4</strong>.</p>\n<h3>Real-World Use</h3>\n<p>If you know the volume of a cube and want to find its side length: side = ∛V. A cube with V = 729 ft³ has side ∛729 = <strong>9 ft</strong>.</p>",
+  "congruence-similarity": "<h2>Congruence &amp; Similarity</h2>\n<h3>Congruent Figures (8.G.2)</h3>\n<p>Two figures are <strong>congruent</strong> if they have the <em>same shape AND the same size</em>. You can map one onto the other using a sequence of <strong>rigid motions</strong>:</p>\n<ul>\n<li><strong>Translation</strong> (slide)</li>\n<li><strong>Rotation</strong> (turn)</li>\n<li><strong>Reflection</strong> (flip)</li>\n</ul>\n<p>Rigid motions preserve length and angle measures — congruent figures share all corresponding side lengths and all corresponding angles.</p>\n<h3>Similar Figures (8.G.4)</h3>\n<p>Two figures are <strong>similar</strong> if they have the <em>same shape but possibly different sizes</em>. You can map one to the other using rigid motions <strong>plus a dilation</strong> (a scaling).</p>\n<p>Similar figures have:</p>\n<ul>\n<li><strong>Equal corresponding angles</strong></li>\n<li><strong>Proportional corresponding side lengths</strong> (same scale factor)</li>\n</ul>\n<h3>Scale Factor</h3>\n<p>If similar figure A has side 3 cm and figure B has corresponding side 12 cm, the scale factor from A to B is 12 ÷ 3 = <strong>4</strong>.</p>\n<h3>Testing for Similarity (AA criterion)</h3>\n<p>Two triangles are similar if they have two pairs of equal corresponding angles.</p>\n<h3>Notation</h3>\n<p>Congruent: △ABC ≅ △DEF. Similar: △ABC ~ △DEF.</p>"
 };
 
 const WORKSHEETS = {
@@ -339,6 +373,18 @@ const WORKSHEETS = {
     { q: 'Write 3.7 × 10⁵ in standard form:', answer: '370,000' },
     { q: 'Write 123,000 in scientific notation:', answer: '1.23 × 10⁵' },
     { q: 'Write 6 × 10⁻² in standard form:', answer: '0.06' }
+  ],
+  'percent-error': [
+    { q: 'Measured c = 2.94×10⁸ m/s, actual 3.00×10⁸ m/s. Percent error = ?', answer: '2%' },
+    { q: 'Measured Avogadro\'s number 6.65×10²³, actual 6.022×10²³. Percent error = ?', answer: '10.43%' },
+    { q: 'Measured hypotenuse 5.2 cm, actual 5.0 cm. Percent error = ?', answer: '4%' },
+    { q: 'Measured density 2.75 g/mL, actual 2.70 g/mL (Al). Percent error = ?', answer: '1.85%' },
+    { q: 'Measured Earth radius 6,420 km, actual 6,371 km. Percent error = ?', answer: '0.77%' },
+    { q: 'Measured π experimentally as 3.10, actual 3.14159. Percent error = ?', answer: '1.32%' },
+    { q: 'Measured 9.78 m/s², actual 9.81 m/s². Percent error = ?', answer: '0.31%' },
+    { q: 'Measured 1.65×10⁻¹⁹ C, actual 1.602×10⁻¹⁹ C. Percent error = ?', answer: '3.0%' },
+    { q: 'Measured frequency 432 Hz, actual 440 Hz. Percent error = ?', answer: '1.82%' },
+    { q: 'Tolerance ±0.01% applies to: pharmaceuticals or aerospace fasteners?', answer: 'aerospace fasteners' }
   ],
   'slope': [
     { q: 'Slope between (2,3) and (5,9):', answer: '2' },
@@ -550,6 +596,20 @@ const WORKSHEETS = {
     { q: 'Which 8th grade math skills are used to solve Kepler\'s Third Law problems?', answer: 'Exponents (cubing r), square roots (solving for T), and cube roots (solving for r)' },
     { q: 'If a planet\'s orbital radius doubles, its orbital period multiplies by approximately:', answer: '2^(3/2) = 2√2 ≈ 2.83 (not double — the relationship is T ∝ r^(3/2))' },
     { q: 'Venus: T = 0.615 years. Predicted r using T² = r³ (solve r = ∛(T²)):', answer: 'r = ∛(0.615²) = ∛(0.378) ≈ 0.724 AU (actual: 0.723 AU ✓)' }
+  ],
+  "cube-roots": [
+    { q: "∛8", answer: "2" },
+    { q: "∛125", answer: "5" },
+    { q: "∛(-64)", answer: "-4" },
+    { q: "Solve x³ = 216", answer: "x = 6" },
+    { q: "A cube has volume 1000 cm³. Side length?", answer: "10 cm" }
+  ],
+  "congruence-similarity": [
+    { q: "Two triangles map to each other by a slide and a flip. Congruent or similar?", answer: "Congruent (only rigid motions)" },
+    { q: "If one shape is a 3× enlargement of another, they are:", answer: "Similar" },
+    { q: "Triangle with sides 3, 4, 5 ~ Triangle with sides 6, 8, ?", answer: "10 (scale factor 2)" },
+    { q: "△ABC ≅ △DEF. If AB = 7, what is DE?", answer: "7" },
+    { q: "Scale factor from a 5 cm square to a 20 cm square?", answer: "4" }
   ]
 };
 
@@ -586,6 +646,13 @@ const QUIZZES = {
     { q: '(2×10³)×(3×10²) = ?', opts: ['6×10¹', '6×10⁵', '6×10⁶', '5×10⁵'], ans: 1 },
     { q: '3.5 × 10⁻² = ?', opts: ['350', '3500', '0.035', '0.0035'], ans: 2 },
     { q: 'Format: a × 10ⁿ where:', opts: ['a = 1 to 10', 'a = 0 to 1', 'a < 10', 'a > 10'], ans: 0 }
+  ],
+  'percent-error': [
+    { q: 'Measured g = 9.7 m/s², actual 9.81 m/s². Percent error = ?', answer: '1.12%' },
+    { q: 'Measured 1.55×10⁻¹⁹ C, actual 1.60×10⁻¹⁹ C. Percent error = ?', answer: '3.13%' },
+    { q: 'Why can\'t percent error be used when actual value is 0?', answer: 'division by zero' },
+    { q: 'Measured speed of sound 340 m/s, actual 343 m/s. Percent error = ?', answer: '0.87%' },
+    { q: 'Engineering tolerance ±5% applies to: aerospace or construction beam?', answer: 'construction beam' }
   ],
   'slope': [
     { q: 'Slope between (0,0) and (2,4):', opts: ['2', '4', '0.5', '6'], ans: 0 },
@@ -735,6 +802,18 @@ const QUIZZES = {
     { q: 'Why is the Kepler constant exactly 1 when using AU and years?', opts: ['Earth is the largest planet', "AU and year are defined relative to Earth's own orbit", 'The formula uses base 10', 'Gravity equals 1 in space'], ans: 1 },
     { q: "Kepler's Laws apply to:", opts: ['Only Earth and Moon', 'Only planets orbiting the Sun', 'Any object orbiting another under gravity', 'Only circular orbits'], ans: 2 },
     { q: 'If orbital radius triples, orbital period multiplies by approximately:', opts: ['3', '5.2', '9', '27'], ans: 1 }
+  ],
+  "cube-roots": [
+    { q: "∛27 =", choices: ["3", "9", "27"], correct: 0 },
+    { q: "∛(-8) =", choices: ["undefined", "-2", "2"], correct: 1 },
+    { q: "Solve x³ = 125", choices: ["x = 5", "x = 25", "x = 125"], correct: 0 },
+    { q: "Volume of cube = 343 ft³. Side =", choices: ["7 ft", "17 ft", "49 ft"], correct: 0 }
+  ],
+  "congruence-similarity": [
+    { q: "Rigid motions are:", choices: ["translations, rotations, dilations", "translations, rotations, reflections", "reflections only"], correct: 1 },
+    { q: "Similar figures have:", choices: ["same size, same shape", "different shape", "same shape, possibly different size"], correct: 2 },
+    { q: "Two triangles with all corresponding angles equal are:", choices: ["congruent", "similar", "neither"], correct: 1 },
+    { q: "Scale factor that produces a smaller image:", choices: ["greater than 1", "less than 1", "exactly 1"], correct: 1 }
   ]
 };
 
@@ -805,6 +884,8 @@ function showLesson(unitId) {
   document.getElementById('lesson-screen').classList.add('active');
   const unit = UNITS.find(u => u.id === unitId);
   document.getElementById('lesson-content').innerHTML = LESSONS[unitId] + resourceCardHTML(unit);
+  const rwBtn = document.getElementById('realworld-btn');
+  if (rwBtn) rwBtn.style.display = (REALWORLD_8 && REALWORLD_8[unitId]) ? '' : 'none';
   renderSidebar();
   setTopbar();
 }
@@ -1126,7 +1207,190 @@ In this project you will build a dual calculator that uses both tools on real en
       `On Sheet 4, Mercury orbits at about 47 km/s and Neptune at about 5.4 km/s. Using the formula v = 2πr/T and Kepler's Third Law (T = r^(3/2)), show algebraically that v ∝ r^(-1/2) — meaning orbital speed decreases as the square root of radius increases. This is why inner planets are faster: gravity's pull is stronger at shorter distances.`
     ]
   },
+  "cube-roots": {
+    title: `Cubic Storage Crates`,
+    banner: `📦 Real-World Math — Volumes and Side Lengths`,
+    mission: `Use cube roots to find side lengths of cube-shaped objects.`,
+    steps: [
+      `A shipping crate is a cube with volume 729 ft³. How long is each side?`,
+      `A small jewelry box is a cube with volume 64 cm³. Side length?`,
+      `A water tank holds 1000 liters (1 m³). What's the side of a cubic tank holding the same?`,
+      `Practice cube roots: ∛1, ∛8, ∛27, ∛64, ∛125, ∛216 — list each value.`,
+      `Build a paper cube with side 5 cm. Verify volume = 125 cm³.`
+    ],
+    deliverable: `Five answers plus your paper cube.`,
+    reflect: [
+      `Why can cube roots be negative when square roots (of real numbers) can't?`,
+      `Where do cubes show up in life — dice? Rubik's cubes? Buildings?`,
+      `If you doubled a cube's side length, how does the volume change?`
+    ]
+  },
+  "congruence-similarity": {
+    title: `Hawaiian Quilt Symmetry`,
+    banner: `🎨 Real-World Math — Congruence & Similarity in Design`,
+    mission: `Identify congruent and similar shapes in patterns and architecture.`,
+    steps: [
+      `Look at a Hawaiian quilt or tile pattern. Find two shapes that look identical. Are they congruent?`,
+      `Find two shapes where one is a 'shrunk' or 'enlarged' version of the other. Those are similar.`,
+      `Draw a triangle with sides 3 cm, 4 cm, 5 cm. Now draw another with sides 6 cm, 8 cm, 10 cm. Similar? Scale factor?`,
+      `Cut out your two 3-4-5 triangles. Slide one over the other — do they match? That tests congruence.`,
+      `Photograph a building corner and compare two windows. Are they congruent, just similar, or neither?`
+    ],
+    deliverable: `Drawings of one congruent pair and one similar pair, with the scale factor of the similar pair.`,
+    reflect: [
+      `Can two figures be similar but not congruent? (Yes — different sizes.)`,
+      `Can two figures be congruent but not similar? (No — congruent means similar with scale factor 1.)`,
+      `Where does scaling matter in life — maps, blueprints, scale models?`
+    ]
+  }
 };
+
+  const REALWORLD_8 = {
+    'slope': {
+      title: `Wheelchair Ramp / Skate Ramp Designer`,
+      banner: `🎨 Real-World Math — Engineering & Slope`,
+      mission: `The Americans with Disabilities Act requires wheelchair ramps to have a slope no steeper than 1:12. Design and draw a ramp for a real entrance with a 30-inch step up.`,
+      steps: [
+      `A 30-inch rise at slope 1:12 needs a run of 30 x 12 = 360 inches = 30 feet of horizontal ramp.`,
+      `Compute the actual slope as a decimal and a percent: 1/12 ≈ 0.0833 = 8.33%.`,
+      `Draw the ramp on graph paper at scale 1 inch = 1 foot. Show: the rise, the run, the angle.`,
+      `Use the Pythagorean theorem to compute the LENGTH of the ramp surface (hypotenuse). a² + b² = c². The ramp length is the c value.`,
+      `Convert your drawing to a skate ramp: a quarter-pipe with a 4-ft rise. What slope ratio does a 6-ft long ramp give? Express as fraction, decimal, and percent.`,
+      `Bonus: ADA also requires a level "landing" every 30 feet. If a building has a 5-ft step up, is one landing enough? Show the math.`
+      ],
+      deliverable: `Submit your scaled ramp drawing with the rise, run, ramp length, slope ratio, slope decimal, and slope percent all labeled. Bonus: the skate-ramp comparison.`,
+      reflect: [
+      `A skate-ramp designer might use a 1:1 slope. A wheelchair ramp uses 1:12. Why are these so different?`,
+      `If you double the rise but keep the slope at 1:12, what happens to the run? What about the ramp’s diagonal length?`
+      ]
+    },
+    'linear-equations': {
+      title: `Phone Plan Comparator`,
+      banner: `🎨 Real-World Math — Smart Spending & Linear Models`,
+      mission: `Two cell phone plans look similar but cost very differently over time. Build linear equations to find the BREAK-EVEN month and decide which is cheaper for your usage.`,
+      steps: [
+      `Plan A: $40 per month, $200 phone (paid up front). Total cost after m months: y = 40m + 200.`,
+      `Plan B: $60 per month, free phone, $50 activation fee. Total cost: y = 60m + 50.`,
+      `Set the equations equal: 40m + 200 = 60m + 50. Solve for m. This is the break-even month.`,
+      `Compute total cost for both plans at m = 6, 12, 18, 24 months. Make a table.`,
+      `On graph paper, plot both lines on the same axes. Mark the intersection point.`,
+      `Bonus: find a 3rd plan online (T-Mobile, Mint, US Cellular) and compute its break-even with both A and B.`
+      ],
+      deliverable: `Submit the equations, the break-even calculation, the cost table, and the graph. Write 2 sentences: which plan would YOU choose, and why?`,
+      reflect: [
+      `Plan B has a higher monthly cost but a cheaper start. Which plan is better for a 6-month visit? For a 4-year contract?`,
+      `On the graph, the break-even is the INTERSECTION of two lines. Why does that point answer "when do they cost the same?"`
+      ]
+    },
+    'systems': {
+      title: `Boba Tea Shop Inventory`,
+      banner: `🎨 Real-World Math — Business & Systems of Equations`,
+      mission: `A boba shop sold 80 drinks today and made $360. Small drinks are $4 each, large are $5. How many of each were sold? Set up and solve a system of equations.`,
+      steps: [
+      `Let s = small drinks, L = large drinks. Write 2 equations: s + L = 80 (total drinks); 4s + 5L = 360 (total revenue).`,
+      `Solve by SUBSTITUTION: from equation 1, s = 80 - L. Substitute into equation 2.`,
+      `Solve by ELIMINATION: multiply equation 1 by 4 and subtract from equation 2 to eliminate s.`,
+      `Verify both methods give the same answer.`,
+      `Now create your OWN scenario. A bakery sells cookies ($2) and brownies ($3). 50 items sold, $112 revenue. How many of each?`,
+      `Bonus: write a 3-variable system. The bakery also sells $4 muffins. 60 items, $190, twice as many cookies as muffins. Solve.`
+      ],
+      deliverable: `Submit both methods of solution for the boba problem, the solution to your own bakery problem, and the bonus 3-variable system.`,
+      reflect: [
+      `Substitution and elimination both solve the same system. When is one easier than the other?`,
+      `Could a system have NO solution? Two parallel lines never meet. Give an example with a boba context.`
+      ]
+    },
+    'pythagorean': {
+      title: `TV Diagonal Decoder`,
+      banner: `🎨 Real-World Math — Pythagorean Theorem in Real Products`,
+      mission: `A "55-inch TV" measures 55 inches diagonally. But what are the real width and height? Use the Pythagorean theorem and the 16:9 ratio to find out.`,
+      steps: [
+      `Modern TVs use a 16:9 aspect ratio. So width / height = 16 / 9. Set width = 16k and height = 9k for some scaling factor k.`,
+      `Apply Pythagoras: (16k)² + (9k)² = 55². Simplify: 256k² + 81k² = 3025. 337 k² = 3025. Solve for k.`,
+      `Find width = 16k and height = 9k.`,
+      `Repeat for a 65-inch TV and a 75-inch TV. Make a table: diagonal | width | height | viewing area.`,
+      `Compute the AREA in sq inches. A 75-inch TV has how many MORE square inches than a 55-inch?`,
+      `Bonus: 4:3 was the old TV ratio. Does a 55-inch 4:3 TV have more or less SCREEN AREA than a 55-inch 16:9? Compute both and compare.`
+      ],
+      deliverable: `Submit your three TV calculations (55, 65, 75) with widths, heights, and areas. Plus the 4:3 vs 16:9 comparison.`,
+      reflect: [
+      `A 65-inch TV has only an 18% bigger diagonal than a 55-inch (10/55), but the area is much more than 18% larger. Compute the area increase as a percent. Why is it bigger?`,
+      `Why does the Pythagorean theorem connect the diagonal and the side lengths of a rectangle? Draw the rectangle and the diagonal: what shape do you see?`
+      ]
+    },
+    'volume': {
+      title: `Surfboard Volume Builder`,
+      banner: `🎨 Real-World Math — Surfing & Volume`,
+      mission: `Surfboards are sold by their VOLUME in liters. Use prism approximations to compute the volume of three boards (a longboard, a shortboard, a fish), and pick the right one for your weight.`,
+      steps: [
+      `A surfboard is roughly a flattened prism. Approximate it as: volume ≈ length x width x thickness x 0.55 (the 0.55 accounts for tapered ends).`,
+      `Compute volumes (in cubic inches) for 3 boards: Longboard: 9’6" x 22.5" x 3"; Shortboard: 6’2" x 19" x 2.4"; Fish: 5’8" x 21" x 2.5".`,
+      `Convert cubic inches to LITERS (1 in³ = 0.01639 L). Round to 1 decimal place.`,
+      `A general rule: surfers want the volume to roughly match their body weight in pounds, reduced by a skill-level factor (beginners 1.0, intermediate 0.7, advanced 0.5). For a 150 lb beginner, target 150 L; intermediate, 105 L; advanced, 75 L.`,
+      `Match the 3 boards to skill levels.`,
+      `Bonus: design YOUR ideal board. Pick a length, width, thickness so the volume matches your weight class.`
+      ],
+      deliverable: `Submit your 3-board volume table (cubic in and liters), your skill-level matching, and your custom board design with all dimensions.`,
+      reflect: [
+      `If you double the LENGTH of a board, the volume also doubles. If you double the WIDTH, volume doubles. If you double ALL three dimensions, what happens?`,
+      `Why is more volume usually easier for a beginner? Tie this to physics (buoyancy is volume-dependent).`
+      ]
+    },
+    'functions': {
+      title: `Roller Coaster Designer`,
+      banner: `🎨 Real-World Math — Functions & Coaster Physics`,
+      mission: `A roller coaster’s elevation along its track must always be a FUNCTION of distance (one elevation per distance — you can’t be at two heights at once). Design a coaster on graph paper, label which segments are functions and which are not.`,
+      steps: [
+      `On graph paper, draw a side view of a coaster track. x-axis = distance along the track, y-axis = elevation in feet. Make the track interesting: one big drop, one loop, one helix turn.`,
+      `Mark on your drawing: which sections PASS the vertical-line test (are functions) and which FAIL (are not). Loops and helices fail; uphills, downhills, and flat sections pass.`,
+      `Identify each "function piece" as linear, increasing, decreasing, or constant. Label each.`,
+      `Pick ONE linear segment. Compute its slope (rise / run). Write its equation y = mx + b.`,
+      `Build a domain-and-range table for each function piece: input distance range, output elevation range.`,
+      `Bonus: design the coaster so that the entire track (no loops!) is a single function. How does this constraint change your design?`
+      ],
+      deliverable: `Submit your annotated coaster drawing with function/not-function labels, the linear-segment equation, the domain-range table, and the bonus single-function version.`,
+      reflect: [
+      `Why does every input have at most one output in a function? What does this rule mean physically for a coaster?`,
+      `A loop is NOT a function of distance. But a coaster can still HAVE loops. How? (Hint: think about parameterization — use TIME as input.)`
+      ]
+    },
+    'transformations': {
+      title: `Hawaiian Tessellation Art`,
+      banner: `🎨 Real-World Math — Art & Geometric Transformations`,
+      mission: `Tessellations cover a plane with a single shape, no gaps, no overlaps. Design an Escher-style tessellation using a Hawaiian theme (sea turtle, hibiscus, wave) using rigid transformations.`,
+      steps: [
+      `Start with a square or hexagon as your base tile. Cut a curve out of one side; tape it onto the OPPOSITE side (translation). The new tile still tessellates.`,
+      `Now do a rotation: cut a curve out of one side; rotate it 90° and tape it to the adjacent side.`,
+      `On the tile, draw a Hawaiian image (turtle, hibiscus, wave). The shape edges should suggest the form.`,
+      `Trace your tile 12 times on a piece of paper, fitting it together. Use the tile and its transformations consistently.`,
+      `For each tile in the tessellation, identify which TRANSFORMATION moved it from the starting tile: translation, rotation, reflection, or glide reflection.`,
+      `Color the result. Use 4 colors so no adjacent tiles share a color (the Four-Color Theorem says this is always possible).`
+      ],
+      deliverable: `Submit (1) your tile template (the original cut shape with image on it) and (2) the finished colored tessellation, plus a sheet labeling each tile’s transformation.`,
+      reflect: [
+      `Why does the "cut and tape opposite side" trick produce a shape that still tessellates? Connect this to the rigid-motion property of translation.`,
+      `Squares and hexagons tessellate, but pentagons (regular 5-sided) do NOT. Why? (Hint: 360° / interior angle should be a whole number.)`
+      ]
+    },
+    'scatter-plots': {
+      title: `Sleep vs. Test Scores Investigation`,
+      banner: `🎨 Real-World Math — Personal Data & Correlation`,
+      mission: `Does more sleep mean better test scores? Run a personal experiment for 2 weeks: log your sleep and your performance, then plot and analyze.`,
+      steps: [
+      `For 14 nights, log: hours of sleep | next-day quiz/homework score (or self-rated focus 1 to 10).`,
+      `On graph paper, plot a scatter plot. x-axis = sleep hours, y-axis = score.`,
+      `Eyeball a "line of best fit" through the cluster.`,
+      `Compute the slope of your line of best fit by picking two points on it. Interpret: how much does the score change per extra hour of sleep?`,
+      `Identify the correlation: positive, negative, none, or strong/weak. Justify.`,
+      `Bonus: pool data with 4 classmates (60+ nights). Replot. Is the correlation stronger or weaker with more data?`
+      ],
+      deliverable: `Submit your data log, scatter plot with line of best fit, the slope calculation and interpretation, and your correlation classification.`,
+      reflect: [
+      `Correlation does NOT prove causation. List 2 OTHER reasons sleep and test scores might both rise on the same days that aren’t "sleep causes the score."`,
+      `Why is a 14-day sample small? How might pooling with classmates change the picture?`
+      ]
+    },
+  };
 
 const ANSWER_KEYS_8 = {
   'real-numbers': 'Engineering_Precision_Numbers.xlsx',
@@ -1181,6 +1445,33 @@ function showHandout() {
         ${h.deliverable}
       </div>
       ${answerKeyHtml}
+      <div class="handout-reflect">
+        <strong>💭 Reflection Questions:</strong>
+        <ol>${reflectHtml}</ol>
+      </div>
+    </div>`;
+}
+
+function showRealWorld() {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('realworld-screen').classList.add('active');
+  const h = REALWORLD_8[currentUnit];
+  if (!h) {
+    return;
+  }
+  const stepsHtml = h.steps.map(s => `<li>${s}</li>`).join('');
+  const reflectHtml = h.reflect.map((r,i) => `<li>${r}</li>`).join('');
+  document.getElementById('realworld-content').innerHTML = `
+    <div class="handout-card">
+      <h3>${h.title}</h3>
+      <div class="handout-science">${h.banner}</div>
+      <div class="handout-mission">${h.mission}</div>
+      <p><strong>📋 Step-by-Step Instructions</strong></p>
+      <ol class="handout-steps">${stepsHtml}</ol>
+      <div class="handout-deliverable">
+        <strong>🎯 What to Submit:</strong>
+        ${h.deliverable}
+      </div>
       <div class="handout-reflect">
         <strong>💭 Reflection Questions:</strong>
         <ol>${reflectHtml}</ol>

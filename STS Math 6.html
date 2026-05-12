@@ -14,6 +14,8 @@
     .sidebar-item:hover { background: #1B3A8A; }
     .sidebar-item.active { background: #1B3A8A; }
     .main { flex: 1; display: flex; flex-direction: column; }
+    .all-math-btn { background: #FFD100; color: #1a2a4a; border: none; cursor: pointer; font-size: 13px; font-weight: 700; padding: 8px 14px; border-radius: 6px; margin-right: 10px; text-decoration: none; display: inline-block; transition: all 0.18s; }
+    .all-math-btn:hover { background: #ffc400; transform: translateX(-2px); }
     .home-btn { background: rgba(0,0,0,0.2); border: none; color: white; cursor: pointer; font-size: 14px; font-weight: 600; padding: 8px 14px; border-radius: 6px; margin-right: 16px; }
     .home-btn:hover { background: rgba(0,0,0,0.35); }
     .topbar { border-bottom: 4px solid #FFD100;  background: #1B3A8A; color: white; padding: 15px 30px; font-size: 18px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
@@ -174,7 +176,7 @@
     </div>
     <div class="main">
       <div class="topbar">
-        <button class="home-btn" onclick="showHome()">🏠 HOME</button>
+        <a href="STS Math Index.html" class="all-math-btn" title="Back to STS home">&larr; All Math</a><button class="home-btn" onclick="showHome()">🏠 HOME</button>
         <span style="font-size:12px;font-weight:normal;opacity:0.85;margin-right:10px;">Saint Theresa School &nbsp;&nbsp;</span><span id="topbar-title">Describing the World with Math</span>
         <div class="topbar-right">
           <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj4KICA8ZGVmcz4KICAgIDxjbGlwUGF0aCBpZD0iaW5uZXIiPgogICAgICA8Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9Ijc4Ii8+CiAgICA8L2NsaXBQYXRoPgogICAgPHBhdGggaWQ9InRvcC1hcmMiIGQ9Ik0gMTgsMTAwIGE4Miw4MiAwIDAsMSAxNjQsMCIgZmlsbD0ibm9uZSIvPgogICAgPHBhdGggaWQ9ImJvdC1hcmMiIGQ9Ik0gMjIsMTEwIGE4MCw4MCAwIDAsMCAxNTYsMCIgZmlsbD0ibm9uZSIvPgogIDwvZGVmcz4KICA8IS0tIE91dGVyIGdvbGQgcmluZyAtLT4KICA8Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9Ijk5IiBmaWxsPSIjRkZEMTAwIiBzdHJva2U9IiMxQjNBOEEiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwhLS0gQmx1ZSB0ZXh0IGJhbmQgLS0+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI5OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUIzQThBIiBzdHJva2Utd2lkdGg9IjIyIi8+CiAgPCEtLSBHb2xkIGlubmVyIGFyZWEgLS0+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI4OCIgZmlsbD0iI0ZGRDEwMCIvPgogIDwhLS0gQmx1ZSBjcm9zcyBhcm1zIGNsaXBwZWQgdG8gY2lyY2xlIC0tPgogIDxnIGNsaXAtcGF0aD0idXJsKCNpbm5lcikiPgogICAgPHJlY3QgeD0iODYiIHk9IjIyIiB3aWR0aD0iMjgiIGhlaWdodD0iMTU2IiBmaWxsPSIjMUIzQThBIi8+CiAgICA8cmVjdCB4PSIyMiIgeT0iODYiIHdpZHRoPSIxNTYiIGhlaWdodD0iMjgiIGZpbGw9IiMxQjNBOEEiLz4KICAgIDwhLS0gU2hpZWxkIG91dGxpbmUgaW4gY2VudGVyIC0tPgogICAgPHBhdGggZD0iTTEwMCw2OCBMMTIwLDc1IEwxMjAsMTAwIFExMjAsMTE4IDEwMCwxMjYgUTgwLDExOCA4MCwxMDAgTDgwLDc1IFoiIGZpbGw9IiNGRkQxMDAiIHN0cm9rZT0iIzFCM0E4QSIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgICA8IS0tIEZsb3dlci9yb3NlIGluIHNoaWVsZCAtLT4KICAgIDxjaXJjbGUgY3g9IjEwMCIgY3k9Ijk3IiByPSI4IiBmaWxsPSIjMUIzQThBIi8+CiAgICA8Y2lyY2xlIGN4PSIxMDAiIGN5PSI4NyIgcj0iNSIgZmlsbD0iIzFCM0E4QSIvPgogICAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTA3IiByPSI1IiBmaWxsPSIjMUIzQThBIi8+CiAgICA8Y2lyY2xlIGN4PSI5MSIgY3k9Ijk3IiByPSI1IiBmaWxsPSIjMUIzQThBIi8+CiAgICA8Y2lyY2xlIGN4PSIxMDkiIGN5PSI5NyIgcj0iNSIgZmlsbD0iIzFCM0E4QSIvPgogIDwvZz4KICA8IS0tIFF1YWRyYW50IHN5bWJvbHMgKG91dHNpZGUgY3Jvc3MsIGluc2lkZSBvdXRlciByaW5nKSAtLT4KICA8IS0tIFRvcC1sZWZ0OiBCb29rIC0tPgogIDx0ZXh0IHg9IjU4IiB5PSI3MiIgZm9udC1zaXplPSIxOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzFCM0E4QSIgZm9udC1mYW1pbHk9InNlcmlmIj7wn5OWPC90ZXh0PgogIDwhLS0gVG9wLXJpZ2h0OiBGbGV1ci1kZS1saXMgLS0+CiAgPHRleHQgeD0iMTQyIiB5PSI3MiIgZm9udC1zaXplPSIxNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzFCM0E4QSIgZm9udC1mYW1pbHk9InNlcmlmIj7impw8L3RleHQ+CiAgPCEtLSBCb3R0b20tbGVmdDogTGluZXMgKGhhdGNoKSAtLT4KICA8bGluZSB4MT0iMzIiIHkxPSIxMTgiIHgyPSI1MCIgeTI9IjEzMCIgc3Ryb2tlPSIjMUIzQThBIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8bGluZSB4MT0iMzYiIHkxPSIxMTQiIHgyPSI1NCIgeTI9IjEyNiIgc3Ryb2tlPSIjMUIzQThBIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8bGluZSB4MT0iNDAiIHkxPSIxMTAiIHgyPSI1OCIgeTI9IjEyMiIgc3Ryb2tlPSIjMUIzQThBIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8IS0tIEJvdHRvbS1yaWdodDogUGxhbnQvY3Jvc3MgLS0+CiAgPHRleHQgeD0iMTQyIiB5PSIxMzYiIGZvbnQtc2l6ZT0iMTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMxQjNBOEEiIGZvbnQtZmFtaWx5PSJzZXJpZiI+4pygPC90ZXh0PgogIDwhLS0gQ2lyY3VsYXIgdGV4dDogU0FJTlQgVEhFUkVTQSBTQ0hPT0wgLS0+CiAgPHRleHQgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmaWxsPSIjRkZEMTAwIiBsZXR0ZXItc3BhY2luZz0iMiI+CiAgICA8dGV4dFBhdGggaHJlZj0iI3RvcC1hcmMiIHN0YXJ0T2Zmc2V0PSI4JSI+U0FJTlQgVEhFUkVTQSBTQ0hPT0w8L3RleHRQYXRoPgogIDwvdGV4dD4KICA8IS0tIEJvdHRvbSB0ZXh0OiAxOTMxIC0tPgogIDx0ZXh0IGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSJib2xkIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZmlsbD0iI0ZGRDEwMCIgbGV0dGVyLXNwYWNpbmc9IjMiPgogICAgPHRleHRQYXRoIGhyZWY9IiNib3QtYXJjIiBzdGFydE9mZnNldD0iMzUlIj4xOTMxPC90ZXh0UGF0aD4KICA8L3RleHQ+Cjwvc3ZnPg==" style="height:44px;width:44px;border-radius:50%;object-fit:contain;background:#FFD100;" alt="Saint Theresa School Seal"/>
@@ -190,6 +192,7 @@
           <div class="nav-buttons">
             <button class="btn back-btn" onclick="showHome()">← Back</button>
             <button class="btn" onclick="showHandout()">🔬 Science Connection</button>
+            <button class="btn" id="realworld-btn" onclick="showRealWorld()">🎨 Real-World Project</button>
             <button class="btn" onclick="showWorksheet()">Worksheet →</button>
           </div>
         </div>
@@ -207,6 +210,15 @@
           <button class="btn back-btn" onclick="showLesson(currentUnit)">← Back to Lesson</button>
           <h2 style="margin: 20px 0;">🔬 Science Connection</h2>
           <div id="handout-content"></div>
+          <div class="nav-buttons">
+            <button class="btn back-btn" onclick="showLesson(currentUnit)">← Back to Lesson</button>
+            <button class="btn" onclick="showWorksheet()">Worksheet →</button>
+          </div>
+        </div>
+        <div id="realworld-screen" class="screen">
+          <button class="btn back-btn" onclick="showLesson(currentUnit)">← Back to Lesson</button>
+          <h2 style="margin: 20px 0;">🎨 Real-World Project</h2>
+          <div id="realworld-content"></div>
           <div class="nav-buttons">
             <button class="btn back-btn" onclick="showLesson(currentUnit)">← Back to Lesson</button>
             <button class="btn" onclick="showWorksheet()">Worksheet →</button>
@@ -246,9 +258,11 @@ const UNITS = [
   { id:'fraction-division', title:'Fraction Division', icon:'➗', cc:'6.NS.1', desc:'Divide fractions by fractions using models and algorithms.', kaUrl:'https://www.khanacademy.org/math/arithmetic/fraction-arithmetic', ixlUrl:'https://www.ixl.com/math/grade-6/divide-fractions', ytSearch:'khan academy 6th grade dividing fractions', phetUrl:'https://phet.colorado.edu/en/simulations/build-a-fraction' },
   { id:'decimal-ops', title:'Decimal Operations', icon:'💯', cc:'6.NS.2-3', desc:'Add, subtract, multiply, and divide multi-digit decimals.', kaUrl:'https://www.khanacademy.org/math/arithmetic/arith-decimals', ixlUrl:'https://www.ixl.com/math/grade-6/add-and-subtract-decimals', ytSearch:'khan academy 6th grade decimal operations', phetUrl:'https://phet.colorado.edu/en/simulations/area-model-decimals' },
   { id:'unit-conversions', title:'Unit Conversions (KHDUdcm)', icon:'📐', cc:'6.RP + Science', desc:'Convert between metric units using the KHDUdcm staircase — King Henry Doesn\'t Usually drink chocolate milk.', kaUrl:'https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-ratios-prop', ixlUrl:'https://www.ixl.com/math/grade-6/convert-between-metric-units', ytSearch:'metric unit conversions KHDUdcm kilo hecto deca unit deci centi milli 6th grade' },
+  { id:'density', title:'Density (Mass / Volume)', icon:'⚖️', cc:'6.RP + Earth Science', desc:'Density tells you how much matter is packed into a volume. Use the formula D = m / V to identify minerals, predict whether objects float or sink, and compare layers of the Earth.', kaUrl:'https://www.khanacademy.org/science/middle-school-physics/x11e4e3a3a8b76ade:matter-and-its-interactions/x11e4e3a3a8b76ade:density', ixlUrl:'https://www.ixl.com/science/grade-6/calculate-density', ytSearch:'density mass volume formula 6th grade earth science minerals floats sinks' },
   { id:'scientific-notation', title:'Scientific Notation', icon:'🔬', cc:'6.EE + Science Preview', desc:'Write very large numbers in scientific notation using powers of 10, and understand why scientists need this tool.', kaUrl:'https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-expressions-and-variables', ixlUrl:'https://www.ixl.com/math/grade-6/convert-between-standard-and-scientific-notation', ytSearch:'khan academy scientific notation powers of 10 6th grade introduction' },
   { id:'ratios-rates', title:'Ratios & Rates', icon:'⚖️', cc:'6.RP.1-3', desc:'Understand ratios, unit rates, and solve proportional problems.', kaUrl:'https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-ratios-prop', ixlUrl:'https://www.ixl.com/math/grade-6/unit-rates', ytSearch:'khan academy 6th grade ratios rates proportions', phetUrl:'https://phet.colorado.edu/en/simulations/unit-rates' },
   { id:'percents', title:'Percents', icon:'%', cc:'6.RP.3c', desc:'Find percentages of numbers and apply to real-world contexts.', kaUrl:'https://www.khanacademy.org/math/pre-algebra/pre-algebra-ratios-rates', ixlUrl:'https://www.ixl.com/math/grade-6/percents-of-numbers', ytSearch:'khan academy 6th grade percents', phetUrl:'https://phet.colorado.edu/en/simulations/unit-rates' },
+  { id:'percent-error', title:'Percent Error', icon:'⚠️', cc:'6.RP + Science', desc:'When you measure something, your answer is rarely exactly right. Percent error tells you how close your measurement is to the true value. Use the formula |measured − actual| ÷ actual × 100% to evaluate the accuracy of an experiment.', kaUrl:'https://www.khanacademy.org/math/pre-algebra/pre-algebra-ratios-rates', ixlUrl:'https://www.ixl.com/math/grade-6/percents-of-numbers', ytSearch:'percent error formula 6th grade science measurement' },
   { id:'integers', title:'Integers & Number System', icon:'➕➖', cc:'6.NS.5-6', desc:'Understand positive and negative integers and their real-world meaning.', kaUrl:'https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-negative-number-topic', ixlUrl:'https://www.ixl.com/math/grade-6/integers-on-number-lines', ytSearch:'khan academy 6th grade integers negative numbers', phetUrl:'https://phet.colorado.edu/en/simulations/number-line-integers' },
   { id:'coordinate-plane', title:'Coordinate Plane', icon:'📍', cc:'6.NS.6-8', desc:'Plot and find distances on a four-quadrant coordinate plane.', kaUrl:'https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-negative-number-topic', ixlUrl:'https://www.ixl.com/math/grade-6/coordinate-plane-review', ytSearch:'khan academy 6th grade coordinate plane quadrants', phetUrl:'https://phet.colorado.edu/en/simulations/graphing-lines' },
   { id:'alg-expressions', title:'Algebraic Expressions', icon:'🔣', cc:'6.EE.1-4', desc:'Write, evaluate, and simplify algebraic expressions with variables.', kaUrl:'https://www.khanacademy.org/math/cc-sixth-grade-math/cc-6th-expressions-and-variables', ixlUrl:'https://www.ixl.com/math/grade-6/write-variable-expressions', ytSearch:'khan academy 6th grade algebraic expressions variables', phetUrl:'https://phet.colorado.edu/en/simulations/expression-exchange' },
@@ -271,9 +285,11 @@ const LESSONS = {
   'fraction-division': `<h2>Dividing Fractions</h2><p>Dividing by a fraction means multiplying by its <strong>reciprocal</strong>.</p><h3>The Reciprocal</h3><p>The reciprocal of a fraction flips the numerator and denominator. For example:</p><ul><li>Reciprocal of 3/4 is 4/3</li><li>Reciprocal of 5 is 1/5</li></ul><h3>Division Rule</h3><p>a ÷ b/c = a × c/b</p><h3>Steps</h3><ol><li>Keep the first fraction</li><li>Change ÷ to ×</li><li>Flip the second fraction</li><li>Multiply and simplify</li></ol><h3>Example</h3><p>3/4 ÷ 2/5 = 3/4 × 5/2 = 15/8 = 1 7/8</p><h3>Word Problems</h3><p>If you have 3/4 gallon of juice and each serving is 1/6 gallon, how many servings? Answer: 3/4 ÷ 1/6 = 3/4 × 6/1 = 18/4 = 4.5 servings</p>`,
   'decimal-ops': `<h2>Decimal Operations</h2><p>Working with decimals is essential for money, measurements, and science.</p><h3>Adding & Subtracting Decimals</h3><ul><li>Align decimal points</li><li>Add or subtract as with whole numbers</li><li>Keep decimal in same position</li></ul><p><strong>Example:</strong> 12.45 + 8.37 = 20.82</p><h3>Multiplying Decimals</h3><ul><li>Multiply as whole numbers (ignore decimals)</li><li>Count total decimal places in both numbers</li><li>Place decimal in answer</li></ul><p><strong>Example:</strong> 2.5 × 3.2 = 8.00</p><h3>Dividing Decimals</h3><ul><li>Move decimal in divisor to right to make whole</li><li>Move decimal in dividend same number of places</li><li>Divide as usual</li></ul><p><strong>Example:</strong> 7.5 ÷ 2.5 = 75 ÷ 25 = 3</p><h3>Applications</h3><p>Decimals appear in shopping (prices), science (measurements), and sports (times).</p>`,
   'scientific-notation': `<h2>Scientific Notation</h2><p>Some numbers in science are so large they are nearly impossible to write in full. The distance from Earth to the Sun is 150,000,000,000 meters. Scientific notation gives us a shortcut using powers of 10.</p><h3>Connection to KHDUdcm</h3><p>You already know that each step on the KHDUdcm chart multiplies or divides by 10. Scientific notation extends that same idea — every time you multiply by 10, you move the decimal one place right and increase the exponent by 1.</p><ul><li>10 = 10¹</li><li>100 = 10²</li><li>1,000 = 10³</li><li>10,000 = 10⁴</li><li>1,000,000 = 10⁶</li></ul><h3>The Format</h3><p>Scientific notation always looks like: <strong>a × 10ⁿ</strong></p><ul><li><strong>a</strong> = a number from 1 to 9.999… (always one digit before the decimal)</li><li><strong>10ⁿ</strong> = the power of 10 that shows how large the number is</li></ul><h3>Converting a Large Number to Scientific Notation</h3><ol><li>Move the decimal point left until only one digit is in front of it</li><li>Count how many places you moved — that is your exponent</li></ol><p><strong>Example:</strong> 4,500,000 → move decimal 6 places left → <strong>4.5 × 10⁶</strong></p><p><strong>Example:</strong> 93,000,000 miles (Earth–Sun distance) → <strong>9.3 × 10⁷</strong> miles</p><h3>Converting from Scientific Notation to Standard Form</h3><p>Reverse the process — move the decimal right by the exponent.</p><ul><li>3.2 × 10⁴ → move decimal 4 right → <strong>32,000</strong></li><li>7.1 × 10⁶ → move decimal 6 right → <strong>7,100,000</strong></li></ul><h3>Why Scientists Use It</h3><table style="border-collapse:collapse;width:100%;font-size:0.93em;"><tr style="background:#1F3864;color:#fff;"><th style="padding:6px 10px;">Measurement</th><th style="padding:6px 10px;">Standard</th><th style="padding:6px 10px;">Scientific Notation</th></tr><tr style="background:#f2f2f2;"><td style="padding:6px 10px;">Earth–Moon distance</td><td style="padding:6px 10px;">384,400,000 m</td><td style="padding:6px 10px;">3.844 × 10⁸ m</td></tr><tr><td style="padding:6px 10px;">Age of Earth</td><td style="padding:6px 10px;">4,500,000,000 years</td><td style="padding:6px 10px;">4.5 × 10⁹ years</td></tr><tr style="background:#f2f2f2;"><td style="padding:6px 10px;">Mass of Earth</td><td style="padding:6px 10px;">5,970,000,000,000,000,000,000,000 kg</td><td style="padding:6px 10px;">5.97 × 10²⁴ kg</td></tr></table><h3>Comparing Numbers in Scientific Notation</h3><p>To compare, first look at the exponent — the larger the exponent, the larger the number. If exponents are equal, compare the decimal part.</p><ul><li>3.2 × 10⁵ vs 8.1 × 10⁴ → 10⁵ wins → <strong>3.2 × 10⁵ is larger</strong></li></ul>`,
-  'unit-conversions': `<h2>Unit Conversions — KHDUdcm</h2><p>Scientists measure everything — rock mass, rainfall, distances between volcanoes. To compare measurements they must be in the same unit. The <strong>KHDUdcm staircase</strong> organizes all metric prefixes in order:</p><table style="border-collapse:collapse;width:100%;font-size:0.93em;margin:10px 0;"><tr style="background:#1F3864;color:#fff;"><th style="padding:7px 10px;">K</th><th style="padding:7px 10px;">H</th><th style="padding:7px 10px;">D</th><th style="padding:7px 10px;">U</th><th style="padding:7px 10px;">d</th><th style="padding:7px 10px;">c</th><th style="padding:7px 10px;">m</th></tr><tr style="text-align:center;background:#f2f2f2;"><td style="padding:6px 10px;">Kilo</td><td style="padding:6px 10px;">Hecto</td><td style="padding:6px 10px;">Deca</td><td style="padding:6px 10px;font-weight:bold;">Unit</td><td style="padding:6px 10px;">deci</td><td style="padding:6px 10px;">centi</td><td style="padding:6px 10px;">milli</td></tr><tr style="text-align:center;"><td style="padding:6px 10px;">× 1000</td><td style="padding:6px 10px;">× 100</td><td style="padding:6px 10px;">× 10</td><td style="padding:6px 10px;font-weight:bold;">× 1</td><td style="padding:6px 10px;">× 0.1</td><td style="padding:6px 10px;">× 0.01</td><td style="padding:6px 10px;">× 0.001</td></tr></table><p><strong>Memory phrase:</strong> <em>"<strong>K</strong>ing <strong>H</strong>enry <strong>D</strong>oesn't <strong>U</strong>sually <strong>d</strong>rink <strong>c</strong>hocolate <strong>m</strong>ilk"</em></p><p>The <strong>U</strong> in the middle is your base unit — meter (m) for length, gram (g) for mass, liter (L) for volume.</p><h3>The One Rule</h3><ul><li>Moving <strong>right</strong> on the chart → multiply by 10 per step → decimal point moves right</li><li>Moving <strong>left</strong> on the chart → divide by 10 per step → decimal point moves left</li></ul><h3>Connection to Decimal Operations</h3><p>Converting units IS decimal multiplication. 2.5 km → m is just 2.5 × 1000 = 2500 — the same skill you used in decimal operations, applied to measurement.</p><h3>Examples — Length</h3><ul><li><strong>4 km → m:</strong> K to U = 3 steps right → 4 × 1000 = <strong>4000 m</strong></li><li><strong>350 cm → m:</strong> c to U = 2 steps left → 350 ÷ 100 = <strong>3.5 m</strong></li><li><strong>80 mm → cm:</strong> m to c = 1 step left → 80 ÷ 10 = <strong>8 cm</strong></li></ul><h3>Examples — Mass</h3><ul><li><strong>3 kg → g:</strong> K to U = 3 steps right → 3 × 1000 = <strong>3000 g</strong></li><li><strong>500 g → kg:</strong> U to K = 3 steps left → 500 ÷ 1000 = <strong>0.5 kg</strong></li></ul><h3>Examples — Volume</h3><ul><li><strong>2 L → mL:</strong> U to m = 3 steps right → 2 × 1000 = <strong>2000 mL</strong></li><li><strong>750 mL → L:</strong> m to U = 3 steps left → 750 ÷ 1000 = <strong>0.75 L</strong></li></ul>`,
+  'unit-conversions': `<h2>Unit Conversions — KHDUdcm</h2><p>Scientists measure everything — rock mass, rainfall, distances between volcanoes. To compare measurements they must be in the same unit. The <strong>KHDUdcm staircase</strong> organizes all metric prefixes in order:</p><table style="border-collapse:collapse;width:100%;font-size:0.93em;margin:10px 0;"><tr style="background:#1F3864;color:#fff;"><th style="padding:7px 10px;">K</th><th style="padding:7px 10px;">H</th><th style="padding:7px 10px;">D</th><th style="padding:7px 10px;">U</th><th style="padding:7px 10px;">d</th><th style="padding:7px 10px;">c</th><th style="padding:7px 10px;">m</th></tr><tr style="text-align:center;background:#f2f2f2;"><td style="padding:6px 10px;">Kilo</td><td style="padding:6px 10px;">Hecto</td><td style="padding:6px 10px;">Deca</td><td style="padding:6px 10px;font-weight:bold;">Unit</td><td style="padding:6px 10px;">deci</td><td style="padding:6px 10px;">centi</td><td style="padding:6px 10px;">milli</td></tr><tr style="text-align:center;"><td style="padding:6px 10px;">× 1000</td><td style="padding:6px 10px;">× 100</td><td style="padding:6px 10px;">× 10</td><td style="padding:6px 10px;font-weight:bold;">× 1</td><td style="padding:6px 10px;">× 0.1</td><td style="padding:6px 10px;">× 0.01</td><td style="padding:6px 10px;">× 0.001</td></tr></table><p><strong>Memory phrase:</strong> <em>"<strong>K</strong>ing <strong>H</strong>enry <strong>D</strong>oesn't <strong>U</strong>sually <strong>d</strong>rink <strong>c</strong>hocolate <strong>m</strong>ilk"</em></p><p>The <strong>U</strong> in the middle is your base unit — meter (m) for length, gram (g) for mass, liter (L) for volume.</p><h3>The One Rule</h3><ul><li>Moving <strong>right</strong> on the chart → multiply by 10 per step → decimal point moves right</li><li>Moving <strong>left</strong> on the chart → divide by 10 per step → decimal point moves left</li></ul><h3>Connection to Decimal Operations</h3><p>Converting units IS decimal multiplication. 2.5 km → m is just 2.5 × 1000 = 2500 — the same skill you used in decimal operations, applied to measurement.</p><h3>Examples — Length</h3><ul><li><strong>4 km → m:</strong> K to U = 3 steps right → 4 × 1000 = <strong>4000 m</strong></li><li><strong>350 cm → m:</strong> c to U = 2 steps left → 350 ÷ 100 = <strong>3.5 m</strong></li><li><strong>80 mm → cm:</strong> m to c = 1 step left → 80 ÷ 10 = <strong>8 cm</strong></li></ul><h3>Examples — Mass</h3><ul><li><strong>3 kg → g:</strong> K to U = 3 steps right → 3 × 1000 = <strong>3000 g</strong></li><li><strong>500 g → kg:</strong> U to K = 3 steps left → 500 ÷ 1000 = <strong>0.5 kg</strong></li></ul><h3>Examples — Volume</h3><ul><li><strong>2 L → mL:</strong> U to m = 3 steps right → 2 × 1000 = <strong>2000 mL</strong></li><li><strong>750 mL → L:</strong> m to U = 3 steps left → 750 ÷ 1000 = <strong>0.75 L</strong></li></ul><h3>The Factor-Label Method (Dimensional Analysis)</h3><p>The KHDUdcm staircase is fast for metric conversions, but science classes use a more powerful tool that also works for <em>any</em> conversion — metric to imperial, rates to rates, even chained conversions in chemistry. It is called the <strong>factor-label method</strong> (also called <em>dimensional analysis</em>).</p><h4>The big idea</h4><p>Multiply by fractions equal to <strong>1</strong> — built from a unit equality — so units <strong>cancel</strong> on the way to the answer. Anything you multiply by 1 stays the same value, so the math is always honest.</p><p style="text-align:center;padding:8px;background:#f0f4ff;border-radius:6px;"><strong>1 km = 1000 m</strong> &nbsp; → &nbsp; <strong>1 = 1000 m / 1 km</strong> &nbsp; or &nbsp; <strong>1 = 1 km / 1000 m</strong></p><h4>Step-by-step recipe</h4><ol><li>Write the starting value with its unit.</li><li>Multiply by a "1" fraction whose <em>top</em> has the unit you want, <em>bottom</em> has the unit you want to get rid of.</li><li>Cancel the matching units (cross them out diagonally).</li><li>Multiply the numbers; carry the surviving unit.</li></ol><h4>Worked example — single step</h4><p>Convert <strong>2.5 km</strong> to meters:</p><p style="font-family:monospace;background:#f9fafb;padding:10px;border-left:3px solid #2563eb;">2.5 km × (1000 m / 1 km) = 2500 m</p><p>"km" cancels (one on top, one on bottom). The "m" survives. Numbers: 2.5 × 1000 = 2500.</p><h4>Worked example — chained (rate)</h4><p>Convert <strong>72 km/h</strong> to m/s. Use TWO unit equalities at once:</p><p style="font-family:monospace;background:#f9fafb;padding:10px;border-left:3px solid #2563eb;">72 km/h × (1000 m / 1 km) × (1 h / 3600 s) = 72 × 1000 / 3600 m/s = 20 m/s</p><p>"km" cancels and "h" cancels — leaving m/s. This is exactly the same answer as ÷ 3.6, but the work shows <em>why</em>.</p><h4>Worked example — three-step (medicine)</h4><p>A child weighs <strong>30 kg</strong> and the prescription is <strong>5 mg per kg</strong>. How many <strong>grams</strong> total?</p><p style="font-family:monospace;background:#f9fafb;padding:10px;border-left:3px solid #2563eb;">30 kg × (5 mg / 1 kg) × (1 g / 1000 mg) = 150/1000 g = 0.15 g</p><p>"kg" cancels with "kg", "mg" cancels with "mg". "g" survives.</p><h4>Why this is useful in science</h4><ul><li>It works for <strong>any</strong> conversion — not just powers of ten.</li><li>It catches errors: if your units do not cancel, you set up the fraction upside-down.</li><li>It is the same method used in chemistry (mole conversions), physics (unit checks), and medicine (dose calculations).</li><li>It pairs with KHDUdcm: use the staircase for quick metric jumps, factor-label for everything else.</li></ul>`,
+  'density': `<h2>Density &mdash; Mass per Volume</h2><p><strong>Density</strong> is how much mass is packed into a given volume. Two objects can have the same volume but very different masses &mdash; the denser one has more matter crammed into the same space. Density is one of the most useful numbers in earth science: it lets you identify minerals, predict whether objects float or sink, and explain why the Earth has layers.</p><h3>The Formula</h3><p style="text-align:center;padding:10px;background:#f0f4ff;border-radius:6px;font-size:1.15em;"><strong>Density = Mass &divide; Volume</strong> &nbsp;&nbsp; or &nbsp;&nbsp; <strong>D = m / V</strong></p><ul><li><strong>Mass</strong> &mdash; how much stuff there is &mdash; measured in grams (g) or kilograms (kg).</li><li><strong>Volume</strong> &mdash; how much space it takes up &mdash; measured in cm&sup3; or mL (<em>1 cm&sup3; = 1 mL</em>).</li><li><strong>Density</strong> &mdash; comes out in g/cm&sup3; or g/mL.</li></ul><h3>Worked Examples</h3><p><strong>Example 1.</strong> A rock has mass 60 g and volume 20 cm&sup3;.</p><p style="font-family:monospace;padding:8px;background:#f9fafb;border-left:3px solid #2563eb;">D = 60 g &divide; 20 cm&sup3; = 3 g/cm&sup3;</p><p><strong>Example 2.</strong> A 50-mL block of pure water. Water&apos;s mass is 50 g.</p><p style="font-family:monospace;padding:8px;background:#f9fafb;border-left:3px solid #2563eb;">D = 50 g &divide; 50 mL = 1 g/mL  &nbsp;(this is why water density is the reference, 1.00 g/mL)</p><h3>Floats or Sinks?</h3><p><strong>If an object&apos;s density is less than 1 g/mL, it floats in water. If greater than 1 g/mL, it sinks.</strong></p><table style="border-collapse:collapse;width:100%;font-size:0.93em;margin:10px 0;"><tr style="background:#1F3864;color:#fff;"><th style="padding:7px 10px;">Material</th><th style="padding:7px 10px;">Density (g/cm&sup3;)</th><th style="padding:7px 10px;">In water?</th></tr><tr style="background:#f2f2f2;"><td style="padding:6px 10px;">Cork</td><td style="padding:6px 10px;">0.24</td><td style="padding:6px 10px;">Floats</td></tr><tr><td style="padding:6px 10px;">Ice</td><td style="padding:6px 10px;">0.92</td><td style="padding:6px 10px;">Floats</td></tr><tr style="background:#f2f2f2;"><td style="padding:6px 10px;">Water</td><td style="padding:6px 10px;">1.00</td><td style="padding:6px 10px;">&mdash;</td></tr><tr><td style="padding:6px 10px;">Aluminum</td><td style="padding:6px 10px;">2.70</td><td style="padding:6px 10px;">Sinks</td></tr><tr style="background:#f2f2f2;"><td style="padding:6px 10px;">Iron</td><td style="padding:6px 10px;">7.87</td><td style="padding:6px 10px;">Sinks</td></tr><tr><td style="padding:6px 10px;">Lead</td><td style="padding:6px 10px;">11.34</td><td style="padding:6px 10px;">Sinks</td></tr><tr style="background:#f2f2f2;"><td style="padding:6px 10px;">Gold</td><td style="padding:6px 10px;">19.30</td><td style="padding:6px 10px;">Sinks fast</td></tr></table><h3>Identifying Minerals by Density</h3><p>Earth-science classes use density to <em>identify</em> unknown mineral samples. Quartz (2.65), feldspar (2.56), mica (2.8), pyrite (5.0), galena (7.5). Measure mass with a balance, find volume by water displacement, divide &mdash; the density matches one mineral on the chart.</p><p><em>Example.</em> A shiny yellow sample has mass 50 g. In a graduated cylinder, water rises from 20 mL to 30 mL when the sample is added. Volume = 10 mL. Density = 50 / 10 = 5 g/cm&sup3;. That&apos;s pyrite ("fool&apos;s gold"), not gold (which is 19.3).</p><h3>Layers of the Earth</h3><p>Earth&apos;s layers are arranged by density &mdash; densest on the inside.</p><ul><li>Inner core (solid iron + nickel): about 13 g/cm&sup3;</li><li>Outer core (liquid iron): about 11 g/cm&sup3;</li><li>Mantle (silicate rock): about 4.5 g/cm&sup3;</li><li>Continental crust (granite): about 2.7 g/cm&sup3;</li><li>Oceanic crust (basalt): about 3.0 g/cm&sup3;</li></ul><p>Less-dense oceanic crust floats on the denser mantle &mdash; that&apos;s why plates can move. Hot rock is less dense than cold rock, which is why mantle convection works.</p><h3>Solving for Mass or Volume</h3><p>Rearrange the formula when you know two of the three values:</p><ul><li><strong>m = D &times; V</strong> &mdash; given a density and a volume, find the mass.</li><li><strong>V = m &divide; D</strong> &mdash; given a mass and a density, find the volume.</li></ul><p><em>Example.</em> What is the mass of 100 cm&sup3; of aluminum (D = 2.70)? m = 2.70 &times; 100 = 270 g.</p>`,
   'ratios-rates': `<h2>Ratios & Rates</h2><p>A <strong>ratio</strong> compares two quantities. A <strong>rate</strong> compares quantities with different units.</p><h3>Ratios</h3><ul><li>Can be written as 3:5, 3 to 5, or 3/5</li><li>Must be simplified like fractions</li><li>Are used to compare quantities</li></ul><p><strong>Example:</strong> In a class of 12 boys and 8 girls, the ratio is 12:8 = 3:2</p><h3>Unit Rates</h3><p>A unit rate has a denominator of 1. It tells you "how much per 1"</p><ul><li>60 miles in 2 hours → 30 miles per hour</li><li>$15 for 3 books → $5 per book</li></ul><h3>Solving Proportions</h3><p>If ratios are equal, we can solve for missing values using cross-multiplication:</p><p>3/5 = x/20 → 3 × 20 = 5 × x → x = 12</p><h3>Real-World Uses</h3><p>Scale models use ratios. If a model car is 1:24 scale and is 5 inches long, the real car is 120 inches (10 feet) long.</p>`,
   'percents': `<h2>Percents</h2><p>A <strong>percent</strong> means "per hundred" and is written with the % symbol.</p><h3>Understanding Percents</h3><ul><li>50% = 50/100 = 0.5 = one-half</li><li>25% = 25/100 = 0.25 = one-quarter</li><li>100% = the whole amount</li></ul><h3>Finding a Percent of a Number</h3><p>To find 20% of 50:</p><ul><li>Method 1: 20/100 × 50 = 10</li><li>Method 2: 0.20 × 50 = 10</li></ul><h3>Common Percents</h3><ul><li>10% - move decimal left one place</li><li>50% - divide by 2</li><li>25% - divide by 4</li></ul><h3>Real-World Contexts</h3><p>Percents appear in:</p><ul><li>Discounts: 30% off means pay 70%</li><li>Tips: 15-20% of bill</li><li>Taxes: vary by location</li><li>Test scores: 85% correct</li></ul>`,
+  'percent-error': `<h2>Percent Error &mdash; How Close Is Your Measurement?</h2><p>When you measure something &mdash; the length of a desk, the mass of a rock, the time for a pendulum to swing &mdash; your answer is almost never exactly right. Maybe the ruler is a little off, or your hand wobbled, or the scale rounded. <strong>Percent error</strong> is the math tool scientists and engineers use to say <em>how close</em> a measurement is to the true (accepted) value.</p><h3>The Formula</h3><p style="text-align:center;padding:10px;background:#f0f4ff;border-radius:8px;font-size:1.05em;"><strong>Percent Error = |measured &minus; actual| &divide; actual &times; 100%</strong></p><ul><li><strong>measured</strong> = the value YOU got (your experiment)</li><li><strong>actual</strong> = the true or accepted value (from a textbook, manufacturer, or careful measurement)</li><li>The vertical bars | | mean <strong>absolute value</strong> &mdash; always make the answer positive. Whether you measured too high or too low, error is a positive number.</li></ul><h3>Worked Example 1 &mdash; Measuring a Pencil</h3><p>You measure a pencil with a ruler and get 14 cm. The actual length, measured carefully, is 15 cm.</p><p style="font-family:monospace;background:#f9fafb;padding:10px;border-left:3px solid #2563eb;">|14 &minus; 15| &divide; 15 &times; 100%<br>= 1 &divide; 15 &times; 100%<br>= 0.0667 &times; 100%<br>= <strong>6.67%</strong></p><p>Your measurement was off by about 6.67%. That is pretty good for a 6th grade ruler reading.</p><h3>Worked Example 2 &mdash; Weighing Flour</h3><p>A recipe calls for 250 g of flour. You scoop out flour and weigh it: the scale reads 240 g. What is your percent error?</p><p style="font-family:monospace;background:#f9fafb;padding:10px;border-left:3px solid #2563eb;">|240 &minus; 250| &divide; 250 &times; 100%<br>= 10 &divide; 250 &times; 100%<br>= 0.04 &times; 100% = <strong>4%</strong></p><h3>Worked Example 3 &mdash; A Class Pendulum</h3><p>The accepted period of a 1-meter pendulum is 2.0 seconds. Your group times it and gets 2.2 seconds.</p><p style="font-family:monospace;background:#f9fafb;padding:10px;border-left:3px solid #2563eb;">|2.2 &minus; 2.0| &divide; 2.0 &times; 100%<br>= 0.2 &divide; 2.0 &times; 100% = <strong>10%</strong></p><h3>What Counts as a &ldquo;Good&rdquo; Percent Error?</h3><table style="border-collapse:collapse;width:100%;font-size:0.95em;margin:10px 0;"><tr style="background:#1F3864;color:#fff;"><th style="padding:7px 10px;">% Error</th><th style="padding:7px 10px;">What it means in the lab</th></tr><tr style="background:#f2f2f2;"><td style="padding:6px 10px;">Under 5%</td><td style="padding:6px 10px;">Excellent &mdash; very accurate</td></tr><tr><td style="padding:6px 10px;">5&ndash;10%</td><td style="padding:6px 10px;">Good &mdash; acceptable for most middle-school labs</td></tr><tr style="background:#f2f2f2;"><td style="padding:6px 10px;">10&ndash;20%</td><td style="padding:6px 10px;">Fair &mdash; check tools and procedure</td></tr><tr><td style="padding:6px 10px;">Over 20%</td><td style="padding:6px 10px;">Poor &mdash; something likely went wrong; repeat the experiment</td></tr></table><h3>Why It Matters</h3><ul><li><strong>Cooking:</strong> 4% off on flour might still bake fine. 25% off ruins the recipe.</li><li><strong>Medicine:</strong> A 5% dosing error might be safe. A 50% error could be dangerous.</li><li><strong>Engineering:</strong> A bridge measurement off by 10% would be catastrophic.</li><li><strong>Sports:</strong> Olympic times are measured to the thousandth of a second &mdash; the percent error of the timing equipment must be tiny.</li></ul><h3>Quick Recipe</h3><ol><li>Subtract: <em>measured</em> &minus; <em>actual</em>.</li><li>Take the absolute value (drop the negative sign if any).</li><li>Divide by <em>actual</em>.</li><li>Multiply by 100 to convert to a percent.</li></ol>`,
   'integers': `<h2>Integers & the Number System</h2><p><strong>Integers</strong> include positive numbers, negative numbers, and zero: ..., -3, -2, -1, 0, 1, 2, 3, ...</p><h3>Understanding Negatives</h3><p>Negative numbers represent:</p><ul><li>Temperatures below zero</li><li>Depths below sea level</li><li>Debts or withdrawals</li><li>Movement in opposite directions</li></ul><h3>Number Line</h3><p>Numbers increase to the right, decrease to the left. The distance from zero is called <strong>absolute value</strong>, written |−5| = 5.</p><h3>Ordering Integers</h3><ul><li>−10 < −5 (more negative is smaller)</li><li>−3 < 2 (negatives are less than positives)</li><li>0 is greater than all negative numbers</li></ul><h3>Adding & Subtracting Integers</h3><ul><li>Same signs: add, keep sign</li><li>Different signs: subtract, keep sign of larger</li><li>Subtracting means adding the opposite</li></ul><p><strong>Examples:</strong> 5 + 3 = 8, −5 − 3 = −8, 5 − (−3) = 8</p>`,
   'coordinate-plane': `<h2>The Coordinate Plane</h2><p>A coordinate plane is formed by two perpendicular number lines: the x-axis (horizontal) and y-axis (vertical).</p><h3>Quadrants</h3><ul><li>Quadrant I: (+, +) - upper right</li><li>Quadrant II: (−, +) - upper left</li><li>Quadrant III: (−, −) - lower left</li><li>Quadrant IV: (+, −) - lower right</li></ul><h3>Ordered Pairs</h3><p>A point is written as (x, y):</p><ul><li>First number: x-coordinate (left/right)</li><li>Second number: y-coordinate (up/down)</li></ul><p><strong>Example:</strong> (3, 4) means 3 right, 4 up from origin</p><h3>Finding Distance</h3><p>Distance between (0, 0) and (3, 4):</p><ul><li>Using Pythagorean theorem later</li><li>Or count units on graph</li></ul><h3>Reflections & Transformations</h3><p>Reflecting (3, 4) across y-axis gives (−3, 4). Reflecting across x-axis gives (3, −4).</p>`,
   'alg-expressions': `<h2>Algebraic Expressions</h2><p>An <strong>algebraic expression</strong> uses variables, numbers, and operations to represent quantities.</p><h3>Writing Expressions</h3><p>Translate words to symbols:</p><ul><li>Sum of x and 5: x + 5</li><li>Product of 3 and y: 3y</li><li>5 less than z: z − 5</li><li>Quotient of a and 2: a/2</li></ul><h3>Evaluating Expressions</h3><p>Substitute values and calculate:</p><p>If x = 3, then 2x + 5 = 2(3) + 5 = 6 + 5 = 11</p><h3>Simplifying Expressions</h3><p><strong>Combining like terms:</strong> Terms with same variable can be added/subtracted</p><p>3x + 2y + 5x − y = 8x + y</p><h3>Order of Operations (PEMDAS)</h3><ol><li>Parentheses</li><li>Exponents</li><li>Multiplication & Division (left to right)</li><li>Addition & Subtraction (left to right)</li></ol>`,
@@ -354,6 +370,21 @@ const WORKSHEETS = {
     { q: 'Rock sample: 850 g → kg:', answer: '0.85 kg' },
     { q: 'Rainfall: 45 mm → cm:', answer: '4.5 cm' }
   ],
+  'density': [
+    { q: 'Mass 60 g, volume 20 cm³. Density?', answer: '3 g/cm³' },
+    { q: 'Mass 80 g, volume 10 cm³. Density?', answer: '8 g/cm³' },
+    { q: 'Mass 25 g, volume 100 mL. Density?', answer: '0.25 g/mL (floats)' },
+    { q: 'Mass 200 g, volume 25 cm³. Density? Floats or sinks?', answer: '8 g/cm³, sinks' },
+    { q: 'Sample 50 g, water rises 20→30 mL. Volume? Density?', answer: '10 mL, 5 g/cm³ (pyrite)' },
+    { q: 'Density of water?', answer: '1.00 g/mL' },
+    { q: 'Aluminum density 2.70. Mass of 100 cm³?', answer: '270 g' },
+    { q: 'Gold density 19.30. Mass of 5 cm³?', answer: '96.5 g' },
+    { q: 'Iron density 7.87. Volume of 78.7 g?', answer: '10 cm³' },
+    { q: 'Mass of mercury (D = 13.5) in 20 mL beaker?', answer: '270 g' },
+    { q: 'Object D = 0.85 g/mL. Floats or sinks?', answer: 'Floats' },
+    { q: 'Object D = 2.5 g/mL. Floats or sinks?', answer: 'Sinks' },
+    { q: 'Mantle ~4.5 g/cm³, crust ~2.7. Which floats?', answer: 'Crust floats on mantle' }
+  ],
   'ratios-rates': [
     { q: 'If you drive 120 miles in 2 hours, what is the unit rate?', answer: '60 miles per hour' },
     { q: 'Simplify ratio 6:9', answer: '2:3' },
@@ -377,6 +408,18 @@ const WORKSHEETS = {
     { q: 'Find 5% of 120', answer: '6' },
     { q: '50 is what percent of 200?', answer: '25%' },
     { q: 'If 60% of students passed, and 18 passed, how many total?', answer: '30 students' }
+  ],
+  'percent-error': [
+    { q: 'Measured 14 cm, actual 15 cm. Percent error = ?', answer: '6.67%' },
+    { q: 'Measured 10 g, actual 12 g. Percent error = ?', answer: '16.67%' },
+    { q: 'Measured 240 mL, actual 250 mL. Percent error = ?', answer: '4%' },
+    { q: 'Measured 9.5 s, actual 10 s. Percent error = ?', answer: '5%' },
+    { q: 'Measured 200 m, actual 192 m. Percent error = ?', answer: '4.17%' },
+    { q: 'Measured 50 °C, actual 48 °C. Percent error = ?', answer: '4.17%' },
+    { q: 'Measured 3.0 kg, actual 3.5 kg. Percent error = ?', answer: '14.29%' },
+    { q: 'Measured 75 cm, actual 80 cm. Percent error = ?', answer: '6.25%' },
+    { q: 'Measured 2.2 s, actual 2.0 s for a pendulum. Percent error = ?', answer: '10%' },
+    { q: 'Is 4% percent error acceptable for a middle-school lab? (yes/no)', answer: 'yes' }
   ],
   'integers': [
     { q: 'Order from least to greatest: 3, −5, 0, −2, 4', answer: '−5, −2, 0, 3, 4' },
@@ -606,6 +649,18 @@ const QUIZZES = {
     { q: 'Memory: K H D U d c m stands for King Henry...', opts: ['Does Usually...', 'Doesn\'t Usually drink...', 'Drinks Usually...', 'Did Usually...'], ans: 1 },
     { q: 'Base unit for mass is:', opts: ['kilogram', 'gram', 'milligram', 'liter'], ans: 1 }
   ],
+  'density': [
+    { q: 'Density formula?', opts: ['m × V', 'm / V', 'V / m', 'm + V'], ans: 1 },
+    { q: 'Mass 90 g, V = 30 cm³. Density?', opts: ['2 g/cm³', '3 g/cm³', '6 g/cm³', '30 g/cm³'], ans: 1 },
+    { q: 'Density of pure water?', opts: ['0.5 g/mL', '1.0 g/mL', '1.5 g/mL', '10 g/mL'], ans: 1 },
+    { q: 'Object D = 0.7 g/mL in water:', opts: ['Sinks', 'Floats', 'Dissolves', 'Stays in middle'], ans: 1 },
+    { q: 'Object D = 4.2 g/mL in water:', opts: ['Sinks', 'Floats', 'Dissolves', 'Stays in middle'], ans: 0 },
+    { q: 'Aluminum D = 2.70. Mass of 50 cm³?', opts: ['52.7 g', '135 g', '150 g', '270 g'], ans: 1 },
+    { q: '1 cm³ equals:', opts: ['1 g', '1 mL', '1 kg', '1 L'], ans: 1 },
+    { q: 'Earth\'s densest layer is the:', opts: ['Crust', 'Mantle', 'Outer core', 'Inner core'], ans: 3 },
+    { q: 'Sample 75 g, V = 25 mL. Density?', opts: ['1 g/mL', '3 g/mL', '5 g/mL', '50 g/mL'], ans: 1 },
+    { q: 'Iron D = 7.87. Volume of 15.74 g?', opts: ['1 cm³', '2 cm³', '5 cm³', '7.87 cm³'], ans: 1 }
+  ],
   'ratios-rates': [
     { q: 'If 3 items cost $12, what is the unit price?', opts: ['$3', '$4', '$5', '$6'], ans: 1 },
     { q: 'Simplify 8:12', opts: ['2:3', '4:6', '8:12', '1:2'], ans: 1 },
@@ -619,6 +674,13 @@ const QUIZZES = {
     { q: 'What is 10% of 200?', opts: ['20', '10', '100', '50'], ans: 0 },
     { q: 'If 25% is 10, the whole is...', opts: ['40', '50', '25', '100'], ans: 0 },
     { q: '$50 with 20% off costs...', opts: ['$30', '$40', '$35', '$45'], ans: 1 }
+  ],
+  'percent-error': [
+    { q: 'A student measures 18 cm; actual is 20 cm. Percent error = ?', answer: '10%' },
+    { q: 'Measured 95 g, actual 100 g. Percent error = ?', answer: '5%' },
+    { q: 'Which is more accurate: 8% or 12% error?', answer: '8%' },
+    { q: 'Measured 49 cm, actual 50 cm. Percent error = ?', answer: '2%' },
+    { q: 'Why use absolute value in percent error?', answer: 'errors should always be positive' }
   ],
   'integers': [
     { q: 'What is the opposite of -5?', opts: ['-5', '5', '0', '10'], ans: 1 },
@@ -814,6 +876,8 @@ function showLesson(unitId) {
   document.getElementById('lesson-screen').classList.add('active');
   const unit = UNITS.find(u => u.id === unitId);
   document.getElementById('lesson-content').innerHTML = LESSONS[unitId] + resourceCardHTML(unit);
+  const rwBtn = document.getElementById('realworld-btn');
+  if (rwBtn) rwBtn.style.display = (REALWORLD_6 && REALWORLD_6[unitId]) ? '' : 'none';
   renderSidebar();
   setTopbar();
 }
@@ -956,6 +1020,25 @@ In this project you will build a metric conversion tool for real Earth science m
       `Converting 2.5 km to meters gives 2500 m. How does this connect to what you learned about multiplying decimals by powers of 10?`,
       `A mineral sample weighs 1,500 mg. Is it heavier or lighter than 1 gram? Convert to grams to check.`,
       `Why does Mt. Waiʻaleʻale (one of Earth's wettest places) on Kauaʻi matter to Hawaiʻi? Convert its annual rainfall from mm to meters and discuss.`
+    ]
+  },
+  'density': {
+    title: `Mineral Density Identification Lab`,
+    science: `🔬 Earth Science — Identifying Unknown Minerals by Density`,
+    mission: `Geologists use density to identify unknown mineral samples in the field. Build a Sheets workbook that calculates density, classifies float-or-sink, and matches samples to a known density table.`,
+    steps: [
+      `Create a workbook called <em>Mineral_Density_Lab</em>.`,
+      `<strong>Sheet 1 — Reference Table:</strong> Columns: Mineral | Density (g/cm³). Enter: Quartz 2.65, Feldspar 2.56, Mica 2.80, Calcite 2.71, Pyrite 5.00, Galena 7.50, Hematite 5.30, Gold 19.30, Aluminum 2.70, Iron 7.87.`,
+      `<strong>Sheet 2 — Density Calculator:</strong> Columns: Sample # | Mass (g) | Initial water (mL) | Final water (mL) | Volume (mL) <code>=D2-C2</code> | Density (g/mL) <code>=B2/E2</code> | Float/Sink <code>=IF(F2&lt;1,"Floats","Sinks")</code>.`,
+      `Enter 6 sample rows: Sample A 80 g (20→50 mL), Sample B 60 g (20→40 mL), Sample C 27 g (50→60 mL), Sample D 39.65 g (10→15 mL), Sample E 75 g (50→60 mL), Sample F 96.5 g (10→15 mL).`,
+      `<strong>Sheet 3 — Identification:</strong> For each sample, write the closest mineral match from the reference. Use <code>=VLOOKUP</code> for bonus points, or do it manually.`,
+      `<strong>Sheet 4 — Earth Layers Bar Chart:</strong> Plot crust (2.7), mantle (4.5), outer core (11), inner core (13) as a bar chart. Title: “Earth&apos;s Density Increases with Depth.”`
+    ],
+    deliverable: `Submit your 4-sheet workbook with all calculated densities, identifications, and the Earth-layers chart. Write: <em>Sample ___ has the highest density and is most likely ___. Sample ___ would float in water because ___.</em>`,
+    reflect: [
+      `If two samples have the same mass but different volumes, which one is denser? Explain why.`,
+      `Why does oceanic crust (3.0 g/cm³) sink BENEATH continental crust (2.7 g/cm³) at subduction zones, even though both float on the mantle?`,
+      `A student measures a sample’s density as 1.05 g/cm³. Should they trust the answer if water beads up on the sample (so air bubbles cling to it)? Why or why not?`
     ]
   },
   'decimal-ops': {
@@ -1142,6 +1225,135 @@ In this project you will build a metric conversion tool for real Earth science m
   },
 };
 
+  const REALWORLD_6 = {
+    'factors-multiples': {
+      title: `Hawaiian Kapa Pattern Designer`,
+      banner: `🎨 Real-World Math — Pattern Design (LCM & GCD)`,
+      mission: `Hawaiian kapa cloth and quilt designs use repeating motifs that line up at predictable intervals. Use LCM and GCD to design a two-motif pattern that "syncs" perfectly across a quilt.`,
+      steps: [
+      `Pick two motifs (a flower and a wave, for example) with two different repeat periods. Try motif A repeating every 4 squares and motif B repeating every 6 squares.`,
+      `Compute the LCM of the two periods. This tells you how many squares the full pattern needs before both motifs align again.`,
+      `Compute the GCD of the two periods to find the smallest "tile" both motifs share.`,
+      `Draw a 12-square strip on graph paper. Color motif A every 4 squares and motif B every 6 squares. Highlight the squares where they overlap.`,
+      `Now design a 24x24 quilt using YOUR own pair of periods. Pick two motifs. Calculate the LCM. Use the LCM to choose your block size.`,
+      `In the corner of your quilt, write: "Motif A repeats every ___. Motif B repeats every ___. They align every ___ squares (the LCM)."`
+      ],
+      deliverable: `Submit your hand-colored quilt design plus the LCM/GCD calculation. Bonus: photograph a real Hawaiian quilt online and identify its repeat period.`,
+      reflect: [
+      `If motif A repeats every 4 squares and motif B every 5 squares, when do they first align? Why is this answer the LCM and not just A times B?`,
+      `Why would a quilt designer want to know the LCM before cutting fabric?`
+      ]
+    },
+    'fraction-division': {
+      title: `Lūʻau Recipe Scaler`,
+      banner: `🎨 Real-World Math — Cooking & Fraction Division`,
+      mission: `A friend is hosting a lūʻau and asks you to scale a poke recipe that serves 8 to feed 60 people. Practice multiplying and dividing fractions and mixed numbers as you compute every ingredient.`,
+      steps: [
+      `Find or create a poke (or any local-favorite) recipe that serves 8 people. List 6 to 8 ingredients with fractional amounts — for example 1 1/4 lb tuna, 1/3 cup soy sauce, 1/2 tsp Hawaiian salt.`,
+      `Compute the scale factor: 60 / 8 = 7 1/2. Every ingredient gets multiplied by 7 1/2.`,
+      `For each ingredient, write out the multiplication: original quantity x 7 1/2. Convert mixed numbers to improper fractions before multiplying. Show your full work.`,
+      `Convert your final answers back to mixed numbers in the most useful unit. (33 tsp → 11 Tbsp; 5/4 cup → 1 1/4 cup.)`,
+      `Now reverse the process: a different friend asks for a scale-down to 4 people. Divide every original amount by 2 (because 4 / 8 = 1/2).`,
+      `Build a clean recipe card showing both versions side by side: Original (8), Big party (60), Solo (4).`
+      ],
+      deliverable: `Submit your three-column recipe card with all multiplication and division work shown. On the back, write a short note: "Which step was the hardest fraction calculation? Why?"`,
+      reflect: [
+      `Why does scaling a recipe for 60 people involve BOTH multiplication and division?`,
+      `A recipe says "1/4 cup oil per serving." For 7 1/2 servings, you need 1/4 x 7 1/2 cups. Show this two ways: as fractions and as decimals. Which is easier to measure in the kitchen?`
+      ]
+    },
+    'ratios-rates': {
+      title: `Lemonade Stand Profit Lab`,
+      banner: `🎨 Real-World Math — Entrepreneurship & Unit Rates`,
+      mission: `Run a virtual lemonade stand. Use ratios, unit rates, and basic profit math to figure out how much to charge per cup, how many lemons to buy, and whether you actually made a profit.`,
+      steps: [
+      `Set up costs: a 6 lb bag of lemons costs $9, sugar 5 lb for $5, paper cups (50 ct) for $4. Compute the unit rate (cost per lemon, cost per cup, cost per gram of sugar).`,
+      `Decide your recipe: 2 lemons, 1/4 cup sugar, and 12 oz water make 1 cup of lemonade. Compute the cost of ingredients per cup.`,
+      `Set a price. Try $1.50 per cup. Profit per cup = price - cost. Multiply by your sales target (50 cups) to find total profit.`,
+      `Now stress-test the model. What if lemons go up to $12 a bag? Recompute cost per cup and profit per cup.`,
+      `Build a "Sales Day" table on graph paper: hour | cups sold | revenue | running profit. Add columns for each hour from 10 AM to 4 PM. Use realistic numbers.`,
+      `At the end, compute average revenue per hour, best hour, and total profit.`
+      ],
+      deliverable: `Submit your priced recipe sheet and the Sales Day table. Write a one-paragraph "investor pitch": tell a parent why $1.50 is the right price.`,
+      reflect: [
+      `If lemons doubled in price, would you raise your price to $3.00? Why might that be a bad idea?`,
+      `What is the unit rate "cost per cup of lemonade"? Why is the unit rate more useful than the total ingredient cost?`
+      ]
+    },
+    'percents': {
+      title: `Hawaii Tax + Tip Trainer`,
+      banner: `🎨 Real-World Math — Personal Finance & Percents`,
+      mission: `Hawaii’s 4.712% General Excise Tax (Honolulu) and the 18-20% restaurant tip add up. Build a one-page calculator that takes any menu price and shows the final amount.`,
+      steps: [
+      `Pick a real Honolulu restaurant menu (online is fine). Choose 6 items with realistic prices.`,
+      `For each item, compute: subtotal | GET 4.712% | with-tax total | tip 18% on subtotal | grand total.`,
+      `Verify your work using a different method: 4.712% = 0.04712. Multiply twice (once by tax, once by tip) and add. Get the same answer? Good.`,
+      `Mental-math shortcut: round the tax to 5% (= price / 20) and the tip to 20% (= price / 5). Use these shortcuts for a quick estimate; compare to the exact calculation.`,
+      `Make a lookup table you could keep in your wallet. Rows: $5, $10, $20, $50, $100. Columns: tax (4.712%), tax-included, tip (18%), tip (20%), grand total.`,
+      `Bonus challenge: a coupon offers 15% off. Does the discount apply before or after tax? Compute both — you’ll discover discount-then-tax saves more.`
+      ],
+      deliverable: `Submit your filled-in menu page, your verification calculations, the wallet-card lookup, and the discount comparison.`,
+      reflect: [
+      `If you eat out 3 times a week, how much do you pay in tax + tip in a year (assume $20 meal each time)? Surprised?`,
+      `Why does it almost never matter whether you compute the tip on subtotal or on with-tax total?`
+      ]
+    },
+    'coordinate-plane': {
+      title: `ʻIolani Palace Treasure Map`,
+      banner: `🎨 Real-World Math — Coordinates & Game Design`,
+      mission: `Design a treasure-hunt game on the grounds of ʻIolani Palace using a coordinate-plane map. A friend should be able to follow your clues and find the treasure.`,
+      steps: [
+      `Draw a 20-by-20 coordinate plane on graph paper with both positive and negative axes. Set origin at the palace front steps.`,
+      `Mark 8 landmarks with coordinates: banyan tree, gate, fountain, etc. Label each.`,
+      `Hide a "treasure" at a secret coordinate — don’t mark it on the map you’ll give your friend.`,
+      `Write 6 clues that walk a player from the origin to the treasure using ordered pairs and directional moves — for example "Start at (0,0). Move 4 right and 3 up. You should be at the banyan tree (4,3)."`,
+      `Each clue should END at a marked landmark so the player can self-check. The final clue lands on the treasure.`,
+      `Bonus: include a clue with NEGATIVE coordinates to test the player’s comfort with all four quadrants.`
+      ],
+      deliverable: `Submit (1) the labeled landmark map and (2) the clue card with the secret coordinate sealed in an envelope. Trade with a classmate — did they find the treasure?`,
+      reflect: [
+      `Why must the order in (x, y) matter? What goes wrong if a clue says "(3, 4)" and the friend reads it as "(4, 3)"?`,
+      `You write a clue "Move 5 left and 2 down from (1, 3)." Where do you end up? Show the algebra.`
+      ]
+    },
+    'volume': {
+      title: `Backyard Aquaponics Tank Designer`,
+      banner: `🎨 Real-World Math — Sustainable Farming`,
+      mission: `Aquaponics combines fish and plants. The fish tank and the grow bed must have a roughly 1:1 volume ratio. Design a working setup for your backyard.`,
+      steps: [
+      `Choose a fish-tank shape. A rectangular prism 4 ft x 2 ft x 2 ft holds 16 ft³ of water. Convert to gallons (1 ft³ ≈ 7.48 gal).`,
+      `Design a grow bed with the SAME volume. It can be a different shape — say 6 ft x 2 ft x ?? ft. Solve for the missing height to match volume.`,
+      `How many fish? Tilapia need about 5 gallons each. Compute fish capacity.`,
+      `How many plants? Each plant needs 1 ft² of grow-bed surface. Compute plant capacity.`,
+      `Build a labeled diagram with: tank dimensions and volume, grow-bed dimensions and volume, fish count, plant count, and water-pump rate (1 turnover per hour).`,
+      `Bonus: scale up. What dimensions for a tank that holds 100 fish? Solve for the volume first, then for length-width-height.`
+      ],
+      deliverable: `Submit your dimensioned diagram of the tank and grow bed, with all volume calculations shown, plus the fish and plant counts.`,
+      reflect: [
+      `Why does the system need EQUAL volume in tank and grow bed? Think about water flow.`,
+      `If you double every dimension of the tank, what happens to the volume? Why does the volume go up by a FACTOR of 8 — not 2?`
+      ]
+    },
+    'statistics-data': {
+      title: `Backpack Weight Survey`,
+      banner: `🎨 Real-World Math — Personal Data Collection`,
+      mission: `Doctors recommend kids carry no more than 10% of body weight in their backpack. Conduct a real survey, organize the data, and discover whether your class follows the rule.`,
+      steps: [
+      `With permission, weigh 12 to 20 classmates and their backpacks. Record body weight (lb), backpack weight (lb), and grade level.`,
+      `Compute each student’s "backpack ratio" — backpack weight divided by body weight, as a percent.`,
+      `Find the mean, median, mode, and range of the ratios.`,
+      `Make a dot plot or bar chart showing every student’s ratio. Mark the 10% safety line.`,
+      `Count: how many students are above 10%? Express as a fraction and a percent.`,
+      `Compare boys vs. girls (or by grade level). Are the means significantly different?`
+      ],
+      deliverable: `Submit your data table, your statistics summary, and your dot plot. Write a one-paragraph recommendation: "Should our school worry about backpack weight? Why or why not?"`,
+      reflect: [
+      `Why is the median sometimes more useful than the mean when one student carries an extreme load?`,
+      `Your sample is 15 students. Can you trust your conclusions for the WHOLE school? Why might a sample of 15 be too small?`
+      ]
+    },
+  };
+
 const ANSWER_KEYS_6 = {
   'factors-multiples': 'Mineral_Factor_Analyzer.xlsx',
   'scientific-notation': 'Solar_System_Explorer.xlsx',
@@ -1195,6 +1407,33 @@ function showHandout() {
         ${h.deliverable}
       </div>
       ${answerKeyHtml}
+      <div class="handout-reflect">
+        <strong>💭 Reflection Questions:</strong>
+        <ol>${reflectHtml}</ol>
+      </div>
+    </div>`;
+}
+
+function showRealWorld() {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById('realworld-screen').classList.add('active');
+  const h = REALWORLD_6[currentUnit];
+  if (!h) {
+    return;
+  }
+  const stepsHtml = h.steps.map(s => `<li>${s}</li>`).join('');
+  const reflectHtml = h.reflect.map((r,i) => `<li>${r}</li>`).join('');
+  document.getElementById('realworld-content').innerHTML = `
+    <div class="handout-card">
+      <h3>${h.title}</h3>
+      <div class="handout-science">${h.banner}</div>
+      <div class="handout-mission">${h.mission}</div>
+      <p><strong>📋 Step-by-Step Instructions</strong></p>
+      <ol class="handout-steps">${stepsHtml}</ol>
+      <div class="handout-deliverable">
+        <strong>🎯 What to Submit:</strong>
+        ${h.deliverable}
+      </div>
       <div class="handout-reflect">
         <strong>💭 Reflection Questions:</strong>
         <ol>${reflectHtml}</ol>

@@ -14,6 +14,8 @@
     .sidebar-item:hover { background: #1B3A8A; }
     .sidebar-item.active { background: #1B3A8A; }
     .main { flex: 1; display: flex; flex-direction: column; }
+    .all-math-btn { background: #FFD100; color: #1a2a4a; border: none; cursor: pointer; font-size: 13px; font-weight: 700; padding: 8px 14px; border-radius: 6px; margin-right: 10px; text-decoration: none; display: inline-block; transition: all 0.18s; }
+    .all-math-btn:hover { background: #ffc400; transform: translateX(-2px); }
     .home-btn { background: rgba(0,0,0,0.2); border: none; color: white; cursor: pointer; font-size: 14px; font-weight: 600; padding: 8px 14px; border-radius: 6px; margin-right: 16px; }
     .home-btn:hover { background: rgba(0,0,0,0.35); }
     .topbar { border-bottom: 4px solid #FFD100;  background: #1B3A8A; color: white; padding: 15px 30px; font-size: 18px; font-weight: bold; display: flex; justify-content: space-between; align-items: center; }
@@ -85,12 +87,12 @@
       <h2 style="margin:0 0 4px 0;">Saint Theresa School</h2><p style="margin:0 0 16px 0;color:#888;font-size:14px;">4th Grade Math Topics</p>
       <div id="sidebar-content"></div>
       <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #444; font-size: 12px; color: #999;">
-        Progress: <span id="progress-text">0/16</span>
+        Progress: <span id="progress-text">0/18</span>
       </div>
     </div>
     <div class="main">
       <div class="topbar">
-        <button class="home-btn" onclick="showHome()">🏠 HOME</button>
+        <a href="STS Math Index.html" class="all-math-btn" title="Back to STS home">&larr; All Math</a><button class="home-btn" onclick="showHome()">🏠 HOME</button>
         <span style="font-size:12px;font-weight:normal;opacity:0.85;margin-right:10px;">Saint Theresa School &nbsp;&nbsp;</span><span id="topbar-title">Exploring the World with Math</span>
         <div class="topbar-right">
           <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIj4KICA8ZGVmcz4KICAgIDxjbGlwUGF0aCBpZD0iaW5uZXIiPgogICAgICA8Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9Ijc4Ii8+CiAgICA8L2NsaXBQYXRoPgogICAgPHBhdGggaWQ9InRvcC1hcmMiIGQ9Ik0gMTgsMTAwIGE4Miw4MiAwIDAsMSAxNjQsMCIgZmlsbD0ibm9uZSIvPgogICAgPHBhdGggaWQ9ImJvdC1hcmMiIGQ9Ik0gMjIsMTEwIGE4MCw4MCAwIDAsMCAxNTYsMCIgZmlsbD0ibm9uZSIvPgogIDwvZGVmcz4KICA8IS0tIE91dGVyIGdvbGQgcmluZyAtLT4KICA8Y2lyY2xlIGN4PSIxMDAiIGN5PSIxMDAiIHI9Ijk5IiBmaWxsPSIjRkZEMTAwIiBzdHJva2U9IiMxQjNBOEEiIHN0cm9rZS13aWR0aD0iMiIvPgogIDwhLS0gQmx1ZSB0ZXh0IGJhbmQgLS0+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI5OSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMUIzQThBIiBzdHJva2Utd2lkdGg9IjIyIi8+CiAgPCEtLSBHb2xkIGlubmVyIGFyZWEgLS0+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI4OCIgZmlsbD0iI0ZGRDEwMCIvPgogIDwhLS0gQmx1ZSBjcm9zcyBhcm1zIGNsaXBwZWQgdG8gY2lyY2xlIC0tPgogIDxnIGNsaXAtcGF0aD0idXJsKCNpbm5lcikiPgogICAgPHJlY3QgeD0iODYiIHk9IjIyIiB3aWR0aD0iMjgiIGhlaWdodD0iMTU2IiBmaWxsPSIjMUIzQThBIi8+CiAgICA8cmVjdCB4PSIyMiIgeT0iODYiIHdpZHRoPSIxNTYiIGhlaWdodD0iMjgiIGZpbGw9IiMxQjNBOEEiLz4KICAgIDwhLS0gU2hpZWxkIG91dGxpbmUgaW4gY2VudGVyIC0tPgogICAgPHBhdGggZD0iTTEwMCw2OCBMMTIwLDc1IEwxMjAsMTAwIFExMjAsMTE4IDEwMCwxMjYgUTgwLDExOCA4MCwxMDAgTDgwLDc1IFoiIGZpbGw9IiNGRkQxMDAiIHN0cm9rZT0iIzFCM0E4QSIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgICA8IS0tIEZsb3dlci9yb3NlIGluIHNoaWVsZCAtLT4KICAgIDxjaXJjbGUgY3g9IjEwMCIgY3k9Ijk3IiByPSI4IiBmaWxsPSIjMUIzQThBIi8+CiAgICA8Y2lyY2xlIGN4PSIxMDAiIGN5PSI4NyIgcj0iNSIgZmlsbD0iIzFCM0E4QSIvPgogICAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTA3IiByPSI1IiBmaWxsPSIjMUIzQThBIi8+CiAgICA8Y2lyY2xlIGN4PSI5MSIgY3k9Ijk3IiByPSI1IiBmaWxsPSIjMUIzQThBIi8+CiAgICA8Y2lyY2xlIGN4PSIxMDkiIGN5PSI5NyIgcj0iNSIgZmlsbD0iIzFCM0E4QSIvPgogIDwvZz4KICA8IS0tIFF1YWRyYW50IHN5bWJvbHMgKG91dHNpZGUgY3Jvc3MsIGluc2lkZSBvdXRlciByaW5nKSAtLT4KICA8IS0tIFRvcC1sZWZ0OiBCb29rIC0tPgogIDx0ZXh0IHg9IjU4IiB5PSI3MiIgZm9udC1zaXplPSIxOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzFCM0E4QSIgZm9udC1mYW1pbHk9InNlcmlmIj7wn5OWPC90ZXh0PgogIDwhLS0gVG9wLXJpZ2h0OiBGbGV1ci1kZS1saXMgLS0+CiAgPHRleHQgeD0iMTQyIiB5PSI3MiIgZm9udC1zaXplPSIxNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzFCM0E4QSIgZm9udC1mYW1pbHk9InNlcmlmIj7impw8L3RleHQ+CiAgPCEtLSBCb3R0b20tbGVmdDogTGluZXMgKGhhdGNoKSAtLT4KICA8bGluZSB4MT0iMzIiIHkxPSIxMTgiIHgyPSI1MCIgeTI9IjEzMCIgc3Ryb2tlPSIjMUIzQThBIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8bGluZSB4MT0iMzYiIHkxPSIxMTQiIHgyPSI1NCIgeTI9IjEyNiIgc3Ryb2tlPSIjMUIzQThBIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8bGluZSB4MT0iNDAiIHkxPSIxMTAiIHgyPSI1OCIgeTI9IjEyMiIgc3Ryb2tlPSIjMUIzQThBIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8IS0tIEJvdHRvbS1yaWdodDogUGxhbnQvY3Jvc3MgLS0+CiAgPHRleHQgeD0iMTQyIiB5PSIxMzYiIGZvbnQtc2l6ZT0iMTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMxQjNBOEEiIGZvbnQtZmFtaWx5PSJzZXJpZiI+4pygPC90ZXh0PgogIDwhLS0gQ2lyY3VsYXIgdGV4dDogU0FJTlQgVEhFUkVTQSBTQ0hPT0wgLS0+CiAgPHRleHQgZm9udC1zaXplPSIxMyIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmaWxsPSIjRkZEMTAwIiBsZXR0ZXItc3BhY2luZz0iMiI+CiAgICA8dGV4dFBhdGggaHJlZj0iI3RvcC1hcmMiIHN0YXJ0T2Zmc2V0PSI4JSI+U0FJTlQgVEhFUkVTQSBTQ0hPT0w8L3RleHRQYXRoPgogIDwvdGV4dD4KICA8IS0tIEJvdHRvbSB0ZXh0OiAxOTMxIC0tPgogIDx0ZXh0IGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSJib2xkIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZmlsbD0iI0ZGRDEwMCIgbGV0dGVyLXNwYWNpbmc9IjMiPgogICAgPHRleHRQYXRoIGhyZWY9IiNib3QtYXJjIiBzdGFydE9mZnNldD0iMzUlIj4xOTMxPC90ZXh0UGF0aD4KICA8L3RleHQ+Cjwvc3ZnPg==" style="height:44px;width:44px;border-radius:50%;object-fit:contain;background:#FFD100;" alt="Saint Theresa School Seal"/>
@@ -296,6 +298,24 @@ const UNITS = [
     "desc": "Solve multi-step word problems using the four operations; interpret remainders.",
     "ixlUrl": "https://www.ixl.com/math/grade-4/multi-step-word-problems",
     "ytSearch": "khan academy 4th grade multi-step word problems"
+  },
+  {
+    "id": "angles",
+    "title": "Angles",
+    "icon": "📐",
+    "cc": "4.MD.5-7",
+    "desc": "Recognize angles as geometric shapes; measure and draw angles in whole-number degrees using a protractor.",
+    "ixlUrl": "https://www.ixl.com/math/grade-4/measure-angles-with-a-protractor",
+    "ytSearch": "khan academy 4th grade angles protractor degrees"
+  },
+  {
+    "id": "patterns",
+    "title": "Patterns",
+    "icon": "🔁",
+    "cc": "4.OA.5",
+    "desc": "Generate a number or shape pattern that follows a given rule; identify features and explain how the rule produces the pattern.",
+    "ixlUrl": "https://www.ixl.com/math/grade-4/complete-an-increasing-number-pattern",
+    "ytSearch": "khan academy 4th grade number patterns rule"
   }
 ];
 
@@ -316,6 +336,8 @@ const LESSONS = {
   "factoring": "<h2>Factoring</h2>\n<p>A <strong>factor</strong> divides a number evenly. A <strong>multiple</strong> is the result of multiplying.</p>\n<p><strong>Factors of 12:</strong> 1, 2, 3, 4, 6, 12.</p>\n<p><strong>Multiples of 6:</strong> 6, 12, 18, 24, 30, 36, …</p>\n<p><strong>Prime numbers</strong> have exactly two factors (1 and themselves). Examples: 2, 3, 5, 7, 11, 13, 17, 19, 23.</p>\n<p><strong>Composite numbers</strong> have more than two factors: 4, 6, 8, 9, 10, 12, …</p>\n<p><strong>1 is neither prime nor composite.</strong></p>\n<p><strong>Factor pairs of 24:</strong> 1 × 24, 2 × 12, 3 × 8, 4 × 6.</p>\n<p><strong>Prime factorization:</strong> Break a number into a product of primes.</p>\n<ul>\n  <li>24 = 2 × 12 = 2 × 2 × 6 = 2 × 2 × 2 × 3 = <strong>2³ × 3</strong></li>\n  <li>45 = 3 × 15 = 3 × 3 × 5 = <strong>3² × 5</strong></li>\n</ul>",
   "data-graphing": "<h2>Data & Graphing</h2>\n<p>Data are answers to questions — height, temperature, number of petals, etc. We use graphs to <em>see</em> patterns quickly.</p>\n<p><strong>Line plot:</strong> A number line where each data point is an X above its value. Great for small numbers of measurements.</p>\n<p><strong>Bar graph:</strong> Shows amount for each category. Bars can be vertical or horizontal. Always label axes.</p>\n<p><strong>Pictograph:</strong> Each picture represents a count (the key tells you how many).</p>\n<p><strong>Reading graphs — questions to ask:</strong></p>\n<ul>\n  <li>Which category has the most? the least?</li>\n  <li>How many more does X have than Y?</li>\n  <li>What's the total?</li>\n</ul>\n<p><strong>Mean (average):</strong> Sum all data, divide by count. Example: (3 + 5 + 7 + 9) ÷ 4 = 6.</p>\n<p><strong>Range:</strong> largest − smallest = spread of the data.</p>",
   "word-problems": "<h2>Word Problems</h2>\n<p>A word problem describes a real situation in sentences. Your job: translate into math, solve, and check.</p>\n<p><strong>Four-step plan:</strong></p>\n<ol>\n  <li><strong>Understand:</strong> What is being asked? Highlight the question.</li>\n  <li><strong>Plan:</strong> What operation(s) fit? (+ − × ÷)</li>\n  <li><strong>Solve:</strong> Write the equation and calculate.</li>\n  <li><strong>Check:</strong> Does the answer make sense? Estimate to compare.</li>\n</ol>\n<p><strong>Example:</strong> A class plants 6 rows of corn with 18 stalks each. Birds eat 15 stalks. How many are left?</p>\n<ul>\n  <li>Step 1 — ask: \"How many stalks remain?\"</li>\n  <li>Step 2 — plan: multiply, then subtract.</li>\n  <li>Step 3 — solve: 6 × 18 = 108; 108 − 15 = <strong>93</strong>.</li>\n  <li>Step 4 — check: 93 + 15 = 108 = 6 × 18 ✓</li>\n</ul>\n<p><strong>Interpret remainders:</strong> If 27 cookies are split among 4 friends, 27 ÷ 4 = 6 R 3. Each friend gets 6 cookies; 3 are left over.</p>",
+  "angles": "<h2>Angles</h2>\n<p>An <strong>angle</strong> is formed by two rays sharing a common endpoint (the <em>vertex</em>). We measure angles in <strong>degrees (°)</strong>.</p>\n<h3>Types of Angles</h3>\n<ul>\n<li><strong>Right angle:</strong> exactly 90° (a square corner).</li>\n<li><strong>Acute angle:</strong> less than 90°.</li>\n<li><strong>Obtuse angle:</strong> greater than 90° but less than 180°.</li>\n<li><strong>Straight angle:</strong> exactly 180° (a straight line).</li>\n</ul>\n<h3>Using a Protractor</h3>\n<ol>\n<li>Place the center hole on the vertex.</li>\n<li>Line up one ray with the 0° line.</li>\n<li>Read the degree where the other ray crosses the scale.</li>\n<li>Use the scale (inner or outer) that starts at 0° on your ray.</li>\n</ol>\n<h3>Adding & Subtracting Angles</h3>\n<p>If a larger angle is split into two parts, the parts add up to the whole. If a 90° angle is split into a 35° piece and an unknown piece, the unknown = 90 − 35 = <strong>55°</strong>.</p>\n<h3>Full Turn</h3>\n<p>A full circle is 360°. Half a turn is 180°. A quarter turn is 90°.</p>",
+  "patterns": "<h2>Patterns</h2>\n<p>A <strong>pattern</strong> is a sequence that follows a rule. To find the next term, figure out the rule first.</p>\n<h3>Number Patterns</h3>\n<p><strong>Example (add 4):</strong> 2, 6, 10, 14, 18, … The next term is 22.</p>\n<p><strong>Example (multiply by 2):</strong> 3, 6, 12, 24, 48, … The next term is 96.</p>\n<p><strong>Example (alternating):</strong> +5, −2: 10, 15, 13, 18, 16, 21, …</p>\n<h3>Shape Patterns</h3>\n<p>Shapes may repeat (▲ ● ▲ ● ▲ ● …) or grow (1 dot, then 3, then 6 — a triangle pattern). Predict the next shape by counting how the figure changes each step.</p>\n<h3>Finding the Rule</h3>\n<ol>\n<li>Compare consecutive terms — what changed?</li>\n<li>Test the rule on the next term. If it works, you have the rule.</li>\n<li>Use the rule to predict any future term.</li>\n</ol>\n<h3>Features of Patterns</h3>\n<p>Even/odd, growing/shrinking, increasing by a constant amount, or doubling — all are <em>features</em> you can describe besides just listing the numbers.</p>"
 };
 
 const WORKSHEETS = {
@@ -335,6 +357,20 @@ const WORKSHEETS = {
   "factoring": [{"q": "List all factors of 18.", "answer": "1, 2, 3, 6, 9, 18"}, {"q": "Is 29 prime or composite?", "answer": "prime"}, {"q": "Find the prime factorization of 36.", "answer": "2 × 2 × 3 × 3 = 2² × 3²"}, {"q": "List the first five multiples of 7.", "answer": "7, 14, 21, 28, 35"}, {"q": "Name a factor pair of 48 other than 1 × 48.", "answer": "2 × 24 (or 3 × 16, 4 × 12, 6 × 8)"}],
   "data-graphing": [{"q": "Find the mean of 4, 7, 8, 9, 12.", "answer": "8 (sum 40 ÷ 5)"}, {"q": "Find the range of 12, 5, 8, 20, 15.", "answer": "15 (20 − 5)"}, {"q": "On a line plot with Xs at 1, 1, 2, 3, 3, 3, 4, what number is the mode?", "answer": "3"}, {"q": "A pictograph uses 🌺 = 5 flowers. Anna has 4 🌺🌺🌺🌺. How many flowers?", "answer": "20 flowers"}, {"q": "If a bar graph shows 8 cats, 6 dogs, 4 fish, how many pets total?", "answer": "18 pets"}],
   "word-problems": [{"q": "A surfboard rental costs $12 per hour. Pele rents for 4 hours and tips $5. Total cost?", "answer": "$53 (12 × 4 = 48; 48 + 5)"}, {"q": "A container holds 672 mL of juice. How many 8-mL servings can be poured?", "answer": "84 servings"}, {"q": "Hikers walked 3 miles in the morning and 2.5 miles in the afternoon. What was their total distance?", "answer": "5.5 miles"}, {"q": "25 students each bring 6 shells to class. After losing 18 shells, how many remain?", "answer": "132 shells (25 × 6 = 150; 150 − 18)"}, {"q": "A pizza is cut into 8 slices. 3 friends each eat 2 slices. What fraction of the pizza is left?", "answer": "2/8 = 1/4"}],
+  "angles": [
+    { q: "What is the measure of a right angle?", answer: "90°" },
+    { q: "Is a 45° angle acute, right, or obtuse?", answer: "Acute" },
+    { q: "Is a 120° angle acute, right, or obtuse?", answer: "Obtuse" },
+    { q: "An angle is split into two parts of 30° and ?°, total 90°. What is the missing part?", answer: "60°" },
+    { q: "How many degrees in a straight angle?", answer: "180°" }
+  ],
+  "patterns": [
+    { q: "Find the next term: 4, 9, 14, 19, ___", answer: "24 (rule: add 5)" },
+    { q: "Find the next term: 1, 2, 4, 8, 16, ___", answer: "32 (rule: multiply by 2)" },
+    { q: "Find the next term: 50, 45, 40, 35, ___", answer: "30 (rule: subtract 5)" },
+    { q: "What's the rule for 2, 5, 11, 23, 47?", answer: "Multiply by 2 and add 1" },
+    { q: "First 3 triangle numbers are 1, 3, 6. What is the 4th?", answer: "10" }
+  ]
 };
 
 const QUIZZES = {
@@ -354,6 +390,18 @@ const QUIZZES = {
   "factoring": [{"q": "Which is prime?", "opts": ["9", "21", "11", "15"], "ans": 2}, {"q": "Which is composite?", "opts": ["7", "13", "25", "19"], "ans": 2}, {"q": "Factors of 20 are ___.", "opts": ["1, 2, 4, 5, 10, 20", "1, 2, 4, 20", "1, 5, 10, 20", "1, 2, 5, 20"], "ans": 0}, {"q": "Prime factorization of 30 is ___.", "opts": ["2·3·5", "2·15", "3·10", "5·6"], "ans": 0}, {"q": "The number 1 is ___.", "opts": ["prime", "composite", "neither", "both"], "ans": 2}],
   "data-graphing": [{"q": "The mean of 2, 4, 6 is ___.", "opts": ["3", "4", "5", "12"], "ans": 1}, {"q": "Range of 10, 14, 22, 6 is ___.", "opts": ["6", "14", "16", "22"], "ans": 2}, {"q": "Mode of 3, 5, 5, 7, 9 is ___.", "opts": ["3", "5", "6", "7"], "ans": 1}, {"q": "A pictograph key is 🐠 = 4 fish. Tank A has 🐠🐠🐠 — that's ___ fish.", "opts": ["3", "4", "7", "12"], "ans": 3}, {"q": "Best graph for showing category counts?", "opts": ["line plot", "bar graph", "scatter plot", "coordinate grid"], "ans": 1}],
   "word-problems": [{"q": "Maya bought 3 books at $8 each and 1 magazine at $5. Total?", "opts": ["$29", "$24", "$27", "$32"], "ans": 0}, {"q": "72 ÷ 5 = 14 R ___.", "opts": ["1", "2", "3", "4"], "ans": 1}, {"q": "If 4 apples cost $1.20, one apple costs ___.", "opts": ["$0.20", "$0.30", "$0.40", "$0.50"], "ans": 1}, {"q": "Sam read 135 pages in 3 days. Daily average?", "opts": ["35", "40", "45", "50"], "ans": 2}, {"q": "A van holds 8 passengers. To carry 54 people, how many vans?", "opts": ["6", "7", "8", "6 R 6"], "ans": 1}],
+  "angles": [
+    { q: "An angle less than 90° is called:", choices: ["Obtuse", "Acute", "Right"], correct: 1 },
+    { q: "A square corner measures:", choices: ["45°", "90°", "180°"], correct: 1 },
+    { q: "A straight line measures:", choices: ["90°", "180°", "360°"], correct: 1 },
+    { q: "An angle of 130° is:", choices: ["Acute", "Right", "Obtuse"], correct: 2 }
+  ],
+  "patterns": [
+    { q: "Next in 3, 7, 11, 15, ___ :", choices: ["18", "19", "20"], correct: 1 },
+    { q: "Rule for 5, 10, 20, 40:", choices: ["+5", "×2", "+10"], correct: 1 },
+    { q: "Next in 100, 90, 81, 73, ___ :", choices: ["66", "65", "64"], correct: 0 },
+    { q: "If the rule is 'add 6, subtract 2' alternating, after 10, 16, 14, 20: next is", choices: ["18", "26", "24"], correct: 0 }
+  ]
 };
 
 const HANDOUTS_4 = {
@@ -373,6 +421,8 @@ const HANDOUTS_4 = {
   "factoring": {"title": "Taro Field Grid Planner", "science": "🌱 Real-World Math — Hawaiian Agriculture", "mission": "Taro (kalo) is a sacred Hawaiian plant grown in flooded fields called loi. You'll use factors and multiples to plan rectangular loi layouts.", "steps": ["You have 24 taro starts (seedlings). List all rectangular arrangements (a × b) you could plant. These are factor pairs of 24.", "A farmer wants a field with area 36 m² and whole-number sides. List every possible layout.", "Two plots — 8 × 6 and 9 × 4 — have equal area. Prove it using factoring.", "List the first 6 multiples of 4 and the first 6 multiples of 6. Find the smallest multiple they share (LCM).", "Is 29 a good choice for total plants? Why or why not? (Hint: prime number.)"], "deliverable": "A loi planning sheet with factor pairs, LCM discussion, and prime-number explanation.", "reflect": ["Why are prime numbers inconvenient for rectangular layouts?", "How might a farmer use LCM to synchronize two planting schedules?"]},
   "data-graphing": {"title": "Hawaiian Bird Species Count", "science": "🐦 Real-World Math — Hawaiian Wildlife", "mission": "Hawaii is home to native birds like the iiwi, apapane, and nene. You'll build graphs of sightings data and compute averages.", "steps": ["Record this survey data (birds spotted over a week): iiwi 12, apapane 18, amakihi 15, nene 6, honeycreeper 9.", "Draw a bar graph with labeled axes and a title.", "Find the mean (average) number of birds per species.", "Find the mode and range.", "Draw a line plot of daily iiwi sightings: 2, 1, 3, 2, 2, 1, 1. Identify the mode."], "deliverable": "A bar graph, a line plot, and a short summary with mean, mode, and range.", "reflect": ["Why does a bar graph make comparisons easier than a list of numbers?", "Which statistic (mean, mode, or range) best describes \"typical\" for this data? Why?"]},
   "word-problems": {"title": "Luau Party Planner", "science": "🥥 Real-World Math — Event Planning", "mission": "Your class is hosting a Hawaiian luau! You'll plan food, decorations, and seating using multi-step word problems.", "steps": ["You invite 48 guests. Each table seats 6. How many tables do you need?", "Poke bowls cost $7.25 each. You need 48. Total poke cost?", "Pineapple platters serve 8 people; you need enough for 48. Each platter is $15. Total platter cost?", "You have $500 budget. After poke and platters, how much is left? Can you afford 10 flower leis at $9 each?", "A coconut delivery arrives with 60 coconuts. If each table gets 4, are there enough? How many are left over?"], "deliverable": "A full luau budget and seating plan with all operations shown and a leftover-coconut count.", "reflect": ["Which is the trickiest operation in multi-step word problems, and why?", "How do you decide whether a word problem uses +, −, ×, or ÷?"]},
+  "angles": { "title": "Skateboard Ramp Angles", "science": "📐 Real-World Math — Measuring Angles in the Home", "mission": "Find and measure real angles around your home, then classify them as acute, right, or obtuse.", "steps": ["Find 3 objects in your home: scissors, an open book, and a door slightly ajar.", "Estimate each angle in degrees, then classify it (acute / right / obtuse).", "If you have a protractor, measure each angle.", "What is the angle of your scissors when fully open? When half-open?", "What angle does the corner where two walls meet the ceiling make?"], "deliverable": "A table with 3 objects, estimated and measured angle, and classification.", "reflect": ["Why is 90° such a common angle in buildings?", "What angle do a clock's hands make at 3:00? At 6:00?", "Why are ramp angles often 30° or less?"] },
+  "patterns": { "title": "Plumeria Petals & Fibonacci", "science": "🌺 Real-World Math — Patterns in Nature", "mission": "Find growth patterns in nature and continue numeric sequences.", "steps": ["A plumeria has 5 petals. A hibiscus has 5. An orchid has 3. Why these specific numbers? (Hint: Fibonacci.)", "Write the Fibonacci sequence: 1, 1, 2, 3, 5, 8, 13, ___, ___ (continue 2 more terms).", "Pick a household object. Build a 'multiply by 3' sequence: 1, 3, 9, 27, ___. Continue to 4 more terms.", "Find a leaf and inspect its veins — is there a branching pattern?", "Walk to a tree and count branches at each level. Is it doubling or follows another rule?"], "deliverable": "Two completed sequences plus a description of a nature pattern you observed.", "reflect": ["Why do so many flowers have 3, 5, or 8 petals?", "Why does 'doubling' reach big numbers so quickly?", "Where do patterns help predict things — weather, tides, growth?"] }
 };
 
 const ANSWER_KEYS_4 = {
